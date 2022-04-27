@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "sYpFcloNe9VNDv3Hud1k490BaS/DWPv1hxaqmkyX4ji850WXIPT9H+2OLO4VZBs2NQi3+j0Sx3iqIgJBySFy5g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cedri\\OneDrive\\Documents\\Pojet Formation\\SecurityApi\\SecurityApi\\SecurityApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cedri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\cedri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\cedri\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\cedri\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\cedri\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\cedri\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

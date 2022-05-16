@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Grade]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Grade] VARCHAR(50) NULL,
+
+)

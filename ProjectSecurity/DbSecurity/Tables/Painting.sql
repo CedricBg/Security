@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Painting]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [IdCategory] INT NOT NULL, 
+    [IdColor] INT NOT NULL,
+    CONSTRAINT FK_PAIN_CAT_COL FOREIGN KEY (IdCategory) REFERENCES Category (IdCategory),
+    CONSTRAINT FK_PAIN_COL_CAT FOREIGN KEY (IdColor) REFERENCES Color (IdColor),
+
+
+)

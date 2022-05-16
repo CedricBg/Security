@@ -14,7 +14,7 @@
     [IdUsers] INT NULL, 
     [EmployeeCardNumber] INT NOT NULL DEFAULT 0,
     CONSTRAINT FK_GRADE_EMPLO FOREIGN KEY (IdGrade) REFERENCES Grade (IdGrade),
-    CONSTRAINT FK_LANG_EMPLO FOREIGN KEY (IdLanguage) REFERENCES Languages (IdLanguage),
+    CONSTRAINT FK_LANG_EMPLO FOREIGN KEY (IdLanguage) REFERENCES Employee_Language (IdLanguage),
     CONSTRAINT FK_INFORMATION_EMPLO FOREIGN KEY (IdInformation) REFERENCES Informations (IdInformation),
     CONSTRAINT FK_USERS_EMPLO FOREIGN KEY (IdUsers) REFERENCES Users (IdUser)
     

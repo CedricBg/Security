@@ -10,3 +10,6 @@ C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\obj\De
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\AdoToolbox.dll
+C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\AdoToolbox.pdb
+C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete

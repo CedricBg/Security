@@ -2,7 +2,7 @@
 (
 	[IdInformation] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Street] VARBINARY(40) NULL, 
-    [PastCode] VARCHAR(30) NULL, 
+    [PostCode] VARCHAR(30) NULL, 
     [StreetNumber] VARCHAR(20) NULL, 
     [IdCountry] INT NULL, 
     [Phone] VARCHAR(50) NOT NULL, 

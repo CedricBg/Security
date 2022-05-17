@@ -13,4 +13,8 @@
     <Folder Include="Tools\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="I:\jonathan\AdoToolbox\AdoToolbox.csproj" />
+  </ItemGroup>
+
 </Project>

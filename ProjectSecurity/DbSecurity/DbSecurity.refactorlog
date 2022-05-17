@@ -224,4 +224,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdUsers" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="588273f2-1517-433e-804a-421104a5c577" ChangeDateTime="05/17/2022 08:59:16">
+    <Property Name="ElementName" Value="[dbo].[Ronde].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Ronde]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdRonde" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="38ba79c4-29d1-49c2-8405-e3a922b55788" ChangeDateTime="05/17/2022 09:09:38">
+    <Property Name="ElementName" Value="[dbo].[RfidPatrol].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RfidPatrol]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdRfid" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0b7b1d5e-e69a-49f5-acc9-e92c69864b7f" ChangeDateTime="05/17/2022 10:09:26">
+    <Property Name="ElementName" Value="[dbo].[StatutAgent].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[StatutAgent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdStatut" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="08d50ec9-001e-4ccb-a042-eec37832699a" ChangeDateTime="05/17/2022 11:11:53">
+    <Property Name="ElementName" Value="[dbo].[Informations].[PastCode]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Informations]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PostCode" />
+  </Operation>
 </Operations>

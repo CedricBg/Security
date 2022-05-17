@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Rondier]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [IdEmployee] INT NOT NULL, 
+    [IdRonde] BIGINT NOT NULL,
+    CONSTRAINT FK_EMPLO_RONDE FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee),
+    CONSTRAINT FK_RONDE_RONDE FOREIGN KEY (IdRonde) REFERENCES Ronde(IdRonde),
+
+)

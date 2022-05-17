@@ -10,7 +10,7 @@
     [RegistreNational] VARCHAR(20) NOT NULL,
     [EmployeeCardNumber] VARCHAR(255) NOT NULL DEFAULT 0, 
     [IdLanguage] INT NOT NULL, 
-    [IdInformation] INT NOT NULL, 
+    [IdInformation] INT NULL, 
     [IdUsers] INT NULL, 
     [IdStatut] INT NOT NULL, 
     CONSTRAINT FK_STATUT_EMPLOYEE FOREIGN KEY ([IdStatut]) REFERENCES StatutAgent (IdStatut),

@@ -89,6 +89,9 @@
     <Build Include="Tables\passage.sql" />
     <Build Include="Tables\RfidPatrol.sql" />
     <Build Include="Tables\StatutAgent.sql" />
+    <Build Include="ProcStored\Register.sql" />
+    <Build Include="Functions\GetSecretKey.sql" />
+    <Build Include="ProcStored\Login.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

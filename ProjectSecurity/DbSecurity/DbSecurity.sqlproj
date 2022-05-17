@@ -69,6 +69,21 @@
     <Build Include="Tables\ContactPerson.sql" />
     <Build Include="Tables\Contacting.sql" />
     <Build Include="Tables\Calling.sql" />
+    <Build Include="Tables\Customer.sql" />
+    <Build Include="Tables\Grade.sql" />
+    <Build Include="Tables\Rapport.sql" />
+    <Build Include="Tables\Start_end_Time.sql" />
+    <Build Include="Tables\ScheduleGuard.sql" />
+    <Build Include="Tables\Departement.sql" />
+    <Build Include="Tables\Belongs.sql" />
+    <Build Include="Tables\Manage.sql" />
+    <Build Include="Tables\Employee_Language.sql" />
+    <Build Include="Tables\Category.sql" />
+    <Build Include="Tables\Product.sql" />
+    <Build Include="Tables\Color.sql" />
+    <Build Include="Tables\Painting.sql" />
+    <Build Include="Tables\RackProduct.sql" />
+    <Build Include="Tables\Searching.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

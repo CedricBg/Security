@@ -6,3 +6,5 @@ C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\p
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.dll
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb
+C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dll
+C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.pdb

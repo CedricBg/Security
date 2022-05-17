@@ -196,4 +196,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdColor" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="3e6ac1b8-ea32-42ff-8280-8f6970fdb73d" ChangeDateTime="05/16/2022 13:52:54">
+    <Property Name="ElementName" Value="[dbo].[RackProduct].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RackProduct]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdRack" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1786dfa9-48d3-452e-8fb8-b5e4a5e2f073" ChangeDateTime="05/16/2022 14:15:36">
+    <Property Name="ElementName" Value="[dbo].[Searching].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Searching]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Idsearch" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4aca9812-5547-4a65-b480-63dc78ef69b1" ChangeDateTime="05/16/2022 14:15:43">
+    <Property Name="ElementName" Value="[dbo].[Searching].[Idsearch]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Searching]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdSearch" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="70ac3891-39b5-4ba0-9718-e4a0907802f8" ChangeDateTime="05/16/2022 14:22:04">
+    <Property Name="ElementName" Value="[dbo].[SubContractors].[idUsers]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SubContractors]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdUsers" />
+  </Operation>
 </Operations>

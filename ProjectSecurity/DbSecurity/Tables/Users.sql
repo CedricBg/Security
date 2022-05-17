@@ -4,6 +4,7 @@
     [Login] NCHAR(10) NOT NULL,
 	[Salt] VARCHAR(100) NOT NULL, 
     [Password_hash] VARBINARY(64) NOT NULL, 
+    [Statut] VARCHAR(10) NOT NULL, 
     CONSTRAINT UK_LOGIN UNIQUE (Login)
 
 )

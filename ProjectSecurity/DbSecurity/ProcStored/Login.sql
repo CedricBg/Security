@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[Login]
 	@Login VARCHAR(50),
 	@Password VARCHAR(50)
+
 AS
 Begin
 	Set NOCOUNT ON
@@ -13,5 +14,6 @@ Begin
 	DECLARE @password_hash VARBINARY(64)
 	SET @password_hash = HASHBYTES('SHA2_512', CONCAT(@salt, @SecretKey, @password, @salt))
 
-	SELECT IdUser from Users WHERE Password_hash = @password_hash AND [Login] = @Login
+	Declare @IdUser INT
+	set @IdUser = (SELECT IdUser from Users WHERE (Password_hash = @password_hash AND ([Login] = @Login)))
 End

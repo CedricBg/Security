@@ -28,6 +28,7 @@ INSERT INTO StatutAgent (Classe, ClasseName) Values('DIR', 'Direction' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('OP', 'Opérations' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('ADM', 'Administratif' )
 
+
 INSERT INTO Countrys Values('Afghanistan')
 INSERT INTO Countrys Values('Albania')
 INSERT INTO Countrys Values('Algeria')

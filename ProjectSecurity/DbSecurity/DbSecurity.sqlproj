@@ -71,7 +71,6 @@
     <Build Include="Tables\Contacting.sql" />
     <Build Include="Tables\Calling.sql" />
     <Build Include="Tables\Customer.sql" />
-    <Build Include="Tables\Grade.sql" />
     <Build Include="Tables\Rapport.sql" />
     <Build Include="Tables\Start_end_Time.sql" />
     <Build Include="Tables\ScheduleGuard.sql" />

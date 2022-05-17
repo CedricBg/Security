@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Informations]
 (
 	[IdInformation] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Street] VARBINARY(40) NULL, 
+    [Street] VARCHAR(50) NULL, 
     [PostCode] VARCHAR(30) NULL, 
     [StreetNumber] VARCHAR(20) NULL, 
     [IdCountry] INT NULL, 

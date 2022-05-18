@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using ProjectSecurity.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -16,9 +17,9 @@ namespace ProjectSecurity.Tools;
         _secret = config.GetSection("tokenValidation").GetSection("secret").Value;
 
     }
-    public string GenerateJwt(AppUser user)
+    public string GenerateJwt(RegisterForm user)
     {
-        if (user.Email is null)
+        if (user.Login is null)
         {
             throw new ArgumentNullException();
         }
@@ -29,8 +30,8 @@ namespace ProjectSecurity.Tools;
 
         Claim[] myClaims = new[]
         {
-            new Claim(ClaimTypes.Surname, user.NickName),
-            new Claim(ClaimTypes.Role, user.IsAdmin? "admin": "user"),
+            new Claim(ClaimTypes.Surname, user.Login),
+            //new Claim(ClaimTypes.Role, user.),
             new Claim(ClaimTypes.Sid, user.Id.ToString()),
         };
 

@@ -9,6 +9,10 @@ Modèle de script de post-déploiement
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+INSERT INTO Employee_Language (Language) Values('Français')
+INSERT INTO Employee_Language (Language) Values('Nederlands')
+INSERT INTO Employee_Language (Language) Values('English')
+
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SB', 'Agent statique' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SQ', 'Agent statique qualifié' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SE', 'Agent statique expert' )

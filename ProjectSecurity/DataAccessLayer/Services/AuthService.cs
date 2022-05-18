@@ -1,5 +1,6 @@
 ﻿using AdoToolbox;
 using DataAccessLayer.Models;
+using DataAccessLayer.Repository;
 using DataAccessLayer.Tools;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -12,7 +13,7 @@ namespace DataAccessLayer.Services;
 
 
 
-public class AuthService
+public class AuthService : IAuthService
 {
     private string _connectionString;
     Mapper mapper;
@@ -23,25 +24,50 @@ public class AuthService
         mapper = new Mapper();
     }
 
-    public bool Register(RegisterForm form)
+    public bool RegisterAccessEmployee(RegisterForm form)
     {
         Connection cnx = new Connection(_connectionString);
 
-        Command cmd = new Command("Register", true);
+        Command cmd = new Command("RegisterAccessEmployee", true);
 
         cmd.AddParameter("Login", form.Login);
         cmd.AddParameter("Password", form.Password);
-        cmd.AddParameter("Statut", form.Statut);
         cmd.AddParameter("Id", form.Id);
 
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
 
-    public bool AddUser(Employee employee)
+    public bool RegisterAccessContract(RegisterForm form)
     {
         Connection cnx = new Connection(_connectionString);
 
-        Command cmd = new Command("AddUser", true);
+        Command cmd = new Command("RegisterAccessContractor", true);
+
+        cmd.AddParameter("Login", form.Login);
+        cmd.AddParameter("Password", form.Password);
+        cmd.AddParameter("Id", form.Id);
+
+        return cnx.ExecuteNonQuery(cmd) == 1;
+    }
+
+    public bool RegisterAccessCustomer(RegisterForm form)
+    {
+        Connection cnx = new Connection(_connectionString);
+
+        Command cmd = new Command("RegisterAccessCustomer", true);
+
+        cmd.AddParameter("Login", form.Login);
+        cmd.AddParameter("Password", form.Password);
+        cmd.AddParameter("Id", form.Id);
+
+        return cnx.ExecuteNonQuery(cmd) == 1;
+    }
+
+    public bool AddEmployee(Employee employee)
+    {
+        Connection cnx = new Connection(_connectionString);
+
+        Command cmd = new Command("AddEmployee", true);
 
         cmd.AddParameter("Name", employee.Name);
         cmd.AddParameter("FirstName", employee.FirstName);
@@ -49,7 +75,7 @@ public class AuthService
         cmd.AddParameter("Vehicle", employee.Vehicle);
         cmd.AddParameter("SecurityCard", employee.SecurityCard);
         cmd.AddParameter("EmployeeCardNumber", employee.EmployeeCardNumber);
-        cmd.AddParameter("EntryService", employee.EntryService); 
+        cmd.AddParameter("EntryService", employee.EntryService);
         cmd.AddParameter("RegistreNational", employee.RegistreNational);
         cmd.AddParameter("IdLanguage", employee.IdLanguage);
         cmd.AddParameter("IdInformation", employee.IdInformation);
@@ -57,4 +83,8 @@ public class AuthService
 
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
+
+
+
+
 }

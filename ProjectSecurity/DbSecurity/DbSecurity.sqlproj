@@ -89,9 +89,12 @@
     <Build Include="Tables\passage.sql" />
     <Build Include="Tables\RfidPatrol.sql" />
     <Build Include="Tables\StatutAgent.sql" />
-    <Build Include="ProcStored\Register.sql" />
+    <Build Include="ProcStored\RegisterAccessEmployee.sql" />
     <Build Include="Functions\GetSecretKey.sql" />
-    <Build Include="ProcStored\Login.sql" />
+    <Build Include="ProcStored\Loginemployee.sql" />
+    <Build Include="ProcStored\AddEmployee.sql" />
+    <Build Include="ProcStored\RegisterAccessContractor.sql" />
+    <Build Include="ProcStored\RegisterAccessCustomer.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

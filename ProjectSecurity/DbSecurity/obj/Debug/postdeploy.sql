@@ -28,6 +28,7 @@ INSERT INTO StatutAgent (Classe, ClasseName) Values('DIR', 'Direction' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('OP', 'Opérations' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('ADM', 'Administratif' )
 
+
 INSERT INTO Countrys Values('Afghanistan')
 INSERT INTO Countrys Values('Albania')
 INSERT INTO Countrys Values('Algeria')
@@ -230,4 +231,5 @@ INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry )
 
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
 Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
+
 GO

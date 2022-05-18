@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[Login]
+﻿CREATE PROCEDURE [dbo].[Loginemployee]
 	@Login VARCHAR(50),
 	@Password VARCHAR(50)
 
@@ -16,4 +16,6 @@ Begin
 
 	Declare @IdUser INT
 	set @IdUser = (SELECT IdUser from Users WHERE (Password_hash = @password_hash AND ([Login] = @Login)))
+
+	
 End

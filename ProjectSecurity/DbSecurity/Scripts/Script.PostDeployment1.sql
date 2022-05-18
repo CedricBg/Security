@@ -9,6 +9,11 @@ Modèle de script de post-déploiement
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+INSERT INTO Departement (NameDepartement) Values('Stock')
+INSERT INTO Departement (NameDepartement) Values('Opérations')
+INSERT INTO Departement (NameDepartement) Values('Directions')
+INSERT INTO Departement (NameDepartement) Values('Agent')
+
 INSERT INTO Employee_Language (Language) Values('Français')
 INSERT INTO Employee_Language (Language) Values('Nederlands')
 INSERT INTO Employee_Language (Language) Values('English')
@@ -234,5 +239,5 @@ INSERT INTO Employee_Language Values('french')
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) Values('Rue Simon', 48, '6990', 'bogaert@outlook.com', '0487345912' ,1)
 
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
-Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
+              Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
 

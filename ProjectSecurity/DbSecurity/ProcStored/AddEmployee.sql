@@ -12,7 +12,7 @@
     @IdInformation int 
 As
 Begin
-    Insert into Employee ([Name], firstName, BirthDate, Vehicle, SecurityCardNumber, EntryService, EmployeeCardNumber,IdStatut, IdLanguage,IdInformation)
+    Insert into Employee ([Name], firstName, BirthDate, Vehicle, SecurityCardNumber, RegistreNational,EntryService, EmployeeCardNumber,IdStatut, IdLanguage,IdInformation)
     output inserted.IdEmployee
-    Values(@Name, @FirstName, @BirthDate, @Vehicle, @SecurityCard, @EntryService, @EmployeeCardNumber, @IdStatut, @IdLanguage, @IdInformation)
+    Values(@Name, @FirstName, @BirthDate, @Vehicle, @SecurityCard, @RegistreNational, @EntryService, @EmployeeCardNumber, @IdStatut, @IdLanguage, @IdInformation)
 End

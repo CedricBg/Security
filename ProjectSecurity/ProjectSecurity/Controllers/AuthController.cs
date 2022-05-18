@@ -19,12 +19,6 @@ namespace ProjectSecurity.Controllers
             _servicesAuth = servicesAuth;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok();
-        }
-
 
         [HttpPost("employee/")]
         public IActionResult Post(RegisterForm form)

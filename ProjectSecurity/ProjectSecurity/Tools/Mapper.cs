@@ -34,4 +34,44 @@ public static class Mapper
             Id = form.Id,
         };
     }
+    public static DATA.Employee AspToDataCustomer(this ASP.Employee form)
+    {
+        return new DATA.Employee
+        {
+            Name = form.Name,
+            FirstName = form.FirstName,
+            Vehicle = form.Vehicle,
+            BirthDate = form.BirthDate,
+            EmployeeCardNumber = form.EmployeeCardNumber,
+            SecurityCard = form.SecurityCard,
+            IdStatut = form.IdStatut,
+            IdInformation = form.IdInformation,
+            IdLanguage = form.IdLanguage,
+            IdUsers = form.IdUsers,
+            RegistreNational = form.RegistreNational,
+            EntryService = form.EntryService,
+        };
+    }
+
+    public static ASP.Employee DataToAspEmployee(this DATA.Employee form)
+    {
+        return new ASP.Employee
+        {
+            Name = form.Name,
+            FirstName = form.FirstName,
+            BirthDate = form.BirthDate,
+            Vehicle = form.Vehicle,
+            SecurityCard = form.SecurityCard,
+            EntryService = form.EntryService,
+            RegistreNational = form.RegistreNational,
+            EmployeeCardNumber = form.EmployeeCardNumber,
+            IdStatut = form.IdStatut,
+            IdInformation = form.IdInformation,
+            IdLanguage = form.IdLanguage,
+            IdUsers = form.IdUsers
+
+
+        };
+    }
+
 }

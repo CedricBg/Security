@@ -170,17 +170,17 @@
           }
         }
       },
-      "AdoToolbox/1.0.0": {
+      "AdoToolBox/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "System.Data.SqlClient": "4.8.3"
         },
         "compile": {
-          "bin/placeholder/AdoToolbox.dll": {}
+          "bin/placeholder/AdoToolBox.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AdoToolbox.dll": {}
+          "bin/placeholder/AdoToolBox.dll": {}
         }
       }
     }
@@ -568,16 +568,17 @@
         "version.txt"
       ]
     },
-    "AdoToolbox/1.0.0": {
+    "AdoToolBox/1.0.0": {
       "type": "project",
-      "path": "F:\\jonathan\\AdoToolbox\\AdoToolbox.csproj",
-      "msbuildProject": "F:\\jonathan\\AdoToolbox\\AdoToolbox.csproj"
+      "path": "../AdoToolBox/AdoToolBox.csproj",
+      "msbuildProject": "../AdoToolBox/AdoToolBox.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AdoToolbox >= 1.0.0",
-      "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0"
+      "AdoToolBox >= 1.0.0",
+      "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0",
+      "System.Data.SqlClient >= 4.8.3"
     ]
   },
   "packageFolders": {
@@ -587,11 +588,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Angular\\Security\\ProjectSecurity\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\cedri\\Documents\\Projet Formation\\ProjectSecurity\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Angular\\Security\\ProjectSecurity\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectPath": "C:\\Users\\cedri\\Documents\\Projet Formation\\ProjectSecurity\\DataAccessLayer\\DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\cedri\\.nuget\\packages\\",
-      "outputPath": "C:\\Angular\\Security\\ProjectSecurity\\DataAccessLayer\\obj\\",
+      "outputPath": "C:\\Users\\cedri\\Documents\\Projet Formation\\ProjectSecurity\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -606,20 +607,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Angular\\Security\\technobel\\Technoshop\\TestAdoToolbox\\AdoToolbox\\AdoToolbox.csproj": {
-              "projectPath": "C:\\Angular\\Security\\technobel\\Technoshop\\TestAdoToolbox\\AdoToolbox\\AdoToolbox.csproj"
-            },
-            "F:\\jonathan\\AdoToolbox\\AdoToolbox.csproj": {
-              "projectPath": "F:\\jonathan\\AdoToolbox\\AdoToolbox.csproj"
-            },
-            "I:\\jonathan\\AdoToolbox\\AdoToolbox.csproj": {
-              "projectPath": "I:\\jonathan\\AdoToolbox\\AdoToolbox.csproj"
+            "C:\\Users\\cedri\\Documents\\Projet Formation\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj": {
+              "projectPath": "C:\\Users\\cedri\\Documents\\Projet Formation\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj"
             }
           }
         }
@@ -637,6 +633,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "System.Data.SqlClient": {
+            "target": "Package",
+            "version": "[4.8.3, )"
           }
         },
         "imports": [

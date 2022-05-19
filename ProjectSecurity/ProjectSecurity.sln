@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DbSecurity", "DbSecurity\DbSecurity.sqlproj", "{2214C00F-1286-4488-A442-0CB3D766E8E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdoToolbox", "..\technobel\Technoshop\TestAdoToolbox\AdoToolbox\AdoToolbox.csproj", "{62E23E4A-A874-4DDE-80B6-8DE02F43B0F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoToolBox", "AdoToolBox\AdoToolBox.csproj", "{C4B8C2D8-60E3-4B49-91F9-71CD6567C8AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{2214C00F-1286-4488-A442-0CB3D766E8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2214C00F-1286-4488-A442-0CB3D766E8E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2214C00F-1286-4488-A442-0CB3D766E8E0}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{62E23E4A-A874-4DDE-80B6-8DE02F43B0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62E23E4A-A874-4DDE-80B6-8DE02F43B0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62E23E4A-A874-4DDE-80B6-8DE02F43B0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62E23E4A-A874-4DDE-80B6-8DE02F43B0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B8C2D8-60E3-4B49-91F9-71CD6567C8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B8C2D8-60E3-4B49-91F9-71CD6567C8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B8C2D8-60E3-4B49-91F9-71CD6567C8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B8C2D8-60E3-4B49-91F9-71CD6567C8AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

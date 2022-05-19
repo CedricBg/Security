@@ -7,12 +7,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\technobel\Technoshop\TestAdoToolbox\AdoToolbox\AdoToolbox.csproj" />
-    <ProjectReference Include="F:\jonathan\AdoToolbox\AdoToolbox.csproj" />
-    <ProjectReference Include="I:\jonathan\AdoToolbox\AdoToolbox.csproj" />
+    <ProjectReference Include="..\AdoToolBox\AdoToolBox.csproj" />
   </ItemGroup>
 
 </Project>

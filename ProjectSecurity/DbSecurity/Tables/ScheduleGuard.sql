@@ -5,6 +5,5 @@
     [EndTime] DATETIME2 NULL,
     [IdEmployee] INT NULL, 
     [IdCustomer] INT NULL, 
-    CONSTRAINT FK_SCHEDU_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee),
-    CONSTRAINT FK_SCHEDU_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
+
 )

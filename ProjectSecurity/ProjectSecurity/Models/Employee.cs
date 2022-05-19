@@ -7,7 +7,7 @@
         public string? FirstName { get; set; }
         public string? BirthDate { get; set; }
         public bool Vehicle { get; set; }
-        public int SecurityCard { get; set; }
+        public int? SecurityCard { get; set; }
         public string? EntryService { get; set; }
         public string? EmployeeCardNumber { get; set; }
         public string? RegistreNational { get; set; }

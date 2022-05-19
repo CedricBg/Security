@@ -28,15 +28,18 @@ namespace ProjectSecurity.Controllers
         [HttpGet("{Id}")]
         public IActionResult GetById(int Id)
         {
-
-            
             Employee employee = _EmployeeService.GetOne(Id).DataToAspEmployee();
             if(employee is not null)
-            {
-                
+            { 
                 return Ok(employee);
             }
             return NotFound();
+        }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            _EmployeeService.GetAll();
         }
 
     }

@@ -2,6 +2,6 @@
 (
 	[IdRonde] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
     [IdCustomer] INT NOT NULL,
-	CONSTRAINT FK_RONDE_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
+	
 
 )

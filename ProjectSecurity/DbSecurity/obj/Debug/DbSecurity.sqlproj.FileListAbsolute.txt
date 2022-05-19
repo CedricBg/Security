@@ -8,3 +8,13 @@ C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\M
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
 C:\Users\cedri\Documents\Projet Formation\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql
+C:\Angular\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dacpac
+C:\Angular\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dll
+C:\Angular\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.pdb
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.sqlproj.AssemblyReference.cache
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.dll
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\Model.xml
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
+C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql

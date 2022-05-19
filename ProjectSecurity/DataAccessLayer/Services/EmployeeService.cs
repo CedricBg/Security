@@ -1,4 +1,5 @@
-﻿using AdoToolbox;
+﻿
+using AdoToolbox;
 using DataAccessLayer.Models;
 using DataAccessLayer.Tools;
 using Microsoft.Extensions.Configuration;
@@ -47,6 +48,14 @@ public class EmployeeService : IEmployeeService
         cmd.AddParameter("Id", id);
         
         return cnx.ExecuteReader(cmd,dr => dr.ReadToAspData()).Single();
+    }
+
+    public IEnumerable<Employee> GetAll()
+    {
+        Connection cnx = new Connection(_connectionString);
+        Command cmd = new Command("GatAllEmployee", true);
+
+       return cnx.ExecuteReader(cmd, dr => dr.ReadToAspData());
     }
 
 }

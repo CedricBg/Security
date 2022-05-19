@@ -12,9 +12,5 @@
     [IdLanguage] INT NOT NULL, 
     [IdInformation] INT NOT NULL DEFAULT 0, 
     [IdUsers] INT NULL  , 
-    [IdStatut] INT NOT NULL, 
-    CONSTRAINT FK_STATUT_EMPLOYEE FOREIGN KEY ([IdStatut]) REFERENCES StatutAgent (IdStatut),
-    CONSTRAINT FK_LANG_EMPLO FOREIGN KEY (IdLanguage) REFERENCES Employee_Language (IdLanguage),
-    CONSTRAINT FK_INFORMATION_EMPLO FOREIGN KEY (IdInformation) REFERENCES Informations (IdInformation),
-    CONSTRAINT FK_USERS_EM FOREIGN KEY (IdUsers) REFERENCES Users (IdUser)
+    [IdStatut] INT NOT NULL
 )

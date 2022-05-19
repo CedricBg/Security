@@ -3,5 +3,5 @@
 	[IdProduct] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Rfid] VARCHAR(150) NULL, 
     [IdCategory] INT NOT NULL,
-    CONSTRAINT FK_PROD_CATEGORY FOREIGN KEY (IdCategory) REFERENCES  Category(IdCategory)
+    
 )

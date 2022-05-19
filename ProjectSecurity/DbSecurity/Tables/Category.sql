@@ -6,6 +6,5 @@
     [Height] INT NULL, 
     [Weight] INT NULL, 
     [Confirmation] VARCHAR(255) NULL, 
-    [IdSub] INT NULL,
-    CONSTRAINT FK_CAT_SUB FOREIGN KEY (IdSub) REFERENCES SubContractors (Idsub)
+    [IdSub] INT NULL
 )

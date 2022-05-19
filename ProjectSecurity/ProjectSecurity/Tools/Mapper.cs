@@ -38,6 +38,7 @@ public static class Mapper
     {
         return new DATA.Employee
         {
+            Id = form.Id,
             Name = form.Name,
             FirstName = form.FirstName,
             Vehicle = form.Vehicle,
@@ -57,6 +58,7 @@ public static class Mapper
     {
         return new ASP.Employee
         {
+            Id = form.Id,
             Name = form.Name,
             FirstName = form.FirstName,
             BirthDate = form.BirthDate,

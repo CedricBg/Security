@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kMilRAiS4Yh/THrB2AeOMEV6dJ79pXo3LKqAnZShAr9SqLJN8N+H02+TX4x92j5k8yBDcCh/43f6OdQaj+IDkw==",
+  "dgSpecHash": "t7j4mt0UHaLICv6MWx+d8sCZ101+EJm7NdlHAw+W2aaM6RLcinp0XSD+QztI9ErGWc0Tp78jSWisIThXQVi/MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cedri\\Documents\\Projet Formation\\ProjectSecurity\\DataAccessLayer\\DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Angular\\Security\\ProjectSecurity\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cedri\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\cedri\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",

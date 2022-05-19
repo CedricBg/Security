@@ -7,5 +7,4 @@
     [IdCountry] INT NULL, 
     [Phone] VARCHAR(50) NOT NULL, 
     [Email] VARCHAR(50) NULL,
-    CONSTRAINT FK_COUNTRY_INFO FOREIGN KEY (IdCountry) REFERENCES Countrys (IdCountrys)
 )

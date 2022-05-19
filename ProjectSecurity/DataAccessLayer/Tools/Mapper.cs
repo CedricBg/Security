@@ -12,8 +12,10 @@ namespace DataAccessLayer.Tools
     {
         public static Employee ReadToAspData(this SqlDataReader reader)
         {
+            
             return new Employee
             {
+                Id = (int)reader["IdEmployee"],
                 Name = reader["Name"].ToString(),
                 FirstName = reader["firstName"].ToString(),
                 BirthDate = reader["BirthDate"].ToString(),

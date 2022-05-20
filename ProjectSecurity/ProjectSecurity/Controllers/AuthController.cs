@@ -42,6 +42,13 @@ namespace ProjectSecurity.Controllers
         }
 
 
+        [HttpPost("update/")]
+        public IActionResult Post(UpdateForm form)
+        {
+           return Ok(_servicesAuth.UpdateAccessContractor(form.AspToDataUpdate()));
+            
+        }
+
 
     }
 }

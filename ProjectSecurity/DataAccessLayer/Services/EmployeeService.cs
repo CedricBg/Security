@@ -1,5 +1,4 @@
-﻿
-using AdoToolbox;
+﻿using AdoToolbox;
 using DataAccessLayer.Models;
 using DataAccessLayer.Tools;
 using Microsoft.Extensions.Configuration;

@@ -97,6 +97,7 @@
     <Build Include="ProcStored\RegisterAccessCustomer.sql" />
     <Build Include="ProcStored\GetOneEmployee.sql" />
     <Build Include="ProcStored\GatAllEmployee.sql" />
+    <Build Include="ProcStored\UpdateAccessContractor.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

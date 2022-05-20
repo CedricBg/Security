@@ -39,7 +39,7 @@ namespace ProjectSecurity.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            _EmployeeService.GetAll();
+            return Ok(_EmployeeService.GetAll());
         }
 
     }

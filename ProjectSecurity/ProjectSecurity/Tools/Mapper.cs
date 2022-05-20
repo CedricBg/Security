@@ -75,5 +75,14 @@ public static class Mapper
 
         };
     }
+    public static DATA.FormUpdate AspToDataUpdate(this ASP.UpdateForm form)
+    {
+        return new DATA.FormUpdate
+        {
+            Login = form.Login,
+            Password = form.Password,
+            PasswordNew = form.PasswordNew,
+        };
+    }
 
 }

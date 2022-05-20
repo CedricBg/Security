@@ -7,5 +7,6 @@ namespace DataAccessLayer.Repository
         bool RegisterAccessEmployee(RegisterForm form);
         bool RegisterAccessContract(RegisterForm form);
         bool RegisterAccessCustomer(RegisterForm form);
+        bool UpdateAccessContractor(FormUpdate form);
     }
 }

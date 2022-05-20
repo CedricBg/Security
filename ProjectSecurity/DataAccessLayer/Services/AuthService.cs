@@ -64,7 +64,18 @@ public class AuthService : IAuthService
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
 
-    
+    public bool UpdateAccessContractor(FormUpdate form)
+    {
+
+        Connection cnx = new Connection(_connectionString);
+
+        Command cmd = new Command("UpdateAccessContractor", true);
+        cmd.AddParameter("Login", form.Login);
+        cmd.AddParameter("Password", form.Password);
+        cmd.AddParameter("New_Password", form.PasswordNew);
+        return cnx.ExecuteNonQuery(cmd) == 1;
+    }
+
 
 
 

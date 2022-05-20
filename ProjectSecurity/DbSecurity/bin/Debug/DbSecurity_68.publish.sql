@@ -1,4 +1,368 @@
 ﻿/*
+Script de déploiement pour Security
+
+Ce code a été généré par un outil.
+La modification de ce fichier peut provoquer un comportement incorrect et sera perdue si
+le code est régénéré.
+*/
+
+GO
+SET ANSI_NULLS, ANSI_PADDING, ANSI_WARNINGS, ARITHABORT, CONCAT_NULL_YIELDS_NULL, QUOTED_IDENTIFIER ON;
+
+SET NUMERIC_ROUNDABORT OFF;
+
+
+GO
+:setvar DatabaseName "Security"
+:setvar DefaultFilePrefix "Security"
+:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER22\MSSQL\DATA\"
+:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER22\MSSQL\DATA\"
+
+GO
+:on error exit
+GO
+/*
+Détectez le mode SQLCMD et désactivez l'exécution du script si le mode SQLCMD n'est pas pris en charge.
+Pour réactiver le script une fois le mode SQLCMD activé, exécutez ce qui suit :
+SET NOEXEC OFF; 
+*/
+:setvar __IsSqlCmdEnabled "True"
+GO
+IF N'$(__IsSqlCmdEnabled)' NOT LIKE N'True'
+    BEGIN
+        PRINT N'Le mode SQLCMD doit être activé de manière à pouvoir exécuter ce script.';
+        SET NOEXEC ON;
+    END
+
+
+GO
+USE [$(DatabaseName)];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_BEL_DEPART1]...';
+
+
+GO
+ALTER TABLE [dbo].[Belongs] DROP CONSTRAINT [FK_BEL_DEPART1];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_BEL_EMPLO1]...';
+
+
+GO
+ALTER TABLE [dbo].[Belongs] DROP CONSTRAINT [FK_BEL_EMPLO1];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_CONTACT_CUST]...';
+
+
+GO
+ALTER TABLE [dbo].[Calling] DROP CONSTRAINT [FK_CONTACT_CUST];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_CUST_CONTACT]...';
+
+
+GO
+ALTER TABLE [dbo].[Calling] DROP CONSTRAINT [FK_CUST_CONTACT];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_CAT_SUB]...';
+
+
+GO
+ALTER TABLE [dbo].[Category] DROP CONSTRAINT [FK_CAT_SUB];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SUB_CONTACT_PERSON]...';
+
+
+GO
+ALTER TABLE [dbo].[Contacting] DROP CONSTRAINT [FK_SUB_CONTACT_PERSON];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SUB_CONTACT_SUB]...';
+
+
+GO
+ALTER TABLE [dbo].[Contacting] DROP CONSTRAINT [FK_SUB_CONTACT_SUB];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_CUST_INFOR]...';
+
+
+GO
+ALTER TABLE [dbo].[Customer] DROP CONSTRAINT [FK_CUST_INFOR];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_CUST_USERS]...';
+
+
+GO
+ALTER TABLE [dbo].[Customer] DROP CONSTRAINT [FK_CUST_USERS];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_INFORMATION_EMPLO]...';
+
+
+GO
+ALTER TABLE [dbo].[Employee] DROP CONSTRAINT [FK_INFORMATION_EMPLO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_LANG_EMPLO]...';
+
+
+GO
+ALTER TABLE [dbo].[Employee] DROP CONSTRAINT [FK_LANG_EMPLO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_STATUT_EMPLO]...';
+
+
+GO
+ALTER TABLE [dbo].[Employee] DROP CONSTRAINT [FK_STATUT_EMPLO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_USERS_EMPLO]...';
+
+
+GO
+ALTER TABLE [dbo].[Employee] DROP CONSTRAINT [FK_USERS_EMPLO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_COUNTRY_INFO]...';
+
+
+GO
+ALTER TABLE [dbo].[Informations] DROP CONSTRAINT [FK_COUNTRY_INFO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_BEL_DEPART2]...';
+
+
+GO
+ALTER TABLE [dbo].[Manage] DROP CONSTRAINT [FK_BEL_DEPART2];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_BEL_EMPLO2]...';
+
+
+GO
+ALTER TABLE [dbo].[Manage] DROP CONSTRAINT [FK_BEL_EMPLO2];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_PAIN_CAT_COL]...';
+
+
+GO
+ALTER TABLE [dbo].[Painting] DROP CONSTRAINT [FK_PAIN_CAT_COL];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_PAIN_COL_CAT]...';
+
+
+GO
+ALTER TABLE [dbo].[Painting] DROP CONSTRAINT [FK_PAIN_COL_CAT];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_PASSA_RFID]...';
+
+
+GO
+ALTER TABLE [dbo].[passage] DROP CONSTRAINT [FK_PASSA_RFID];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_PROD_CATEGORY]...';
+
+
+GO
+ALTER TABLE [dbo].[Product] DROP CONSTRAINT [FK_PROD_CATEGORY];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_RAPPORT_CUST_EMPLOYEE]...';
+
+
+GO
+ALTER TABLE [dbo].[Rapport] DROP CONSTRAINT [FK_RAPPORT_CUST_EMPLOYEE];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_RAPPORT_EMPLOYEE_CUST]...';
+
+
+GO
+ALTER TABLE [dbo].[Rapport] DROP CONSTRAINT [FK_RAPPORT_EMPLOYEE_CUST];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_RONDE_CUST]...';
+
+
+GO
+ALTER TABLE [dbo].[Ronde] DROP CONSTRAINT [FK_RONDE_CUST];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_EMPLO_RONDE]...';
+
+
+GO
+ALTER TABLE [dbo].[Rondier] DROP CONSTRAINT [FK_EMPLO_RONDE];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_RONDE_RONDE]...';
+
+
+GO
+ALTER TABLE [dbo].[Rondier] DROP CONSTRAINT [FK_RONDE_RONDE];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SCHEDU_CUST]...';
+
+
+GO
+ALTER TABLE [dbo].[ScheduleGuard] DROP CONSTRAINT [FK_SCHEDU_CUST];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SCHEDU_EMPLO]...';
+
+
+GO
+ALTER TABLE [dbo].[ScheduleGuard] DROP CONSTRAINT [FK_SCHEDU_EMPLO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SEARCH_PRODUCT]...';
+
+
+GO
+ALTER TABLE [dbo].[Searching] DROP CONSTRAINT [FK_SEARCH_PRODUCT];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SEARCH_RACK]...';
+
+
+GO
+ALTER TABLE [dbo].[Searching] DROP CONSTRAINT [FK_SEARCH_RACK];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_START_CUST]...';
+
+
+GO
+ALTER TABLE [dbo].[Start_end_Time] DROP CONSTRAINT [FK_START_CUST];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_START_EMPLO]...';
+
+
+GO
+ALTER TABLE [dbo].[Start_end_Time] DROP CONSTRAINT [FK_START_EMPLO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_INFO_PERSO]...';
+
+
+GO
+ALTER TABLE [dbo].[SubContractors] DROP CONSTRAINT [FK_INFO_PERSO];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_INFO_SUB]...';
+
+
+GO
+ALTER TABLE [dbo].[SubContractors] DROP CONSTRAINT [FK_INFO_SUB];
+
+
+GO
+PRINT N'Suppression de Clé étrangère [dbo].[FK_SUB_USERS]...';
+
+
+GO
+ALTER TABLE [dbo].[SubContractors] DROP CONSTRAINT [FK_SUB_USERS];
+
+
+GO
+PRINT N'Suppression de Contrainte unique [dbo].[UK_LOGIN_USERS]...';
+
+
+GO
+ALTER TABLE [dbo].[Users] DROP CONSTRAINT [UK_LOGIN_USERS];
+
+
+GO
+PRINT N'Modification de Procédure [dbo].[UpdateAccessContractor]...';
+
+
+GO
+ALTER PROCEDURE [dbo].[UpdateAccessContractor]
+	@Login VARCHAR(50),
+	@Password VARCHAR(50),
+	@New_Password VARCHAR(50)
+As
+Begin
+
+	DECLARE @SecretKey VARCHAR(200)
+	SET @SecretKey  = dbo.GetSecretKey()
+
+	Declare @Salt VARCHAR(100)
+	Set @Salt = (Select Salt from Users where Login = @Login)
+
+	DECLARE @password_hashOld VARBINARY(64)
+	SET @password_hashOld = HASHBYTES('SHA2_512', CONCAT(@Salt,@SecretKey,@Password, @Salt))
+
+	DECLARE @password_hashNew VARBINARY(64)
+	SET @password_hashNew = HASHBYTES('SHA2_512', CONCAT(@Salt,@SecretKey,@New_Password, @Salt))
+
+
+	Declare @New_Hash VARBINARY(64)
+	Set @New_Hash = (SELECT Password_hash FROM Users where Login = @Login)
+
+	if( @New_Hash != @password_hashOld)
+		BEGIN
+			return UPDATE Users SET Login = 'tr' where Login = @Login
+		END
+
+	
+
+
+
+
+
+	
+
+End
+GO
+/*
 Modèle de script de post-déploiement							
 --------------------------------------------------------------------------------------
  Ce fichier contient des instructions SQL qui seront ajoutées au script de compilation.		
@@ -295,5 +659,11 @@ INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry )
 
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
               Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
+
+GO
+
+GO
+PRINT N'Mise à jour terminée.';
+
 
 GO

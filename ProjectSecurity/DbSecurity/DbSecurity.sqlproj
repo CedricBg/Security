@@ -61,6 +61,7 @@
     <Folder Include="Functions" />
     <Folder Include="Scripts" />
     <Folder Include="ProcStored\planning" />
+    <Folder Include="ProcStored\Customer" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Employee.sql" />
@@ -101,6 +102,7 @@
     <Build Include="ProcStored\UpdateAccessContractor.sql" />
     <Build Include="ProcStored\planning\getOneByCustomer.sql" />
     <Build Include="ProcStored\planning\getOneByEmployee.sql" />
+    <Build Include="ProcStored\Customer\AddCustomer.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

@@ -7,6 +7,23 @@ namespace ProjectSecurity.Tools;
 
 public static class Mapper
 {
+    public static busi.Customer AspCustomerToBll(this ASP.Customer form)
+    {
+        return new busi.Customer
+        {
+            Name = form.Name,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            Email = form.Email,
+            Street = form.Street,
+            StreetNumber = form.StreetNumber,
+            PostCode = form.PostCode,
+            IdCountry = form.IdCountry,
+            Phone = form.Phone,
+            GeneralPhone = form.GeneralPhone,
+        };
+    }
+
     public static DATA.RegisterForm AspToDataEmplo(this ASP.RegisterForm form)
     {
         return new DATA.RegisterForm
@@ -72,8 +89,6 @@ public static class Mapper
             IdInformation = form.IdInformation,
             IdLanguage = form.IdLanguage,
             IdUsers = form.IdUsers
-
-
         };
     }
     public static DATA.FormUpdate AspToDataUpdate(this ASP.UpdateForm form)

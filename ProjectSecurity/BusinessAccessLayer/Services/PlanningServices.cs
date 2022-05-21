@@ -29,10 +29,11 @@ namespace BusinessAccessLayer.Services
         public IEnumerable<Planning> getOneByCustomer(int IdCustomer)
         {
 
-            IEnumerable<Planning> plan =  _planningService.getOneByCustomer(IdCustomer).Select(dr => dr.DataPlanningToBusi());
-            foreach (Planning i in plan)
+            IEnumerable<Planning> plan = _planningService.getOneByCustomer(IdCustomer).Select(dr => dr.DataPlanningToBusi());
+            foreach(Planning planning in plan)
             {
-                Console.WriteLine(i.IdEmployee);
+                Console.WriteLine(planning.StartTime);
+
             }
             return plan;
 

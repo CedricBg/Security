@@ -10,10 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Dal Services
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
 builder.Services.AddSingleton<IPlanningService, PlanningService>();
+builder.Services.AddSingleton<ICustomerService, CustomerService>();
+
+
+//BLL Services
 builder.Services.AddSingleton<IPlanningServices , PlanningServices>();
+builder.Services.AddSingleton<IClientServices , ClientServices>();
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

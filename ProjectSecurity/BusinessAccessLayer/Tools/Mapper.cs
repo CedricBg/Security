@@ -17,4 +17,22 @@ public static class Mapper
             IdEmployee = form.IdEmployee
         };
     }
+    public static DATA.Customer BusiCustomerToData(this Customer form)
+    {
+        return new DATA.Customer
+        {
+            Name = form.Name,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            Email = form.Email,
+            Street = form.Street,
+            StreetNumber = form.StreetNumber,
+            PostCode = form.PostCode,
+            IdCountry = form.IdCountry,
+            Phone = form.Phone,
+            GeneralPhone = form.GeneralPhone,
+
+        };
+    }
+
 }

@@ -94,3 +94,4 @@ C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecuri
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\ref\ProjectSecurity.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\BusinessAccessLayer.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\BusinessAccessLayer.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\ProjectSecurity.MvcApplicationPartsAssemblyInfo.cs

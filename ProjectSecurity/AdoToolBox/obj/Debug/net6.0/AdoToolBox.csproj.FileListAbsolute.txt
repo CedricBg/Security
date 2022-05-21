@@ -22,3 +22,15 @@ C:\Angular\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.dll
 C:\Angular\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\refint\AdoToolBox.dll
 C:\Angular\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.pdb
 C:\Angular\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\ref\AdoToolBox.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\bin\Debug\net6.0\AdoToolBox.deps.json
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\bin\Debug\net6.0\AdoToolBox.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\bin\Debug\net6.0\AdoToolBox.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.csproj.AssemblyReference.cache
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.AssemblyInfoInputs.cache
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.AssemblyInfo.cs
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.csproj.CoreCompileInputs.cache
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\refint\AdoToolBox.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\AdoToolBox.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\AdoToolBox\obj\Debug\net6.0\ref\AdoToolBox.dll

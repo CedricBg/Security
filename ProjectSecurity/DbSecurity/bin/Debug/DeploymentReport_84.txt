@@ -1,0 +1,56 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Créer
+       [dbo].[Belongs] (Table)
+       [dbo].[Calling] (Table)
+       [dbo].[Category] (Table)
+       [dbo].[Color] (Table)
+       [dbo].[Contacting] (Table)
+       [dbo].[ContactPerson] (Table)
+       [dbo].[Countrys] (Table)
+       [dbo].[Customer] (Table)
+       [dbo].[Departement] (Table)
+       [dbo].[Employee] (Table)
+       [dbo].[Employee_Language] (Table)
+       [dbo].[Informations] (Table)
+       [dbo].[Manage] (Table)
+       [dbo].[Painting] (Table)
+       [dbo].[passage] (Table)
+       [dbo].[Product] (Table)
+       [dbo].[RackProduct] (Table)
+       [dbo].[Rapport] (Table)
+       [dbo].[RfidPatrol] (Table)
+       [dbo].[Ronde] (Table)
+       [dbo].[Rondier] (Table)
+       [dbo].[ScheduleGuard] (Table)
+       [dbo].[Searching] (Table)
+       [dbo].[Start_end_Time] (Table)
+       [dbo].[StatutAgent] (Table)
+       [dbo].[SubContractors] (Table)
+       [dbo].[Users] (Table)
+       Contrainte par défaut: contrainte sans nom sur [dbo].[Employee] (Contrainte par défaut)
+       Contrainte par défaut: contrainte sans nom sur [dbo].[Employee] (Contrainte par défaut)
+       Contrainte par défaut: contrainte sans nom sur [dbo].[Employee] (Contrainte par défaut)
+       Contrainte par défaut: contrainte sans nom sur [dbo].[Employee] (Contrainte par défaut)
+       [dbo].[GetSecretKey] (Fonction)
+       [dbo].[AddEmployee] (Procédure)
+       [dbo].[GatAllEmployee] (Procédure)
+       [dbo].[getOneByCustomer] (Procédure)
+       [dbo].[getOneByEmployee] (Procédure)
+       [dbo].[GetOneEmployee] (Procédure)
+       [dbo].[Loginemployee] (Procédure)
+       [dbo].[RegisterAccessContractor] (Procédure)
+       [dbo].[RegisterAccessCustomer] (Procédure)
+       [dbo].[RegisterAccessEmployee] (Procédure)
+       [dbo].[UpdateAccessContractor] (Procédure)
+
+** Actions de support

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DataAccessLayer.Tools
 {
     public static class Mapper
@@ -28,6 +29,16 @@ namespace DataAccessLayer.Tools
                 IdInformation = (int)reader["IdInformation"],
                 IdLanguage = (int)reader["IdLanguage"],
                 IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"]
+            };
+        }
+        public static Planning ReadToAccessPlanning(this SqlDataReader reader)
+        {
+            return new Planning
+            {
+                StartTime = (DateTime)reader["StartTime"],
+                EndTime = (DateTime)reader["EndTime"],
+                IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"]
+
             };
         }
     }

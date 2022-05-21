@@ -9,6 +9,9 @@ Modèle de script de post-déploiement
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+
+
+
 ALTER TABLE Belongs ADD CONSTRAINT FK_BEL_EMPLO1 FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee)
 ALTER TABLE Belongs ADD CONSTRAINT FK_BEL_DEPART1 FOREIGN KEY (IdDepartement) REFERENCES Departement (IdDepartement)
 
@@ -48,7 +51,7 @@ Alter TABLE employee ADD CONSTRAINT FK_INFORMATION_EMPLO FOREIGN KEY (IdInformat
 Alter TABLE employee ADD CONSTRAINT FK_LANG_EMPLO FOREIGN KEY (IdLanguage) REFERENCES Employee_Language (IdLanguage)
 Alter TABLE employee ADD CONSTRAINT FK_STATUT_EMPLO FOREIGN KEY ([IdStatut]) REFERENCES StatutAgent (IdStatut) 
 
-ALter TABLE Users ADD CONSTRAINT UK_LOGIN_USERS UNIQUE (Login)
+ALTER TABLE Users ADD CONSTRAINT UK_LOGIN_USERS UNIQUE (Login)
 
 ALTER TABLE SubContractors ADD CONSTRAINT FK_INFO_PERSO FOREIGN KEY (IdContactPerson) REFERENCES ContactPerson (IdContactPerson)ON DELETE CASCADE
 ALTER TABLE SubContractors ADD CONSTRAINT FK_INFO_SUB FOREIGN KEY (IdInformations) REFERENCES Informations (IdInformation)ON DELETE CASCADE
@@ -62,6 +65,8 @@ ALTER TABLE Searching ADD CONSTRAINT FK_SEARCH_PRODUCT FOREIGN KEY (IdProduct) R
 
 ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee)
 ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
+
+
 
 
 INSERT INTO Departement (NameDepartement) Values('Stock')
@@ -296,3 +301,4 @@ INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry )
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
               Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
 
+INSERT INTO ScheduleGuard (StartTime, EndTime, IdEmployee) Values(GETDATE(), GETDATE(), 1)

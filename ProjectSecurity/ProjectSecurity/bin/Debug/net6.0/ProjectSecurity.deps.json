@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ProjectSecurity/1.0.0": {
         "dependencies": {
+          "BusinessAccessLayer": "1.0.0",
           "DataAccessLayer": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.5",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -238,6 +239,14 @@
           "AdoToolBox.dll": {}
         }
       },
+      "BusinessAccessLayer/1.0.0": {
+        "dependencies": {
+          "DataAccessLayer": "1.0.0"
+        },
+        "runtime": {
+          "BusinessAccessLayer.dll": {}
+        }
+      },
       "DataAccessLayer/1.0.0": {
         "dependencies": {
           "AdoToolBox": "1.0.0",
@@ -446,6 +455,11 @@
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
     "AdoToolBox/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BusinessAccessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -14,3 +14,9 @@ C:\Angular\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.pdb
 C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.sqlproj.AssemblyReference.cache
 C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.dll
 C:\Angular\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dacpac
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.sqlproj.AssemblyReference.cache
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb

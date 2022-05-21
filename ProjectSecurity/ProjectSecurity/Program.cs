@@ -1,8 +1,10 @@
 using DataAccessLayer.Repository;
+using BusinessAccessLayer.IRepositories;
 using DataAccessLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BusinessAccessLayer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
+builder.Services.AddSingleton<IPlanningService, PlanningService>();
+builder.Services.AddSingleton<IPlanningServices , PlanningServices>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

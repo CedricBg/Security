@@ -60,6 +60,7 @@
     <Folder Include="Tables" />
     <Folder Include="Functions" />
     <Folder Include="Scripts" />
+    <Folder Include="ProcStored\planning" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Employee.sql" />
@@ -98,6 +99,8 @@
     <Build Include="ProcStored\GetOneEmployee.sql" />
     <Build Include="ProcStored\GatAllEmployee.sql" />
     <Build Include="ProcStored\UpdateAccessContractor.sql" />
+    <Build Include="ProcStored\planning\getOneByCustomer.sql" />
+    <Build Include="ProcStored\planning\getOneByEmployee.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

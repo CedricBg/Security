@@ -57,4 +57,33 @@ public class EmployeeService : IEmployeeService
        return cnx.ExecuteReader(cmd, dr => dr.ReadToAspData());
     }
 
+    public bool DeleteEmployee(int Id)
+    {
+        Connection cnx = new Connection(_connectionString);
+        Command cmd = new Command("DeleteEmployee", true);
+
+        cmd.AddParameter("IdEmployee", Id);
+        return cnx.ExecuteNonQuery(cmd) == 1;
+    }
+
+    public bool PutEmployee(PutEmployee form)
+    {
+        Connection cnx = new Connection(_connectionString);
+        Command cmd = new Command("PutEmployee", true);
+        cmd.AddParameter("Name", form.Name);
+        cmd.AddParameter("firstName", form.FirstName);
+        cmd.AddParameter("BirthDate", form.BirthDate);
+        cmd.AddParameter("Vehicle", form.Vehicle);
+        cmd.AddParameter("SecurityCard", form.SecurityCard);
+        cmd.AddParameter("EmployeeCardNumber", form.EmployeeCardNumber);
+        cmd.AddParameter("RegistreNational", form.RegistreNational);
+        cmd.AddParameter("IdLanguage", form.IdLanguage);
+        cmd.AddParameter("IdInformation", form.IdInformation);
+        cmd.AddParameter("IdEmployee", form.IdInformation);
+
+        
+
+        return cnx.ExecuteNonQuery(cmd) == 1;
+    }
+
 }

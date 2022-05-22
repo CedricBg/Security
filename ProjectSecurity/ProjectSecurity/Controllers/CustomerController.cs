@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using ProjectSecurity.Models;
 using ProjectSecurity.Tools;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ProjectSecurity.Controllers;
 
@@ -26,6 +25,12 @@ public class CustomerController : ControllerBase
         Ok(_customerService.AddCustomer(form.AspCustomerToBll()));
     }
 
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        return Ok(_customerService.GetAll());
+    }
+
     [HttpGet("{Id}")]
     public IActionResult Get(int Id)
     {
@@ -39,15 +44,17 @@ public class CustomerController : ControllerBase
     }
 
 
-    //// PUT api/<CustomerController>/5
-    //[HttpPut("{id}")]
-    //public void Put(int id, [FromBody] string value)
-    //{
-    //}
+    [HttpPut]
+    public IActionResult Put(PutCustomer form)
+    {
+       
+        return Ok(_customerService.PutCustomer(form.AspPutCustomerToBll()));
+    }
 
-    //// DELETE api/<CustomerController>/5
-    //[HttpDelete("{id}")]
-    //public void Delete(int id)
-    //{
-    //}
+    // DELETE api/<CustomerController>/5
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        return Ok(_customerService.DeleteCustomer(id));
+    }
 }

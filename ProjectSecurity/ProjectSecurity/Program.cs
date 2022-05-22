@@ -13,13 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 //Dal Services
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
-builder.Services.AddSingleton<IPlanningService, PlanningService>();
+builder.Services.AddSingleton<IPlanningService, DataAccessLayer.Services.PlanningService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 
 
 //BLL Services
-builder.Services.AddSingleton<IPlanningServices , PlanningServices>();
+builder.Services.AddSingleton<IPlanningServices, BusinessAccessLayer.Services.PlanningService>();
 builder.Services.AddSingleton<IClientServices , ClientServices>();
+builder.Services.AddSingleton<IEmployeeServices, EmployeeServices>();
+builder.Services.AddSingleton<IRapportService , RapportService>();
 
 
 builder.Services.AddControllers();

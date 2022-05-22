@@ -46,16 +46,16 @@
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
+				<Value><![CDATA[1]]></Value>
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Employee]" />
+					<References Name="[dbo].[Customer]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[Employee].[Vehicle]" />
+					<References Name="[dbo].[Customer].[Active]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
@@ -71,7 +71,7 @@
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[Employee].[SecurityCardNumber]" />
+					<References Name="[dbo].[Employee].[Vehicle]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
@@ -87,7 +87,7 @@
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[Employee].[EmployeeCardNumber]" />
+					<References Name="[dbo].[Employee].[SecurityCardNumber]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
@@ -103,10 +103,42 @@
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[Employee].[IdInformation]" />
+					<References Name="[dbo].[Employee].[EmployeeCardNumber]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Employee].[IdInformation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[1]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Employee].[Active]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -125,7 +157,7 @@
 					<References Name="[dbo].[Searching]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -144,7 +176,7 @@
 					<References Name="[dbo].[RackProduct]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -163,7 +195,7 @@
 					<References Name="[dbo].[Painting]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -182,7 +214,7 @@
 					<References Name="[dbo].[Color]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -201,7 +233,7 @@
 					<References Name="[dbo].[Product]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -220,7 +252,7 @@
 					<References Name="[dbo].[Category]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -239,7 +271,7 @@
 					<References Name="[dbo].[Employee_Language]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -258,7 +290,7 @@
 					<References Name="[dbo].[Manage]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -277,7 +309,7 @@
 					<References Name="[dbo].[Belongs]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -296,7 +328,7 @@
 					<References Name="[dbo].[Departement]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -315,7 +347,7 @@
 					<References Name="[dbo].[ScheduleGuard]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -334,7 +366,7 @@
 					<References Name="[dbo].[Start_end_Time]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -353,26 +385,7 @@
 					<References Name="[dbo].[Rapport]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Customer].[IdCustomer]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Customer]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -391,7 +404,7 @@
 					<References Name="[dbo].[Calling]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -410,7 +423,7 @@
 					<References Name="[dbo].[Contacting]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -429,7 +442,7 @@
 					<References Name="[dbo].[ContactPerson]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -448,7 +461,7 @@
 					<References Name="[dbo].[SubContractors]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -467,7 +480,7 @@
 					<References Name="[dbo].[Countrys]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -486,7 +499,7 @@
 					<References Name="[dbo].[Informations]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -503,25 +516,6 @@
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[Users]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Employee].[IdEmployee]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Employee]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
@@ -620,6 +614,44 @@
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Customer].[IdCustomer]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Employee].[IdEmployee]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[AddCustomer]">
 			<Property Name="BodyScript">
@@ -1212,7 +1244,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="15" />
+						<AttachedAnnotation Disambiguator="17" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1272,7 +1304,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="21" />
+						<AttachedAnnotation Disambiguator="22" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1332,7 +1364,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="12" />
+						<AttachedAnnotation Disambiguator="14" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1453,7 +1485,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="10" />
+						<AttachedAnnotation Disambiguator="12" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1498,7 +1530,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="22" />
+						<AttachedAnnotation Disambiguator="23" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1556,7 +1588,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="23" />
+						<AttachedAnnotation Disambiguator="24" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1617,7 +1649,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="25" />
+						<AttachedAnnotation Disambiguator="26" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1662,7 +1694,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="20" />
+						<AttachedAnnotation Disambiguator="34" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1761,6 +1793,23 @@ End]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[Active]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -1838,6 +1887,178 @@ End]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[CustomerById]&#xD;&#xA;&#x9;@IDCustomer int&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[DeleteCustomer]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Delete from Customer where IdCustomer = @IdCustomer
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DeleteCustomer].[@IdCustomer]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[DeleteCustomer].[@IdCustomer]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="127" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[DeleteCustomer]&#xD;&#xA;&#x9;@IdCustomer int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[dbo].[DeleteCustomers]">
+			<Property Name="IsDeleteTrigger" Value="True" />
+			<Property Name="SqlTriggerType" Value="3" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON
+	UPDATE Customer SET Active = 0 WHERE IdCustomer = (SELECT IdCustomer FROM deleted)
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Active]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdCustomer]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="190" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE TRIGGER [dbo].[DeleteCustomers]&#xD;&#xA;ON Customer&#xD;&#xA;INSTEAD OF DELETE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[DeleteEmployee]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Delete from Employee where IdEmployee = @IdEmployee
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DeleteEmployee].[@IdEmployee]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[DeleteEmployee].[@IdEmployee]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="127" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[DeleteEmployee]&#xD;&#xA;&#x9;@IdEmployee int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[dbo].[DeleteEmployees]">
+			<Property Name="IsDeleteTrigger" Value="True" />
+			<Property Name="SqlTriggerType" Value="3" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON
+	UPDATE Employee SET Active = 0 WHERE IdEmployee = (SELECT IdEmployee FROM deleted)
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Active]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdEmployee]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="190" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE TRIGGER [dbo].[DeleteEmployees]&#xD;&#xA;ON Employee&#xD;&#xA;INSTEAD OF DELETE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Departement]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -1856,7 +2077,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="16" />
+						<AttachedAnnotation Disambiguator="18" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1901,7 +2122,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="28" />
+						<AttachedAnnotation Disambiguator="35" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1969,7 +2190,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1986,7 +2207,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2038,7 +2259,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
+						<AttachedAnnotation Disambiguator="6" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2071,7 +2292,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="6" />
+						<AttachedAnnotation Disambiguator="7" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2105,6 +2326,23 @@ End]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[Active]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="8" />
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -2130,7 +2368,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="13" />
+						<AttachedAnnotation Disambiguator="15" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2179,6 +2417,52 @@ RETURN 0]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GatAllEmployee]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+	SELECT *
+		FROM Customer cust , Informations info, Countrys C 
+		Where info.IdInformation = cust.IdInformation 
+		AND C.IdCountrys = info.IdCountry
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Countrys]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Countrys].[IdCountrys]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[IdCountry]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="202" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAll]&#xD;&#xA;&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[getOneByCustomer]">
@@ -2381,7 +2665,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="26" />
+						<AttachedAnnotation Disambiguator="27" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2610,7 +2894,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="14" />
+						<AttachedAnnotation Disambiguator="16" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2670,7 +2954,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="9" />
+						<AttachedAnnotation Disambiguator="11" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2792,7 +3076,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="11" />
+						<AttachedAnnotation Disambiguator="13" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2834,6 +3118,543 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PutCustomer]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Update Customer Set [Name] = @Name , GeneralPhone = @GeneralPhone, EmergencyEmail = @EmergencyEmail, EmergencyPhone = @EmergencyPhone, @IdCountry = @IdCountry
+	Where IdCustomer = @IdCustomer
+
+	Update Informations Set Street = @Street, PostCode = @PostCode, StreetNumber = @StreetNumber, Phone = @Phone ,Email = @Email , IdCountry = @IdCountry 
+	Where IdInformation = @IdInformation
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[GeneralPhone]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@GeneralPhone]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[EmergencyEmail]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@EmergencyEmail]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[EmergencyPhone]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@EmergencyPhone]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@IdCountry]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[Street]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@Street]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[PostCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@PostCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[StreetNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@StreetNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[Phone]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@Phone]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[IdCountry]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutCustomer].[@IdInformation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@Name]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@GeneralPhone]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@EmergencyPhone]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@EmergencyEmail]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@Street]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@PostCode]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@StreetNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@IdCountry]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@Phone]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@Email]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@IdInformation]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutCustomer].[@IdCustomer]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="731" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PutCustomer]&#xD;&#xA;&#x9;@Name varchar(50),&#xD;&#xA;&#x9;@GeneralPhone varchar(50),&#xD;&#xA;&#x9;@EmergencyPhone varchar(50),&#xD;&#xA;&#x9;@EmergencyEmail varchar(50),&#xD;&#xA;&#x9;@Street varchar(50),&#xD;&#xA;&#x9;@PostCode varchar(30),&#xD;&#xA;&#x9;@StreetNumber varchar(20),&#xD;&#xA;&#x9;@IdCountry int,&#xD;&#xA;&#x9;@Phone varchar(50),&#xD;&#xA;&#x9;@Email varchar(50),&#xD;&#xA;&#x9;@IdInformation int,&#xD;&#xA;&#x9;@IdCustomer int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PutEmployee]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Update Employee Set @Name = @Name, @firstName = @firstName , BirthDate = @BirthDate, Vehicle = @Vehicle, 
+	SecurityCardNumber = @SecurityCard, EmployeeCardNumber = @EmployeeCardNumber, RegistreNational = @RegistreNational,
+	IdLanguage = @IdLanguage, IdInformation = @IdInformation where IdEmployee = @IdEmployee
+
+
+
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@firstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[BirthDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@BirthDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Vehicle]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@Vehicle]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[SecurityCardNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@SecurityCard]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeCardNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@EmployeeCardNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[RegistreNational]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@RegistreNational]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdLanguage]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@IdLanguage]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutEmployee].[@IdEmployee]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@Name]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@firstName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@BirthDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@Vehicle]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@SecurityCard]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@EmployeeCardNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@RegistreNational]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@IdLanguage]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@IdInformation]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutEmployee].[@IdEmployee]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="621" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PutEmployee]&#xD;&#xA;&#x9;@Name varchar(50),&#xD;&#xA;&#x9;@firstName varchar(50),&#xD;&#xA;&#x9;@BirthDate varchar(50),&#xD;&#xA;&#x9;@Vehicle bit,&#xD;&#xA;&#x9;@SecurityCard varchar(50),&#xD;&#xA;&#x9;@EmployeeCardNumber varchar(50),&#xD;&#xA;&#x9;@RegistreNational varchar(20),&#xD;&#xA;&#x9;@IdLanguage int,&#xD;&#xA;&#x9;@IdInformation int,&#xD;&#xA;&#x9;@IdEmployee int&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[RackProduct]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -2852,7 +3673,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
+						<AttachedAnnotation Disambiguator="10" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2944,7 +3765,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="19" />
+						<AttachedAnnotation Disambiguator="21" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -3670,7 +4491,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="17" />
+						<AttachedAnnotation Disambiguator="19" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -3761,7 +4582,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="7" />
+						<AttachedAnnotation Disambiguator="9" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -3821,7 +4642,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="18" />
+						<AttachedAnnotation Disambiguator="20" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -3975,7 +4796,7 @@ End]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="24" />
+						<AttachedAnnotation Disambiguator="25" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4184,7 +5005,7 @@ end]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="27" />
+						<AttachedAnnotation Disambiguator="28" />
 					</Element>
 				</Entry>
 				<Entry>

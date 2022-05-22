@@ -12,5 +12,6 @@
     [IdLanguage] INT NOT NULL, 
     [IdInformation] INT NOT NULL DEFAULT 0, 
     [IdUsers] INT NULL  , 
-    [IdStatut] INT NOT NULL
+    [IdStatut] INT NOT NULL, 
+    [Active] BIT NOT NULL DEFAULT 1
 )

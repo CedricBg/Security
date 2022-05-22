@@ -62,6 +62,10 @@
     <Folder Include="Scripts" />
     <Folder Include="ProcStored\planning" />
     <Folder Include="ProcStored\Customer" />
+    <Folder Include="Views" />
+    <Folder Include="Trigger" />
+    <Folder Include="ProcStored\Employee" />
+    <Folder Include="ProcStored\Auth" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Employee.sql" />
@@ -91,19 +95,26 @@
     <Build Include="Tables\passage.sql" />
     <Build Include="Tables\RfidPatrol.sql" />
     <Build Include="Tables\StatutAgent.sql" />
-    <Build Include="ProcStored\RegisterAccessEmployee.sql" />
     <Build Include="Functions\GetSecretKey.sql" />
-    <Build Include="ProcStored\Loginemployee.sql" />
-    <Build Include="ProcStored\AddEmployee.sql" />
-    <Build Include="ProcStored\RegisterAccessContractor.sql" />
-    <Build Include="ProcStored\RegisterAccessCustomer.sql" />
-    <Build Include="ProcStored\GetOneEmployee.sql" />
-    <Build Include="ProcStored\GatAllEmployee.sql" />
-    <Build Include="ProcStored\UpdateAccessContractor.sql" />
     <Build Include="ProcStored\planning\getOneByCustomer.sql" />
     <Build Include="ProcStored\planning\getOneByEmployee.sql" />
     <Build Include="ProcStored\Customer\AddCustomer.sql" />
     <Build Include="ProcStored\Customer\CustomerById.sql" />
+    <Build Include="ProcStored\Customer\PutCustomer.sql" />
+    <Build Include="ProcStored\Customer\DeleteCustomer.sql" />
+    <Build Include="Trigger\DeleteCustomers.sql" />
+    <Build Include="Trigger\DeleteEmployees.sql" />
+    <Build Include="ProcStored\Employee\AddEmployee.sql" />
+    <Build Include="ProcStored\Employee\DeleteEmployee.sql" />
+    <Build Include="ProcStored\Employee\GatAllEmployee.sql" />
+    <Build Include="ProcStored\Employee\GetOneEmployee.sql" />
+    <Build Include="ProcStored\Auth\Loginemployee.sql" />
+    <Build Include="ProcStored\Auth\RegisterAccessContractor.sql" />
+    <Build Include="ProcStored\Auth\RegisterAccessCustomer.sql" />
+    <Build Include="ProcStored\Auth\RegisterAccessEmployee.sql" />
+    <Build Include="ProcStored\Auth\UpdateAccessContractor.sql" />
+    <Build Include="ProcStored\Employee\PutEmployee.sql" />
+    <Build Include="ProcStored\Customer\GetAll.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

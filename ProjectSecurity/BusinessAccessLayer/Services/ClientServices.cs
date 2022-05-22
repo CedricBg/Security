@@ -29,4 +29,19 @@ public class ClientServices : IClientServices
     {
         return _customerService.CustomerById(Id).DataCustomerToBll();
     }
+
+    public bool PutCustomer(BUSI.PutCustomer form)
+    {
+        return _customerService.PutCustomer(form.BllPutCustomerToData());
+    }
+
+    public bool DeleteCustomer(int Id)
+    {
+        return _customerService.DeleteCustomer(Id);
+    }
+
+    public IEnumerable<BUSI.Customer> GetAll()
+    {
+        return _customerService.GetAll().Select(x => x.DataCustomerToBll());
+    }
 }

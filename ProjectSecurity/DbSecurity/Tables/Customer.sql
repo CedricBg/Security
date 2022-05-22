@@ -6,5 +6,6 @@
     [EmergencyPhone] VARCHAR(50) NULL, 
     [EmergencyEmail] VARCHAR(50) NULL, 
     [IdInformation] INT NOT NULL, 
-    [IdUsers] INT NULL
+    [IdUsers] INT NULL, 
+    [Active] BIT NOT NULL DEFAULT 1
 )

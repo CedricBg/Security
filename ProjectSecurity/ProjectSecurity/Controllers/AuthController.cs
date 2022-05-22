@@ -41,8 +41,7 @@ public class AuthController : ControllerBase
         return StatusCode(StatusCodes.Status201Created);
     }
 
-
-    [HttpPost("update/")]
+    [HttpPut]
     public IActionResult Post(UpdateForm form)
     {
        return Ok(_servicesAuth.UpdateAccessContractor(form.AspToDataUpdate()));

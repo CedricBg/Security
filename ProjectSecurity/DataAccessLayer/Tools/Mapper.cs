@@ -15,7 +15,7 @@ namespace DataAccessLayer.Tools
         {
             return new Customer
             {
-                IdCountry = (int)reader["IdCountry"],
+                IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"],
                 Name = reader["Name"].ToString(),
                 IdInformation = (int)reader["IdInformation"],
                 IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"],
@@ -23,6 +23,7 @@ namespace DataAccessLayer.Tools
                 EmergencyEmail = reader["EmergencyEmail"].ToString(),
                 EmergencyPhone = reader["EmergencyPhone"].ToString(),
                 Street = reader["Street"].ToString(),
+                IdCountry = reader["IdCountry"] is DBNull ? null : (int)reader["IdCountry"],
                 StreetNumber = reader["StreetNumber"].ToString(),
                 PostCode = reader["PostCode"].ToString(),
                 Country = reader["Country"].ToString(),

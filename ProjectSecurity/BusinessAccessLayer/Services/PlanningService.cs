@@ -12,11 +12,11 @@ using BusinessAccessLayer.IRepositories;
 
 namespace BusinessAccessLayer.Services
 {
-    public class PlanningServices : IPlanningServices
+    public class PlanningService : IPlanningServices
     {
         private readonly IPlanningService _planningService;
 
-        public PlanningServices(IPlanningService planningService)
+        public PlanningService(IPlanningService planningService)
         {
             _planningService = planningService;
         }
@@ -28,14 +28,7 @@ namespace BusinessAccessLayer.Services
 
         public IEnumerable<Planning> getOneByCustomer(int IdCustomer)
         {
-
-            IEnumerable<Planning> plan = _planningService.getOneByCustomer(IdCustomer).Select(dr => dr.DataPlanningToBusi());
-            foreach(Planning planning in plan)
-            {
-                Console.WriteLine(planning.StartTime);
-
-            }
-            return plan;
+            return _planningService.getOneByCustomer(IdCustomer).Select(dr => dr.DataPlanningToBusi());
 
         }
     }

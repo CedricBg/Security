@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Services;
+﻿using BusinessAccessLayer.Services;
+using DataAccessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
 using ProjectSecurity.Models;
 using ProjectSecurity.Tools;
@@ -12,10 +13,12 @@ namespace ProjectSecurity.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _EmployeeService;
+        private readonly IEmployeeServices _EmployeeServices;
 
-        public EmployeeController(IEmployeeService EmployeeService)
+        public EmployeeController(IEmployeeService EmployeeService, IEmployeeServices employeeServices)
         {
             _EmployeeService = EmployeeService;
+            _EmployeeServices = employeeServices;
         }
 
         [HttpPost]
@@ -42,5 +45,16 @@ namespace ProjectSecurity.Controllers
             return Ok(_EmployeeService.GetAll());
         }
 
+        [HttpDelete("{Id}")]
+        public IActionResult DeleteEmployee(int Id)
+        {
+            return Ok(_EmployeeService.DeleteEmployee(Id));
+        }
+
+        [HttpPut]
+        public IActionResult PutEmployee(PutEmployee form)
+        {
+            return Ok(_EmployeeServices.PutEmployee(form.AspPutEmployeeToBusi()));
+        }
     }
 }

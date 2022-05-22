@@ -45,7 +45,45 @@ namespace DataAccessLayer.Services
             cmd.AddParameter("Email", form.Email);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
+        }
 
+        public bool PutCustomer(PutCustomer form)
+        {
+
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("PutCustomer", true);
+
+
+            cmd.AddParameter("Name", form.Name);
+            cmd.AddParameter("GeneralPhone", form.GeneralPhone);
+            cmd.AddParameter("EmergencyPhone", form.EmergencyPhone);
+            cmd.AddParameter("EmergencyEmail", form.EmergencyEmail);
+            cmd.AddParameter("Street", form.Street);
+            cmd.AddParameter("PostCode", form.PostCode);
+            cmd.AddParameter("StreetNumber", form.StreetNumber);
+            cmd.AddParameter("IdCountry", form.IdCountry);
+            cmd.AddParameter("Phone", form.Phone);
+            cmd.AddParameter("IdInformation", form.IdInformation);
+            cmd.AddParameter("IdCustomer", form.IdCustomer);
+            cmd.AddParameter("Email", form.Email);
+
+            return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+        public bool DeleteCustomer(int Id)
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("DeleteCustomer", true);
+
+            cmd.AddParameter("IdCustomer", Id);
+            return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+
+        public IEnumerable<Customer> GetAll()
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("GetAll", true);
+
+            return cnx.ExecuteReader(cmd, dr => dr.ReadCustomerToBLL());
         }
     }
 }

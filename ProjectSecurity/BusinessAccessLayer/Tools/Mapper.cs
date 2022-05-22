@@ -1,11 +1,30 @@
 ﻿using DATA = DataAccessLayer.Models;
 using BusinessAccessLayer.Models;
+using BUSI = BusinessAccessLayer.Models;
 
 
 namespace BusinessAccessLayer.Tools;
 
 public static class Mapper
 {
+
+    public static DATA.PutEmployee BllPutEmployeeToData(this PutEmployee form)
+    {
+        return new DATA.PutEmployee
+        {
+            IdEmployee = form.IdEmployee,
+            FirstName = form.FirstName,
+            Name = form.Name,
+            BirthDate = form.BirthDate,
+            Vehicle = form.Vehicle,
+            SecurityCard = form.SecurityCard,
+            EmployeeCardNumber = form.EmployeeCardNumber,
+            RegistreNational = form.RegistreNational,
+            IdInformation = form.IdInformation,
+            IdLanguage = form.IdLanguage
+        };
+    }
+
     public static Planning DataPlanningToBusi(this DATA.Planning form)
     {
         return new Planning
@@ -39,6 +58,7 @@ public static class Mapper
     {
         return new Customer
         {
+            IdCustomer = form.IdCustomer,
             Name = form.Name,
             EmergencyEmail = form.EmergencyEmail,
             EmergencyPhone = form.EmergencyPhone,
@@ -52,7 +72,24 @@ public static class Mapper
             Country = form.Country,
             IdUsers = form.IdUsers,
             IdInformation = form.IdInformation
-
+        };
+    }
+    public static DATA.PutCustomer BllPutCustomerToData(this BUSI.PutCustomer form)
+    {
+        return new DATA.PutCustomer
+        {
+            IdCustomer = form.IdCustomer,
+            Name = form.Name,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            Email = form.Email,
+            Street = form.Street,
+            StreetNumber = form.StreetNumber,
+            PostCode = form.PostCode,
+            IdCountry = form.IdCountry,
+            Phone = form.Phone,
+            GeneralPhone = form.GeneralPhone,
+            IdInformation = form.IdInformation
         };
     }
 

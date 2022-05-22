@@ -1768,6 +1768,76 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[CustomerById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	Begin
+		SELECT *
+		FROM Customer cust , Informations info, Countrys C 
+		Where cust.IdCustomer = @IDCustomer 
+		AND info.IdInformation = cust.IdInformation 
+		AND C.IdCountrys = info.IdCountry
+	End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Countrys]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerById].[@IDCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdInformation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Countrys].[IdCountrys]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Informations].[IdCountry]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[CustomerById].[@IDCustomer]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="266" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[CustomerById]&#xD;&#xA;&#x9;@IDCustomer int&#xD;&#xA;&#x9;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Departement]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">

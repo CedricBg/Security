@@ -13,7 +13,7 @@ namespace ProjectSecurity.Controllers;
 public class CustomerController : ControllerBase
 {
     private readonly IClientServices _customerService;
-    
+
     public CustomerController(IClientServices customerService)
     {
         _customerService = customerService;
@@ -26,6 +26,17 @@ public class CustomerController : ControllerBase
         Ok(_customerService.AddCustomer(form.AspCustomerToBll()));
     }
 
+    [HttpGet("{Id}")]
+    public IActionResult Get(int Id)
+    {
+        Customer customer = _customerService.CustomerById(Id).BusiCustomerToAsp();
+
+        if (customer is not null)
+        {
+            return Ok(customer);
+        }
+        return NotFound();
+    }
 
 
     //// PUT api/<CustomerController>/5

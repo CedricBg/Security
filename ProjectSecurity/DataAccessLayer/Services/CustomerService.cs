@@ -1,4 +1,5 @@
 ﻿using AdoToolbox;
+using DataAccessLayer.Tools;
 using DataAccessLayer.Models;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -16,6 +17,16 @@ namespace DataAccessLayer.Services
         public CustomerService(IConfiguration connectionString)
         {
             _connectionString = connectionString.GetConnectionString("ConnectionString");
+        }
+
+        public Customer CustomerById(int Id)
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("CustomerById", true);
+
+            cmd.AddParameter("IDCustomer", Id);
+
+            return cnx.ExecuteReader(cmd,dr => dr.ReadCustomerToBLL()).Single();
         }
 
         public bool AddCustomer(Customer form)

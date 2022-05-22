@@ -103,6 +103,7 @@
     <Build Include="ProcStored\planning\getOneByCustomer.sql" />
     <Build Include="ProcStored\planning\getOneByEmployee.sql" />
     <Build Include="ProcStored\Customer\AddCustomer.sql" />
+    <Build Include="ProcStored\Customer\CustomerById.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

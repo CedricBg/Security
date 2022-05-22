@@ -11,6 +11,26 @@ namespace DataAccessLayer.Tools
 {
     public static class Mapper
     {
+        public static Customer ReadCustomerToBLL(this SqlDataReader reader)
+        {
+            return new Customer
+            {
+                IdCountry = (int)reader["IdCountry"],
+                Name = reader["Name"].ToString(),
+                IdInformation = (int)reader["IdInformation"],
+                IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"],
+                Email = reader["Email"].ToString(),
+                EmergencyEmail = reader["EmergencyEmail"].ToString(),
+                EmergencyPhone = reader["EmergencyPhone"].ToString(),
+                Street = reader["Street"].ToString(),
+                StreetNumber = reader["StreetNumber"].ToString(),
+                PostCode = reader["PostCode"].ToString(),
+                Country = reader["Country"].ToString(),
+                Phone = reader["Phone"].ToString(),
+                GeneralPhone = reader["GeneralPhone"].ToString(),
+            };
+        }
+
         public static Employee ReadToAspData(this SqlDataReader reader)
         {
             

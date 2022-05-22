@@ -25,8 +25,8 @@ public class ClientServices : IClientServices
         return _customerService.AddCustomer(form.BusiCustomerToData());
     }
 
-    public Customer CustomerById(int Id)
+    public BUSI.Customer CustomerById(int Id)
     {
-        return _customerService.CustomerById(Id);
+        return _customerService.CustomerById(Id).DataCustomerToBll();
     }
 }

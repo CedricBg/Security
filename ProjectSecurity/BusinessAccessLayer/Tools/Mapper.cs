@@ -35,4 +35,25 @@ public static class Mapper
         };
     }
 
+    public static Customer DataCustomerToBll(this DATA.Customer form)
+    {
+        return new Customer
+        {
+            Name = form.Name,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            Email = form.Email,
+            Street = form.Street,
+            StreetNumber = form.StreetNumber,
+            PostCode = form.PostCode,
+            IdCountry = form.IdCountry,
+            Phone = form.Phone,
+            GeneralPhone = form.GeneralPhone,
+            Country = form.Country,
+            IdUsers = form.IdUsers,
+            IdInformation = form.IdInformation
+
+        };
+    }
+
 }

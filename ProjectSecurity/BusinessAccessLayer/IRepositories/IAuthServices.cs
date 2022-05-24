@@ -1,4 +1,4 @@
-﻿using BusinessAccessLayer.Models;
+﻿using BusinessAccessLayer.Models.Auth;
 
 namespace BusinessAccessLayer.IRepositories
 {

@@ -1,7 +1,6 @@
-﻿
-using BusinessAccessLayer.Services;
+﻿using BusinessAccessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
-using ProjectSecurity.Models;
+using ASP = ProjectSecurity.Models.Customer;
 using ProjectSecurity.Tools;
 
 
@@ -20,7 +19,7 @@ public class CustomerController : ControllerBase
 
 
     [HttpPost]
-    public void Post(Customer form)
+    public void Post(ASP.Customer form)
     {
         Ok(_customerService.AddCustomer(form.AspCustomerToBll()));
     }
@@ -34,7 +33,7 @@ public class CustomerController : ControllerBase
     [HttpGet("{Id}")]
     public IActionResult Get(int Id)
     {
-        Customer customer = _customerService.CustomerById(Id).BusiCustomerToAsp();
+        ASP.Customer customer = _customerService.CustomerById(Id).BusiCustomerToAsp();
 
         if (customer is not null)
         {
@@ -45,7 +44,7 @@ public class CustomerController : ControllerBase
 
 
     [HttpPut]
-    public IActionResult Put(PutCustomer form)
+    public IActionResult Put(ASP.PutCustomer form)
     {
        
         return Ok(_customerService.PutCustomer(form.AspPutCustomerToBll()));

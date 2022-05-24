@@ -1,12 +1,12 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using ProjectSecurity.Models;
+using ProjectSecurity.Models.Auth;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace ProjectSecurity.Tools;
 
-    public class TokenService
+public class TokenService
     {
     private readonly string _issuer, _audience, _secret;
 

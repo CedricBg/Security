@@ -1,7 +1,7 @@
 ﻿using BusinessAccessLayer.Services;
 using DataAccessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
-using ProjectSecurity.Models;
+using ProjectSecurity.Models.Employee;
 using ProjectSecurity.Tools;
 
 

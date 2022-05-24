@@ -1,7 +1,7 @@
 ﻿using BusinessAccessLayer.IRepositories;
 using BusinessAccessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
-using ProjectSecurity.Models;
+using ProjectSecurity.Models.Auth;
 using ProjectSecurity.Tools;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

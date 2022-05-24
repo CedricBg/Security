@@ -1,5 +1,7 @@
 ﻿using BusinessAccessLayer.IRepositories;
 using Microsoft.AspNetCore.Mvc;
+using ProjectSecurity.Models.Rapport;
+using ProjectSecurity.Tools.Rapport;
 
 namespace ProjectSecurity.Controllers
 {
@@ -16,12 +18,23 @@ namespace ProjectSecurity.Controllers
 
 
         // POST api/<RapportController>
-        [HttpPost("{Rapport}")]
-        public IActionResult Post(string Rapport)
+        [HttpPost]
+        public IActionResult Post(RapportPost rapport)
         {
-            return Ok(_rapportService.PostRapport(Rapport));
+            return Ok(_rapportService.PostRapport(rapport.ASPToBllPost()));
         }
 
-       
+        [HttpPut]
+
+        public IActionResult PutRapport(RapportPut rapport) 
+        {
+            return Ok(_rapportService.PutRapport(rapport.ASPToBllPut()));
+        }
+        //[HttpPut]
+
+        //public IActionResult SaveRapport(RapportPut rapport)
+        //{
+        //    return Ok(_rapportService.SaveRapport(rapport.ASPToBllPut()));
+        //}
     }
 }

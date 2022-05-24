@@ -1,13 +1,16 @@
 ﻿using DATA = DataAccessLayer.Models;
 using BUSI = BusinessAccessLayer.Models;
-
+using BusinessAccessLayer.Models.Employee;
+using BusinessAccessLayer.Models.Auth;
+using BusinessAccessLayer.Models.Customer;
+using BusinessAccessLayer.Models.Planning;
 
 namespace BusinessAccessLayer.Tools;
 
 public static class Mapper
 {
 
-    public static DATA.Employee BllToDataEmployee(this BUSI.Employee form)
+    public static DATA.Employee BllToDataEmployee(this Employee form)
     {
         return new DATA.Employee
         {
@@ -28,9 +31,9 @@ public static class Mapper
     }
 
 
-    public static BUSI.Employee DataToBllEmployee(this DATA.Employee form)
+    public static Employee DataToBllEmployee(this DATA.Employee form)
     {
-        return new BUSI.Employee
+        return new Employee
         {
             Id = form.Id,
             Name = form.Name,
@@ -48,7 +51,7 @@ public static class Mapper
         };
     }
 
-    public static DATA.RegForm BllToDataCustomer(this BUSI.RegForm form)
+    public static DATA.RegForm BllToDataCustomer(this RegForm form)
     {
         return new DATA.RegForm
         {
@@ -57,7 +60,7 @@ public static class Mapper
             Id = form.Id,
         };
     }
-    public static DATA.FormUpdate BllToDataUpdate(this BUSI.updateForm form)
+    public static DATA.FormUpdate BllToDataUpdate(this updateForm form)
     {
         return new DATA.FormUpdate
         {
@@ -66,7 +69,7 @@ public static class Mapper
             PasswordNew = form.PasswordNew,
         };
     }
-    public static DATA.PutEmployee BllPutEmployeeToData(this BUSI.PutEmployee form)
+    public static DATA.PutEmployee BllPutEmployeeToData(this PutEmployee form)
     {
         return new DATA.PutEmployee
         {
@@ -83,9 +86,9 @@ public static class Mapper
         };
     }
 
-    public static BUSI.Planning DataPlanningToBusi(this DATA.Planning form)
+    public static Planning DataPlanningToBusi(this DATA.Planning form)
     {
-        return new BUSI.Planning
+        return new Planning
         {
             Id = form.Id,
             StartTime = form.StartTime,
@@ -94,7 +97,7 @@ public static class Mapper
             IdEmployee = form.IdEmployee
         };
     }
-    public static DATA.Customer BusiCustomerToData(this BUSI.Customer form)
+    public static DATA.Customer BusiCustomerToData(this Customer form)
     {
         return new DATA.Customer
         {
@@ -112,9 +115,9 @@ public static class Mapper
         };
     }
 
-    public static BUSI.Customer DataCustomerToBll(this DATA.Customer form)
+    public static Customer DataCustomerToBll(this DATA.Customer form)
     {
-        return new BUSI.Customer
+        return new Customer
         {
             IdCustomer = form.IdCustomer,
             Name = form.Name,
@@ -132,7 +135,7 @@ public static class Mapper
             IdInformation = form.IdInformation
         };
     }
-    public static DATA.PutCustomer BllPutCustomerToData(this BUSI.PutCustomer form)
+    public static DATA.PutCustomer BllPutCustomerToData(this PutCustomer form)
     {
         return new DATA.PutCustomer
         {

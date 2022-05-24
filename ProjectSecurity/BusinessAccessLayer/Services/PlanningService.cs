@@ -1,5 +1,4 @@
 ﻿using DataAccessLayer.Repository;
-using BusinessAccessLayer.Models;
 using BusinessAccessLayer.Tools;
 using DataAccessLayer.Services;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessAccessLayer.IRepositories;
+using BusinessAccessLayer.Models.Planning;
 
 namespace BusinessAccessLayer.Services
 {

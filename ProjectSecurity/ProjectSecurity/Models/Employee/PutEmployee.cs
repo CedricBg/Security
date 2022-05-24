@@ -1,4 +1,4 @@
-﻿namespace ProjectSecurity.Models;
+﻿namespace ProjectSecurity.Models.Employee;
 
 public class PutEmployee
 {

@@ -1,4 +1,4 @@
-﻿namespace ProjectSecurity.Models;
+﻿namespace ProjectSecurity.Models.Auth;
 
 public class RegForm
 {

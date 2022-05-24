@@ -1,4 +1,4 @@
-﻿using BusinessAccessLayer.Models;
+﻿using BusinessAccessLayer.Models.Employee;
 using BusinessAccessLayer.Tools;
 using DataAccessLayer.Services;
 using System;

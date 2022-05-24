@@ -149,3 +149,4 @@ C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\sc
 C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\ProjectSecurity.csproj.CopyComplete
 C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\ProjectSecurity.genruntimeconfig.cache
 C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\ref\ProjectSecurity.dll
+C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

@@ -1,14 +1,18 @@
-﻿using ASP = ProjectSecurity.Models;
-using busi = BusinessAccessLayer.Models;
+﻿using BUSIAuth = BusinessAccessLayer.Models.Auth;
+using BUSICust = BusinessAccessLayer.Models.Customer;
+using BUSIEmplo = BusinessAccessLayer.Models.Employee;
+using ASPCustomer = ProjectSecurity.Models.Customer;
+using ASPEmplo = ProjectSecurity.Models.Employee;
+using ASPAuth = ProjectSecurity.Models.Auth;
 
 namespace ProjectSecurity.Tools;
 
 
 public static class Mapper
 {
-    public static busi.PutEmployee AspPutEmployeeToBusi(this ASP.PutEmployee form)
+    public static BUSIEmplo.PutEmployee AspPutEmployeeToBusi(this ASPEmplo.PutEmployee form)
     {
-        return new busi.PutEmployee
+        return new BUSIEmplo.PutEmployee
         {
             IdEmployee = form.IdEmployee,
             FirstName = form.FirstName,
@@ -24,9 +28,9 @@ public static class Mapper
     }
 
 
-    public static busi.PutCustomer AspPutCustomerToBll(this ASP.PutCustomer form)
+    public static BUSICust.PutCustomer AspPutCustomerToBll(this ASPCustomer.PutCustomer form)
     {
-        return new busi.PutCustomer
+        return new BUSICust.PutCustomer
         {
             IdCustomer = form.IdCustomer,
             Name = form.Name,
@@ -43,9 +47,9 @@ public static class Mapper
         };
     }
 
-    public static ASP.Customer BusiCustomerToAsp(this busi.Customer form)
+    public static ASPCustomer.Customer BusiCustomerToAsp(this BUSICust.Customer form)
     {
-        return new ASP.Customer
+        return new ASPCustomer.Customer
         {
             IdCustomer = form.IdCustomer,
             Name = form.Name,
@@ -64,9 +68,9 @@ public static class Mapper
         };
     }
 
-    public static busi.Customer AspCustomerToBll(this ASP.Customer form)
+    public static BUSICust.Customer AspCustomerToBll(this ASPCustomer.Customer form)
     {
-        return new busi.Customer
+        return new BUSICust.Customer
         {
             Name = form.Name,
             EmergencyEmail = form.EmergencyEmail,
@@ -83,9 +87,9 @@ public static class Mapper
 
    
 
-    public static busi.RegForm AspToBllRegister(this ASP.RegForm form)
+    public static BUSIAuth.RegForm AspToBllRegister(this ASPAuth.RegForm form)
     {
-        return new busi.RegForm
+        return new BUSIAuth.RegForm
         {
             Login = form.Login,
             Password = form.Password,
@@ -93,9 +97,9 @@ public static class Mapper
         };
     }
    
-    public static busi.Employee AspToBllEmployee(this ASP.Employee form)
+    public static BUSIEmplo.Employee AspToBllEmployee(this ASPEmplo.Employee form)
     {
-        return new busi.Employee
+        return new BUSIEmplo.Employee
         {
             Id = form.Id,
             Name = form.Name,
@@ -113,9 +117,9 @@ public static class Mapper
         };
     }
 
-    public static ASP.Employee BllToAspEmployee(this busi.Employee form)
+    public static ASPEmplo.Employee BllToAspEmployee(this BUSIEmplo.Employee form)
     {
-        return new ASP.Employee
+        return new ASPEmplo.Employee
         {
             Id = form.Id,
             Name = form.Name,
@@ -132,9 +136,9 @@ public static class Mapper
             IdUsers = form.IdUsers
         };
     }
-    public static busi.updateForm AspToBLLUpdate(this ASP.UpdateForm form)
+    public static BUSIAuth.updateForm AspToBLLUpdate(this ASPAuth.UpdateForm form)
     {
-        return new busi.updateForm
+        return new BUSIAuth.updateForm
         {
             Login = form.Login,
             Password = form.Password,

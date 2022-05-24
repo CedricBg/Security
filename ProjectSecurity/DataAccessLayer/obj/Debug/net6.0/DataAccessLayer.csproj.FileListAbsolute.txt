@@ -43,3 +43,18 @@ C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DataAccessLay
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\AdoToolBox.dll
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\bin\Debug\net6.0\AdoToolBox.pdb
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Angular\Security\Security\ProjectSecurity\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll

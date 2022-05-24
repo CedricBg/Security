@@ -4,9 +4,9 @@ namespace DataAccessLayer.Repository
 {
     public interface IAuthService
     {
-        bool RegisterAccessEmployee(RegisterForm form);
-        bool RegisterAccessContract(RegisterForm form);
-        bool RegisterAccessCustomer(RegisterForm form);
+        bool RegisterAccessEmployee(RegForm form);
+        bool RegisterAccessContract(RegForm form);
+        bool RegisterAccessCustomer(RegForm form);
         bool UpdateAccessContractor(FormUpdate form);
     }
 }

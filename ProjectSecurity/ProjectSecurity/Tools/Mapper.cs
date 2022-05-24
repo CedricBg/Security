@@ -1,5 +1,4 @@
-﻿using DATA = DataAccessLayer.Models;
-using ASP = ProjectSecurity.Models;
+﻿using ASP = ProjectSecurity.Models;
 using busi = BusinessAccessLayer.Models;
 
 namespace ProjectSecurity.Tools;
@@ -82,37 +81,21 @@ public static class Mapper
         };
     }
 
-    public static DATA.RegisterForm AspToDataEmplo(this ASP.RegisterForm form)
-    {
-        return new DATA.RegisterForm
-        {
-            Login = form.Login,
-            Password = form.Password,
-            Id = form.Id,
-        };
-    }
+   
 
-    public static DATA.RegisterForm AspToDataContrat(this ASP.ContractorRegForm form)
+    public static busi.RegForm AspToBllRegister(this ASP.RegForm form)
     {
-        return new DATA.RegisterForm
+        return new busi.RegForm
         {
             Login = form.Login,
             Password = form.Password,
             Id = form.Id,
         };
     }
-    public static DATA.RegisterForm AspToDataCustomer(this ASP.CustomerRegForm form)
+   
+    public static busi.Employee AspToBllEmployee(this ASP.Employee form)
     {
-        return new DATA.RegisterForm
-        {
-            Login = form.Login,
-            Password = form.Password,
-            Id = form.Id,
-        };
-    }
-    public static DATA.Employee AspToDataCustomer(this ASP.Employee form)
-    {
-        return new DATA.Employee
+        return new busi.Employee
         {
             Id = form.Id,
             Name = form.Name,
@@ -126,11 +109,11 @@ public static class Mapper
             IdLanguage = form.IdLanguage,
             IdUsers = form.IdUsers,
             RegistreNational = form.RegistreNational,
-            EntryService = form.EntryService,
+            EntryService = form.EntryService
         };
     }
 
-    public static ASP.Employee DataToAspEmployee(this DATA.Employee form)
+    public static ASP.Employee BllToAspEmployee(this busi.Employee form)
     {
         return new ASP.Employee
         {
@@ -149,9 +132,9 @@ public static class Mapper
             IdUsers = form.IdUsers
         };
     }
-    public static DATA.FormUpdate AspToDataUpdate(this ASP.UpdateForm form)
+    public static busi.updateForm AspToBLLUpdate(this ASP.UpdateForm form)
     {
-        return new DATA.FormUpdate
+        return new busi.updateForm
         {
             Login = form.Login,
             Password = form.Password,

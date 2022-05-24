@@ -6,5 +6,8 @@ namespace BusinessAccessLayer.Services
     {
         bool DeleteEmployee(int Id);
         bool PutEmployee(PutEmployee form);
+        bool AddEmployee(Employee form);
+        Employee GetOne(int Id);
+        IEnumerable<Employee> GetAll();
     }
 }

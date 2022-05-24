@@ -15,3 +15,20 @@ C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\BusinessAcces
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\refint\BusinessAccessLayer.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.pdb
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\ref\BusinessAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.AssemblyReference.cache
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.AssemblyInfoInputs.cache
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.AssemblyInfo.cs
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.CoreCompileInputs.cache
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\refint\BusinessAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.pdb
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.deps.json
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.pdb
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\AdoToolBox.dll
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\AdoToolBox.pdb
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.CopyComplete
+C:\Angular\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\ref\BusinessAccessLayer.dll

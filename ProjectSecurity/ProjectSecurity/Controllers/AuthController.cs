@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.Repository;
-using DataAccessLayer.Services;
+﻿using BusinessAccessLayer.IRepositories;
+using BusinessAccessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
 using ProjectSecurity.Models;
 using ProjectSecurity.Tools;
@@ -12,40 +12,39 @@ namespace ProjectSecurity.Controllers;
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private readonly IAuthService _servicesAuth;
+    private readonly IAuthServices _servicesAuth;
 
-    public AuthController(IAuthService servicesAuth)
+    public AuthController(IAuthServices servicesAuth)
     {
         _servicesAuth = servicesAuth;
     }
 
 
     [HttpPost("employee/")]
-    public IActionResult Post(RegisterForm form)
+    public IActionResult Post(RegForm form)
     {
-        _servicesAuth.RegisterAccessEmployee(form.AspToDataEmplo());
+        _servicesAuth.RegisterAccessEmployee(form.AspToBllRegister());
         return StatusCode(StatusCodes.Status201Created);
     }
 
     [HttpPost("contrator/")]
-    public IActionResult Post(ContractorRegForm form)
+    public IActionResult RegisterContractor(RegForm form)
     {
-        _servicesAuth.RegisterAccessContract(form.AspToDataContrat());
+        _servicesAuth.RegisterAccessContract(form.AspToBllRegister());
         return StatusCode(StatusCodes.Status201Created);
     }
 
     [HttpPost("customer/")]
-    public IActionResult Post(CustomerRegForm form)
+    public IActionResult RegisterCustomer(RegForm form)
     {
-        _servicesAuth.RegisterAccessCustomer(form.AspToDataCustomer());
+        _servicesAuth.RegisterAccessCustomer(form.AspToBllRegister());
         return StatusCode(StatusCodes.Status201Created);
     }
 
     [HttpPut]
     public IActionResult Post(UpdateForm form)
     {
-       return Ok(_servicesAuth.UpdateAccessContractor(form.AspToDataUpdate()));
-        
+       return Ok(_servicesAuth.UpdateAccessContractor(form.AspToBLLUpdate())); 
     }
 
 

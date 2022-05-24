@@ -25,7 +25,7 @@ public class AuthService : IAuthService
 
     }
 
-    public bool RegisterAccessEmployee(RegisterForm form)
+    public bool RegisterAccessEmployee(RegForm form)
     {
         Connection cnx = new Connection(_connectionString);
 
@@ -38,7 +38,7 @@ public class AuthService : IAuthService
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
 
-    public bool RegisterAccessContract(RegisterForm form)
+    public bool RegisterAccessContract(RegForm form)
     {
         Connection cnx = new Connection(_connectionString);
 
@@ -51,7 +51,7 @@ public class AuthService : IAuthService
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
 
-    public bool RegisterAccessCustomer(RegisterForm form)
+    public bool RegisterAccessCustomer(RegForm form)
     {
         Connection cnx = new Connection(_connectionString);
 
@@ -73,6 +73,7 @@ public class AuthService : IAuthService
         cmd.AddParameter("Login", form.Login);
         cmd.AddParameter("Password", form.Password);
         cmd.AddParameter("New_Password", form.PasswordNew);
+
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
 

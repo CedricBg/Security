@@ -12,26 +12,24 @@ namespace ProjectSecurity.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeService _EmployeeService;
         private readonly IEmployeeServices _EmployeeServices;
 
-        public EmployeeController(IEmployeeService EmployeeService, IEmployeeServices employeeServices)
+        public EmployeeController(IEmployeeServices employeeServices)
         {
-            _EmployeeService = EmployeeService;
             _EmployeeServices = employeeServices;
         }
 
         [HttpPost]
         public IActionResult Post(Employee form)
         {
-            _EmployeeService.AddEmployee(form.AspToDataCustomer());
+            _EmployeeServices.AddEmployee(form.AspToBllEmployee());
             return StatusCode(StatusCodes.Status201Created);
         }
 
         [HttpGet("{Id}")]
         public IActionResult GetById(int Id)
         {
-            Employee employee = _EmployeeService.GetOne(Id).DataToAspEmployee();
+            Employee employee = _EmployeeServices.GetOne(Id).BllToAspEmployee();
             if(employee is not null)
             { 
                 return Ok(employee);
@@ -42,13 +40,13 @@ namespace ProjectSecurity.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(_EmployeeService.GetAll());
+            return Ok(_EmployeeServices.GetAll());
         }
 
         [HttpDelete("{Id}")]
         public IActionResult DeleteEmployee(int Id)
         {
-            return Ok(_EmployeeService.DeleteEmployee(Id));
+            return Ok(_EmployeeServices.DeleteEmployee(Id));
         }
 
         [HttpPut]

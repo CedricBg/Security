@@ -12,7 +12,6 @@ namespace BusinessAccessLayer.Services
         public string PostRapport(string rapport)
         {
             string fileName = @".\Fichier\fichier.txt";
-
             try
             {
                 if (File.Exists(fileName))

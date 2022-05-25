@@ -26,15 +26,16 @@ namespace ProjectSecurity.Controllers
 
         [HttpPut]
 
-        public IActionResult PutRapport(RapportPut rapport) 
+        public IActionResult PutRapport(RapportPut rapport)
         {
             return Ok(_rapportService.PutRapport(rapport.ASPToBllPut()));
         }
-        //[HttpPut]
 
-        //public IActionResult SaveRapport(RapportPut rapport)
-        //{
-        //    return Ok(_rapportService.SaveRapport(rapport.ASPToBllPut()));
-        //}
+        [HttpPut("pdf/")]
+        
+        public IActionResult SaveRapport(RapportPut rapport)
+        {
+            return Ok(_rapportService.SaveRapport(rapport.ASPToBllPut()));
+        }
     }
 }

@@ -63,6 +63,7 @@ public class RapportService : IRapportService
 
     public string PostRapport(RapportPost rapport)
     {
+        System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
         DateOnly local = DateOnly.FromDateTime(DateTime.Now);
 
         string fileName = @".\Fichier\Rapport\"+rapport.NameCustomer +"_"+ local +".txt";
@@ -89,24 +90,24 @@ public class RapportService : IRapportService
 
     public bool SaveRapport(RapportPut rapport)
     {
-        //this.PutRapport(rapport);
-        //string fileName = @".\Fichier\Rapport\";
-        //try
-        //{
-        //    GlobalFontSettings.FontResolver = new FontResolver();
-        //    var document = new PdfDocument();
-        //    var page = document.AddPage();
-        //    var gfx = XGraphics.FromPdfPage(page);
-        //    var font = new XFont("OpenSans", 20, XFontStyle.Bold);
+        this.PutRapport(rapport);
+        string fileName = @".\Fichier\Rapport\";
+        try
+        {
+            GlobalFontSettings.FontResolver = new FontResolver();
+            var document = new PdfDocument();
+            var page = document.AddPage();
+            var gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("OpenSans", 20, XFontStyle.Bold);
+            gfx.;
+            gfx.DrawString(rapport.Text, font, XBrushes.Black, new XRect(20, 20, page.Width, page.Height), XStringFormats.CenterLeft);
 
-        //    gfx.DrawString("Hello World!", font, XBrushes.Black, new XRect(20, 20, page.Width, page.Height), XStringFormats.Center);
-
-        //    document.Save(fileName+"test.pdf");
-        //}
-        //catch(Exception)
-        //{
-        //    return false;
-        //}
+            document.Save(//fileName + rapport.RapportName+".pdf");
+        }
+        catch (Exception)
+        {
+            return false;
+        }
         return true;
     }
 }

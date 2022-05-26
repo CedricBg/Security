@@ -66,6 +66,7 @@
     <Folder Include="Trigger" />
     <Folder Include="ProcStored\Employee" />
     <Folder Include="ProcStored\Auth" />
+    <Folder Include="ProcStored\Rondes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Employee.sql" />
@@ -115,6 +116,7 @@
     <Build Include="ProcStored\Auth\UpdateAccessContractor.sql" />
     <Build Include="ProcStored\Employee\PutEmployee.sql" />
     <Build Include="ProcStored\Customer\GetAll.sql" />
+    <Build Include="ProcStored\Rondes\CreateRonde.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

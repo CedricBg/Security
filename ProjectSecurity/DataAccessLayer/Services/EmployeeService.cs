@@ -12,7 +12,7 @@ namespace DataAccessLayer.Services;
 
 public class EmployeeService : IEmployeeService
 {
-    private string _connectionString;
+    private readonly string _connectionString;
 
     public EmployeeService(IConfiguration config)
     {

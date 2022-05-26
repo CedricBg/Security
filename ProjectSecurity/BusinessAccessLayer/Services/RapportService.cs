@@ -96,13 +96,15 @@ public class RapportService : IRapportService
         {
             GlobalFontSettings.FontResolver = new FontResolver();
             var document = new PdfDocument();
+            document.Info.Title = "Rapport" + rapport.RapportName;
             var page = document.AddPage();
-            var gfx = XGraphics.FromPdfPage(page);
+            XGraphics gfx = XGraphics.FromPdfPage(page);
             XFont font = new XFont("OpenSans", 20, XFontStyle.Bold);
-            gfx.;
+
             gfx.DrawString(rapport.Text, font, XBrushes.Black, new XRect(20, 20, page.Width, page.Height), XStringFormats.CenterLeft);
 
-            document.Save(//fileName + rapport.RapportName+".pdf");
+            document.Save(fileName + rapport.RapportName+".pdf");
+
         }
         catch (Exception)
         {

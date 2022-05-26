@@ -1,6 +1,8 @@
 ﻿using BUSIAuth = BusinessAccessLayer.Models.Auth;
 using BUSICust = BusinessAccessLayer.Models.Customer;
 using BUSIEmplo = BusinessAccessLayer.Models.Employee;
+using BUSIRonde = BusinessAccessLayer.Models.Ronde;
+using ASPRonde = ProjectSecurity.Models.Ronde;
 using ASPCustomer = ProjectSecurity.Models.Customer;
 using ASPEmplo = ProjectSecurity.Models.Employee;
 using ASPAuth = ProjectSecurity.Models.Auth;
@@ -10,6 +12,16 @@ namespace ProjectSecurity.Tools;
 
 public static class Mapper
 {
+    public static BUSIRonde.Addronde AdDRonde(this ASPRonde.AddRonde form)
+    {
+        return new BUSIRonde.Addronde
+        {
+            IdCustomer = form.IdCustomer,
+            NameRonde = form.NameRonde,
+        };
+    }
+
+
     public static BUSIEmplo.PutEmployee AspPutEmployeeToBusi(this ASPEmplo.PutEmployee form)
     {
         return new BUSIEmplo.PutEmployee

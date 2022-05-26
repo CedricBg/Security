@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Fichier\Rapport\" />
+    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>

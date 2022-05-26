@@ -12,6 +12,20 @@ namespace ProjectSecurity.Tools;
 
 public static class Mapper
 {
+
+   public static ASPAuth.JwtUser BllToASPJwtUser(this BUSIAuth.JwtUser form)
+    {
+        return new ASPAuth.JwtUser
+        {
+            Login = form.Login,
+            IdLanguage = form.IdLanguage,
+            IdUser = form.IdUser,
+            FirstName = form.FirstName,
+            Name = form.Name,
+            Role = form.Role,
+        };
+    }
+
     public static BUSIRonde.Addronde AdDRonde(this ASPRonde.AddRonde form)
     {
         return new BUSIRonde.Addronde

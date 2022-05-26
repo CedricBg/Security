@@ -151,3 +151,4 @@ C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\Pr
 C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\obj\Debug\net6.0\ref\ProjectSecurity.dll
 C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll

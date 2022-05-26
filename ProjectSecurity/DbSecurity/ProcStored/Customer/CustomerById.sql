@@ -8,3 +8,6 @@
 		AND info.IdInformation = cust.IdInformation 
 		AND C.IdCountrys = info.IdCountry
 	End
+
+
+	

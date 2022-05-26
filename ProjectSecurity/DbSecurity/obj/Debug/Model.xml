@@ -1220,10 +1220,10 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="726" />
+				<Property Name="Length" Value="725" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddEmployee]&#xD;&#xA;    @Name varchar(50),&#xD;&#xA;    @FirstName varchar(50),&#xD;&#xA;    @BirthDate varchar(50),&#xD;&#xA;    @Vehicle bit,&#xD;&#xA;    @SecurityCard int  ,&#xD;&#xA;    @EntryService varchar(50) , &#xD;&#xA;    @EmployeeCardNumber varchar(50) ,&#xD;&#xA;    @RegistreNational varchar(50) ,&#xD;&#xA;    @IdStatut int  ,&#xD;&#xA;    @IdLanguage int ,&#xD;&#xA;    @IdInformation int &#xD;&#xA;As" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddEmployee]&#xD;&#xA;    @Name varchar(50),&#xD;&#xA;    @FirstName varchar(50),&#xD;&#xA;    @BirthDate varchar(50),&#xD;&#xA;    @Vehicle bit,&#xD;&#xA;    @SecurityCard int  ,&#xD;&#xA;    @EntryService varchar(50) , &#xD;&#xA;    @EmployeeCardNumber varchar(50) ,&#xD;&#xA;    @RegistreNational varchar(50) ,&#xD;&#xA;    @IdStatut int  ,&#xD;&#xA;    @IdLanguage int ,&#xD;&#xA;    @IdInformation int&#xD;&#xA;As" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Belongs]">
@@ -2128,6 +2128,54 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE TRIGGER [dbo].[DeleteEmployees]&#xD;&#xA;ON Employee&#xD;&#xA;INSTEAD OF DELETE&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[DeleteRonde]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Delete from Ronde Where IdRonde = @IdRonde
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Ronde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Ronde].[IdRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DeleteRonde].[@IdRonde]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[DeleteRonde].[@IdRonde]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="112" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[DeleteRonde]&#xD;&#xA;&#x9;@IdRonde int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Departement]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -2857,7 +2905,11 @@ Begin
 	Declare @IdUser INT
 	set @IdUser = (SELECT IdUser from Users WHERE (Password_hash = @password_hash AND ([Login] = @Login)))
 
-	
+	Select E.[Name], E.firstName, E.IdLanguage, S.Classe , E.IdEmployee, U.[Login] 
+	from Employee E, Users U , StatutAgent S 
+	Where E.IdUsers = U.IdUser  
+	and E.IdStatut = S.IdStatut 
+	AND U.Login = @Login
 End]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2897,6 +2949,45 @@ End]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Users].[Password_hash]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StatutAgent]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[firstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdLanguage]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StatutAgent].[Classe]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[Login]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdUsers]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[IdUser]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdStatut]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StatutAgent].[IdStatut]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -2939,7 +3030,7 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="548" />
+				<Property Name="Length" Value="756" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Loginemployee]&#xD;&#xA;&#x9;@Login VARCHAR(50),&#xD;&#xA;&#x9;@Password VARCHAR(50)&#xD;&#xA;&#xD;&#xA;AS" />
@@ -3737,6 +3828,76 @@ end]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PutEmployee]&#xD;&#xA;&#x9;@Name varchar(50),&#xD;&#xA;&#x9;@firstName varchar(50),&#xD;&#xA;&#x9;@BirthDate varchar(50),&#xD;&#xA;&#x9;@Vehicle bit,&#xD;&#xA;&#x9;@SecurityCard varchar(50),&#xD;&#xA;&#x9;@EmployeeCardNumber varchar(50),&#xD;&#xA;&#x9;@RegistreNational varchar(20),&#xD;&#xA;&#x9;@IdLanguage int,&#xD;&#xA;&#x9;@IdInformation int,&#xD;&#xA;&#x9;@IdEmployee int&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PutRonde]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Update Ronde SET NameRonde = @NameRonde Where IdCustomer = @Id
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Ronde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Ronde].[NameRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutRonde].[@NameRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Ronde].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutRonde].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutRonde].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutRonde].[@NameRonde]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="150" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PutRonde]&#xD;&#xA;&#x9;@Id int,&#xD;&#xA;&#x9;@NameRonde varchar(50)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[RackProduct]">

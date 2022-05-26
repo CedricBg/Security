@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Models;
+using DataAccessLayer.Models.Auth;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,6 +12,20 @@ namespace DataAccessLayer.Tools
 {
     public static class Mapper
     {
+        public static JwtUser ReadJwtUserToBll(this SqlDataReader reader)
+        {
+            return new JwtUser
+            {
+                IdUser = (int)reader["IdEmployee"],
+                Name = (string)reader["Name"],
+                FirstName = Convert.ToString(reader["FirstName"]),
+                IdLanguage = (int)reader["IdLanguage"],
+                Role = Convert.ToString(reader["Classe"]),
+                Login = Convert.ToString(reader["Login"])
+
+            };
+        }
+
         public static Customer ReadCustomerToBLL(this SqlDataReader reader)
         {
             return new Customer

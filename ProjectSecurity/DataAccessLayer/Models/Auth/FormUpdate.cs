@@ -1,6 +1,4 @@
-﻿
-
-namespace DataAccessLayer.Models
+﻿namespace DataAccessLayer.Models.Auth
 {
     public class FormUpdate
     {

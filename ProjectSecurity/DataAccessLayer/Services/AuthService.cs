@@ -1,6 +1,5 @@
-﻿
-using AdoToolbox;
-using DataAccessLayer.Models;
+﻿using AdoToolbox;
+using DataAccessLayer.Models.Auth;
 using DataAccessLayer.Repository;
 using DataAccessLayer.Tools;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +22,17 @@ public class AuthService : IAuthService
     {
         _connectionString = config.GetConnectionString("ConnectionString");
 
+    }
+
+    public JwtUser Login(RegForm form)
+    {
+        Connection cnx = new Connection(_connectionString);
+        Command cmd = new Command("Loginemployee", true);
+
+        cmd.AddParameter("Login", form.Login);
+        cmd.AddParameter("Password", form.Password);
+
+        return cnx.ExecuteReader(cmd, dr => dr.ReadJwtUserToBll()).Single();
     }
 
     public bool RegisterAccessEmployee(RegForm form)

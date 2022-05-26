@@ -9,7 +9,7 @@
     @RegistreNational varchar(50) ,
     @IdStatut int  ,
     @IdLanguage int ,
-    @IdInformation int 
+    @IdInformation int
 As
 Begin
     Insert into Employee ([Name], firstName, BirthDate, Vehicle, SecurityCardNumber, RegistreNational,EntryService, EmployeeCardNumber,IdStatut, IdLanguage,IdInformation)

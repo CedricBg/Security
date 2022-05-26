@@ -13,10 +13,12 @@ namespace ProjectSecurity.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly IAuthServices _servicesAuth;
+    
 
     public AuthController(IAuthServices servicesAuth)
     {
         _servicesAuth = servicesAuth;
+       
     }
 
 
@@ -45,6 +47,14 @@ public class AuthController : ControllerBase
     public IActionResult Post(UpdateForm form)
     {
        return Ok(_servicesAuth.UpdateAccessContractor(form.AspToBLLUpdate())); 
+    }
+
+    [HttpPost("Login/")]
+    public IActionResult Login(RegForm form)
+    {
+        return Ok(_servicesAuth.Login(form.AspToBllRegister()));
+
+        
     }
 
 

@@ -4,11 +4,26 @@ using BusinessAccessLayer.Models.Employee;
 using BusinessAccessLayer.Models.Auth;
 using BusinessAccessLayer.Models.Customer;
 using BusinessAccessLayer.Models.Planning;
+using DATAauth = DataAccessLayer.Models.Auth; 
+
 
 namespace BusinessAccessLayer.Tools;
 
 public static class Mapper
 {
+
+    public static JwtUser DataToBllJwtUser(this DATAauth.JwtUser form)
+    {
+        return new JwtUser
+        {
+            IdLanguage = form.IdLanguage,
+            IdUser = form.IdUser,
+            Name = form.Name,
+            FirstName = form.FirstName,
+            Login = form.Login,
+            Role = form.Role
+        };
+    }
 
     public static DATA.Employee BllToDataEmployee(this Employee form)
     {
@@ -51,18 +66,18 @@ public static class Mapper
         };
     }
 
-    public static DATA.RegForm BllToDataCustomer(this RegForm form)
+    public static DATAauth.RegForm BllToDataCustomer(this RegForm form)
     {
-        return new DATA.RegForm
+        return new DATAauth.RegForm
         {
             Login = form.Login,
             Password = form.Password,
             Id = form.Id,
         };
     }
-    public static DATA.FormUpdate BllToDataUpdate(this updateForm form)
+    public static DATAauth.FormUpdate BllToDataUpdate(this updateForm form)
     {
-        return new DATA.FormUpdate
+        return new DATAauth.FormUpdate
         {
             Login = form.Login,
             Password = form.Password,

@@ -5,10 +5,10 @@ using System.Security.Claims;
 using System.Text;
 using BusinessAccessLayer.Models.Auth;
 
-namespace ProjectSecurity.Tools;
+namespace BusinessAccessLayer.Services;
 
 public class TokenService
-    {
+{
     private readonly string _issuer, _audience, _secret;
 
     public TokenService(IConfiguration config)
@@ -18,7 +18,7 @@ public class TokenService
         _secret = config.GetSection("tokenValidation").GetSection("secret").Value;
 
     }
-    public string GenerateJwt(RegForm user)
+    public string GenerateJwt(JwtUser user)
     {
         if (user.Login is null)
         {
@@ -32,8 +32,9 @@ public class TokenService
         Claim[] myClaims = new[]
         {
             new Claim(ClaimTypes.Surname, user.Login),
-            //new Claim(ClaimTypes.Role, user.),
-            new Claim(ClaimTypes.Sid, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.Name),
+            new Claim(ClaimTypes.Sid, user.IdUser.ToString()),
+            new Claim(ClaimTypes.Role, user.Role)
         };
 
         JwtSecurityToken token = new JwtSecurityToken

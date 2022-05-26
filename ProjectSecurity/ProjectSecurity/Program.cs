@@ -2,9 +2,11 @@ using DataAccessLayer.Repository;
 using BusinessAccessLayer.IRepositories;
 using DataAccessLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BusinessAccessLayer.Services;
+using ProjectSecurity.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +28,8 @@ builder.Services.AddSingleton<IRapportService , RapportService>();
 builder.Services.AddSingleton<IAuthServices, AuthServices>();
 builder.Services.AddSingleton<IRondeServices, RondeServices>();
 
+//Api
+builder.Services.AddSingleton<TokenService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -55,13 +59,20 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("TMPolicy"        , policy => policy.RequireRole("TM" , "DIR"));
 });
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters()
     {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = 
+        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("tokenValidation").GetSection("secret").Value)),
         ValidateIssuer = true,
-        ValidIssuer = Configuration.GetSection("tokenValidation").GetSection("issuer").Value,
-
+        ValidIssuer = builder.Configuration.GetSection("tokenValidation").GetSection("issuer").Value,
+        ValidateLifetime = true,
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration.GetSection("tokenValidation").GetSection("audience").Value
+        
     };
 });
 

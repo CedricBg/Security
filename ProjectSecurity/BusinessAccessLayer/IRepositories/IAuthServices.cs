@@ -8,5 +8,6 @@ namespace BusinessAccessLayer.IRepositories
         bool RegisterAccessCustomer(RegForm form);
         bool RegisterAccessContract(RegForm form);
         bool RegisterAccessEmployee(RegForm form);
+        string Login(RegForm form);
     }
 }

@@ -31,7 +31,7 @@ namespace DataAccessLayer.Tools
                 IdUser = (int)reader["IdEmployee"],
                 Name = (string)reader["Name"],
                 FirstName = Convert.ToString(reader["FirstName"]),
-                IdLanguage = (int)reader["IdLanguage"],
+                IdLanguage = (int)reader["IdLanguages"],
                 Role = Convert.ToString(reader["Classe"]),
                 Login = Convert.ToString(reader["Login"])
 
@@ -73,7 +73,7 @@ namespace DataAccessLayer.Tools
                 PostCode = Convert.ToString(reader["PostCode"]),
                 Street = Convert.ToString(reader["Street"]),
                 StreetNumber = Convert.ToString(reader["StreetNumber"]),
-                Language = Convert.ToString(reader["Languages"]),
+                Language = Convert.ToString(reader["Language"]),
                 Country = Convert.ToString(reader["Country"]),
             };
         }

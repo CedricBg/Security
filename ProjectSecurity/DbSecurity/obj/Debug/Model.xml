@@ -2611,11 +2611,42 @@ End]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-	UPDATE Start_end_Time SET DepartureTime = GETDATE() where IdStart = @IdStart
+	Declare @Arrive Date
+	Declare @Depart Date
+
+	SET @Arrive  = (SELECT TOP 1 ArrivingTime FROM Start_end_Time WHERE IdStart = @IdStart  ORDER BY IdStart DESC )
+	SET @Depart  = (SELECT TOP 1 DepartureTime FROM Start_end_Time WHERE IdStart = @IdStart  ORDER BY IdStart DESC )
+
+	if (@Arrive IS not NULL 
+	And @Depart  IS NULL)
+	begin
+		UPDATE Start_end_Time SET DepartureTime = GETDATE() where IdStart = @IdStart
+	end
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Start_end_Time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Start_end_Time].[ArrivingTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Start_end_Time].[IdStart]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EndWork].[@IdStart]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Start_end_Time].[DepartureTime]" />
+				</Entry>
 				<Entry>
 					<References Name="[dbo].[Start_end_Time]" />
 				</Entry>
@@ -2624,9 +2655,6 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Start_end_Time].[IdStart]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[EndWork].[@IdStart]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -2652,7 +2680,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="142" />
+				<Property Name="Length" Value="487" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[EndWork]&#xD;&#xA;&#x9;@IdStart int&#xD;&#xA;AS" />
@@ -5397,12 +5425,17 @@ End]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 Begin
+	Declare @Arrive Date
+	Declare @Depart Date
 
+	SET @Arrive  = (SELECT TOP 1 ArrivingTime FROM Start_end_Time WHERE IdEmployee = @IdEmployee and IdCustomer = @IdCustomer ORDER BY IdStart DESC )
+	SET @Depart  = (SELECT TOP 1 DepartureTime FROM Start_end_Time WHERE IdEmployee = @IdEmployee and IdCustomer = @IdCustomer ORDER BY IdStart DESC )
+	
+	if ((@Arrive IS NULL 
+	And @Depart  IS NULL)
 
-	if ((SELECT TOP 1 DepartureTime FROM Start_end_Time WHERE IdEmployee = @IdEmployee and IdCustomer = @IdCustomer ORDER BY IdStart DESC ) is Null 
-	And (SELECT TOP 1 ArrivingTime FROM Start_end_Time WHERE IdEmployee = @IdEmployee and IdCustomer = @IdCustomer ORDER BY IdStart DESC  ) IS NULL)
-	or ((SELECT TOP 1 DepartureTime FROM Start_end_Time WHERE IdEmployee = @IdEmployee and IdCustomer = @IdCustomer ORDER BY IdStart DESC ) is Not Null 
-	And (SELECT TOP 1 ArrivingTime FROM Start_end_Time WHERE IdEmployee = @IdEmployee and IdCustomer = @IdCustomer ORDER BY IdStart DESC  ) IS NULL)
+	or (@Depart  IS not NULL
+	And @Arrive  IS not NULL))
 	Begin
 	INSERT INTO Start_end_Time (IdCustomer,IdEmployee,ArrivingTime) OUTPUT inserted.IdStart Values(@IdCustomer, @IdEmployee, GETDATE())
 	end
@@ -5416,10 +5449,16 @@ End]]></Value>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Start_end_Time]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Start_end_Time].[DepartureTime]" />
+					<References Name="[dbo].[Start_end_Time].[ArrivingTime]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Start_end_Time].[IdEmployee]" />
@@ -5437,7 +5476,7 @@ End]]></Value>
 					<References Name="[dbo].[Start_end_Time].[IdStart]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Start_end_Time].[ArrivingTime]" />
+					<References Name="[dbo].[Start_end_Time].[DepartureTime]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Start_end_Time]" />
@@ -5493,7 +5532,7 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="869" />
+				<Property Name="Length" Value="727" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[StartWork]&#xD;&#xA;&#x9;@IdCustomer int,&#xD;&#xA;&#x9;@IdEmployee int&#xD;&#xA;AS" />

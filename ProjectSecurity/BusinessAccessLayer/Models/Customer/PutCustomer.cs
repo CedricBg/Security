@@ -20,5 +20,6 @@ namespace BusinessAccessLayer.Models.Customer
         public int IdCountry { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public int IdLanguage { get; set; }
     }
 }

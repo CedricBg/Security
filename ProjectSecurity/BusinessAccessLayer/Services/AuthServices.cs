@@ -23,31 +23,79 @@ public class AuthServices : IAuthServices
         _tokenService = tokenService;
     }
 
+    public string LoginCust(RegForm form)
+    {
+        try
+        {
+            JwtUser user = _servicesAuth.LoginCust(form.BllToDataCustomer()).DataToBllJwtCustomer();
+            string token = _tokenService.GenerateJwt(user);
+            return token;
+        }
+        catch(Exception ex)
+        {
+            return ex.Message.ToString();
+        }
+    }
+
     public string Login(RegForm form)
     {
-
-        JwtUser user =  _servicesAuth.Login(form.BllToDataCustomer()).DataToBllJwtUser();
-        string token = _tokenService.GenerateJwt(user);
-        return token;
+        try
+        {
+            JwtUser user = _servicesAuth.Login(form.BllToDataCustomer()).DataToBllJwtUser();
+            string token = _tokenService.GenerateJwt(user);
+            return token;
+        }
+        catch (Exception ex)
+        {
+            return ex.Message.ToString();
+        }
     }
 
     public bool UpdateAccessContractor(updateForm form)
     {
-        return _servicesAuth.UpdateAccessContractor(form.BllToDataUpdate());
+        try
+        {
+            return _servicesAuth.UpdateAccessContractor(form.BllToDataUpdate());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool RegisterAccessCustomer(RegForm form)
     {
-        return _servicesAuth.RegisterAccessCustomer(form.BllToDataCustomer());
+        try 
+        { 
+            return _servicesAuth.RegisterAccessCustomer(form.BllToDataCustomer());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool RegisterAccessContract(RegForm form)
     {
-        return _servicesAuth.RegisterAccessContract(form.BllToDataCustomer());
+        try
+        {
+            return _servicesAuth.RegisterAccessContract(form.BllToDataCustomer());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool RegisterAccessEmployee(RegForm form)
     {
-        return _servicesAuth.RegisterAccessEmployee(form.BllToDataCustomer());
+        try 
+        {
+            return _servicesAuth.RegisterAccessEmployee(form.BllToDataCustomer());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 }

@@ -43,6 +43,7 @@ namespace DataAccessLayer.Services
             cmd.AddParameter("IdCountry", form.IdCountry);
             cmd.AddParameter("Phone", form.Phone);
             cmd.AddParameter("Email", form.Email);
+            cmd.AddParameter("IdLanguage", form.IdLanguage);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
@@ -66,6 +67,7 @@ namespace DataAccessLayer.Services
             cmd.AddParameter("IdInformation", form.IdInformation);
             cmd.AddParameter("IdCustomer", form.IdCustomer);
             cmd.AddParameter("Email", form.Email);
+            cmd.AddParameter("IdLanguage", form.IdLanguage);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
@@ -78,12 +80,12 @@ namespace DataAccessLayer.Services
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
 
-        public IEnumerable<Customer> GetAll()
+        public IEnumerable<AllCustomer> GetAll()
         {
             Connection cnx = new Connection(_connectionString);
             Command cmd = new Command("GetAll", true);
+            return cnx.ExecuteReader(cmd, dr => dr.ReadAllCustomerToBll());
 
-            return cnx.ExecuteReader(cmd, dr => dr.ReadCustomerToBLL());
         }
     }
 }

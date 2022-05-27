@@ -24,6 +24,5 @@ Set NOCOUNT ON
 	OUTPUT inserted.IdUser INTO  @IDUser
 	Values(@Salt, @password_hash,@Login)
 	
-	UPDATE SubContractors SET IdUsers = (SELECT id FROM @IDUser) where IdUsers = @Id
-
+	UPDATE SubContractors SET IdUsers = (SELECT id FROM @IDUser) where Idsub = @Id
 End

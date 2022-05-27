@@ -8,14 +8,14 @@
 	@RegistreNational varchar(20),
 	@IdLanguage int,
 	@IdInformation int,
-	@IdEmployee int
+	@IdEmployee int ,
+	@IdDepartement int
 
 AS
 Begin
-	Update Employee Set @Name = @Name, @firstName = @firstName , BirthDate = @BirthDate, Vehicle = @Vehicle, 
+	Update Employee Set [Name] = @Name, firstName = @firstName , BirthDate = @BirthDate, Vehicle = @Vehicle, 
 	SecurityCardNumber = @SecurityCard, EmployeeCardNumber = @EmployeeCardNumber, RegistreNational = @RegistreNational,
 	IdLanguage = @IdLanguage, IdInformation = @IdInformation where IdEmployee = @IdEmployee
-
-
+	Update Manage Set IdDepartement = @IdDepartement
 
 end

@@ -9,5 +9,6 @@ namespace DataAccessLayer.Repository
         bool RegisterAccessCustomer(RegForm form);
         bool UpdateAccessContractor(FormUpdate form);
         JwtUser Login(RegForm form);
+        JwtCustomer LoginCust(RegForm form);
     }
 }

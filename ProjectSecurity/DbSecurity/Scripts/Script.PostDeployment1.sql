@@ -26,6 +26,8 @@ ALTER TABLE Contacting ADD CONSTRAINT FK_SUB_CONTACT_PERSON FOREIGN KEY (IdConta
 
 ALTER TABLE Customer ADD CONSTRAINT FK_CUST_INFOR FOREIGN KEY (IdInformation) REFERENCES Informations (IdInformation)
 ALTER TABLE Customer ADD CONSTRAINT FK_CUST_USERS FOREIGN KEY (IdUsers) REFERENCES Users (IdUser)
+ALTER TABLE Customer ADD CONSTRAINT FK_CUST_STATUT FOREIGN KEY (IdStatuts) REFERENCES StatutAgent (IdStatut)
+ALTER TABLE Customer ADD CONSTRAINT FK_CUST_LANG FOREIGN KEY (IdLanguages) REFERENCES Employee_Language (IdLanguage)
 
 ALTER TABLE Informations ADD CONSTRAINT FK_COUNTRY_INFO FOREIGN KEY (IdCountry) REFERENCES Countrys (IdCountrys)
 
@@ -67,14 +69,8 @@ ALTER TABLE Searching ADD CONSTRAINT FK_SEARCH_PRODUCT FOREIGN KEY (IdProduct) R
 ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee)
 ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
 
-INSERT INTO Departement (NameDepartement) Values('Stock')
-INSERT INTO Departement (NameDepartement) Values('Opérations')
-INSERT INTO Departement (NameDepartement) Values('Directions')
-INSERT INTO Departement (NameDepartement) Values('Agent')
+ALTER TABLE Departement ADD CONSTRAINT UK_DEPARTMENT_NAME UNIQUE (NameDepartement)
 
-INSERT INTO Employee_Language (Language) Values('Français')
-INSERT INTO Employee_Language (Language) Values('Nederlands')
-INSERT INTO Employee_Language (Language) Values('English')
 
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SB'    , 'Agent statique' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SQ'    , 'Agent statique qualifié' )
@@ -294,13 +290,25 @@ INSERT INTO Countrys Values('Yemen')
 INSERT INTO Countrys Values('Zambia')
 INSERT INTO Countrys Values('Zimbabwe')
 
+INSERT INTO Departement (NameDepartement) Values('Stock')
+INSERT INTO Departement (NameDepartement) Values('Direction')
+INSERT INTO Departement (NameDepartement) Values('Opérations')
+INSERT INTO Departement (NameDepartement) Values('Secrétariat')
+INSERT INTO Departement (NameDepartement) Values('réception')
+INSERT INTO Departement (NameDepartement) Values('Garde')
+INSERT INTO Departement (NameDepartement) Values('Ressources humaines')
+
 INSERT INTO Employee_Language Values('french')
+INSERT INTO Employee_Language Values('Nederlands')
+INSERT INTO Employee_Language Values('English')
 
-INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) Values('Rue Simon', 48, '6990', 'bogaert@outlook.com', '0487345912' ,1)
+INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) Values('Rue Simon', '48', '6990', 'bogaert@outlook.com', '0487345912' ,1)
 
-INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation) Values ('Danone','0455555555','101','emerg@email.com', '1')
+INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) Values ('Danone','0455555555','101','emerg@email.com', 1, 1,21)
 
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
               Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
+
+INSERT INTO Manage Values(1,1)
 
 INSERT INTO ScheduleGuard (StartTime, EndTime, IdEmployee, IdCustomer) Values(GETDATE(), GETDATE(), 1,1)

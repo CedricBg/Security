@@ -16,4 +16,5 @@ public class Employee
     public int IdLanguage { get; set; }
     public int IdInformation { get; set; }
     public int? IdUsers { get; set; }
+    public int IdDepartement { get; set; }
 }

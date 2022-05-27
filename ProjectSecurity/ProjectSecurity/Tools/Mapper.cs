@@ -2,18 +2,28 @@
 using BUSICust = BusinessAccessLayer.Models.Customer;
 using BUSIEmplo = BusinessAccessLayer.Models.Employee;
 using BUSIRonde = BusinessAccessLayer.Models.Ronde;
+using BUSIWork = BusinessAccessLayer.Models.Work;
 using ASPRonde = ProjectSecurity.Models.Ronde;
 using ASPCustomer = ProjectSecurity.Models.Customer;
 using ASPEmplo = ProjectSecurity.Models.Employee;
 using ASPAuth = ProjectSecurity.Models.Auth;
+using ASPWork = ProjectSecurity.Models.Work;
 
 namespace ProjectSecurity.Tools;
 
 
 public static class Mapper
 {
+    public static BUSIWork.StartForm ASPTOBllWork(this ASPWork.StartForm form) 
+    {
+        return new BUSIWork.StartForm
+        {
+            IdCustomer = form.IdCustomer,
+            IdEmployee = form.IdEmployee
+        };
+    }
 
-   public static ASPAuth.JwtUser BllToASPJwtUser(this BUSIAuth.JwtUser form)
+    public static ASPAuth.JwtUser BllToASPJwtUser(this BUSIAuth.JwtUser form)
     {
         return new ASPAuth.JwtUser
         {
@@ -49,10 +59,28 @@ public static class Mapper
             EmployeeCardNumber = form.EmployeeCardNumber,
             RegistreNational = form.RegistreNational,
             IdInformation = form.IdInformation,
-            IdLanguage = form.IdLanguage
+            IdLanguage = form.IdLanguage,
+            IdDepartement = form.IdDepartement
+};
+    }
+    public static ASPCustomer.AllCustomer BLLToASPAllCustomer(this BUSICust.AllCustomer form)
+    {
+        return new ASPCustomer.AllCustomer
+        {
+            IdCustomer = form.IdCustomer,
+            Name = form.Name,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            GeneralPhone = form.GeneralPhone,
+            Email = form.Email,
+            Phone = form.Phone,
+            PostCode = form.PostCode,
+            Street = form.Street,
+            StreetNumber = form.StreetNumber,
+            Language = form.Language,
+            Country = form.Country,
         };
     }
-
 
     public static BUSICust.PutCustomer AspPutCustomerToBll(this ASPCustomer.PutCustomer form)
     {
@@ -69,7 +97,8 @@ public static class Mapper
             StreetNumber = form.StreetNumber,
             IdCountry = form.IdCountry,
             Phone = form.Phone,
-            Email = form.Email
+            Email = form.Email,
+            IdLanguage = form.IdLanguage
         };
     }
 
@@ -90,7 +119,8 @@ public static class Mapper
             GeneralPhone = form.GeneralPhone,
             Country = form.Country,
             IdUsers = form.IdUsers,
-            IdInformation = form.IdInformation
+            IdInformation = form.IdInformation,
+            IdLanguage  = form.IdLanguage
         };
     }
 
@@ -108,6 +138,7 @@ public static class Mapper
             IdCountry = form.IdCountry,
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
+            IdLanguage = form.IdLanguage
         };
     }
 
@@ -139,7 +170,8 @@ public static class Mapper
             IdLanguage = form.IdLanguage,
             IdUsers = form.IdUsers,
             RegistreNational = form.RegistreNational,
-            EntryService = form.EntryService
+            EntryService = form.EntryService,
+            IdDepartement = form.IdDepartement
         };
     }
 

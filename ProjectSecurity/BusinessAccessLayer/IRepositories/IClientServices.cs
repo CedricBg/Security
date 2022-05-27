@@ -8,6 +8,6 @@ namespace BusinessAccessLayer.Services
         Customer CustomerById(int Id);
         bool PutCustomer(PutCustomer form);
         bool DeleteCustomer(int Id);
-        IEnumerable<Customer> GetAll();
+        IEnumerable<AllCustomer> GetAll();
     }
 }

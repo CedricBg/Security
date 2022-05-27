@@ -7,5 +7,7 @@
     [EmergencyEmail] VARCHAR(50) NULL, 
     [IdInformation] INT NOT NULL, 
     [IdUsers] INT NULL, 
-    [Active] BIT NOT NULL DEFAULT 1
+    [Active] BIT NOT NULL DEFAULT 1, 
+    [IdLanguages] INT NOT NULL, 
+    [IdStatuts] INT NULL
 )

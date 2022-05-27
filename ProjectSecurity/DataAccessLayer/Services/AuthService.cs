@@ -21,48 +21,87 @@ public class AuthService : IAuthService
     public AuthService(IConfiguration config)
     {
         _connectionString = config.GetConnectionString("ConnectionString");
-
     }
 
     public JwtUser Login(RegForm form)
     {
-        Connection cnx = new Connection(_connectionString);
-        Command cmd = new Command("Loginemployee", true);
+        try
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("Loginemployee", true);
 
-        cmd.AddParameter("Login", form.Login);
-        cmd.AddParameter("Password", form.Password);
+            cmd.AddParameter("Login", form.Login);
+            cmd.AddParameter("Password", form.Password);
 
-        return cnx.ExecuteReader(cmd, dr => dr.ReadJwtUserToBll()).Single();
+            return cnx.ExecuteReader(cmd, dr => dr.ReadJwtUserToBll()).Single();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+    public JwtCustomer LoginCust(RegForm form)
+    {
+         
+        try
+        {
+            
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("LoginCustomer", true);
+            cmd.AddParameter("Login", form.Login);
+            cmd.AddParameter("Password", form.Password);
+            
+            return cnx.ExecuteReader(cmd, dr => dr.ReadToDataJwtCustomer()).Single();
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
     }
 
     public bool RegisterAccessEmployee(RegForm form)
     {
-        Connection cnx = new Connection(_connectionString);
+        try
+        {
+            Connection cnx = new Connection(_connectionString);
 
-        Command cmd = new Command("RegisterAccessEmployee", true);
+            Command cmd = new Command("RegisterAccessEmployee", true);
 
-        cmd.AddParameter("Login", form.Login);
-        cmd.AddParameter("Password", form.Password);
-        cmd.AddParameter("Id", form.Id);
+            cmd.AddParameter("Login", form.Login);
+            cmd.AddParameter("Password", form.Password);
+            cmd.AddParameter("Id", form.Id);
 
-        return cnx.ExecuteNonQuery(cmd) == 1;
+            return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool RegisterAccessContract(RegForm form)
     {
-        Connection cnx = new Connection(_connectionString);
+        try
+        {
+            Connection cnx = new Connection(_connectionString);
 
-        Command cmd = new Command("RegisterAccessContractor", true);
+            Command cmd = new Command("RegisterAccessContractor", true);
 
-        cmd.AddParameter("Login", form.Login);
-        cmd.AddParameter("Password", form.Password);
-        cmd.AddParameter("Id", form.Id);
+            cmd.AddParameter("Login", form.Login);
+            cmd.AddParameter("Password", form.Password);
+            cmd.AddParameter("Id", form.Id);
 
-        return cnx.ExecuteNonQuery(cmd) == 1;
+            return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+        catch(Exception)
+        {
+            return false;
+        }
     }
 
     public bool RegisterAccessCustomer(RegForm form)
     {
+        try { 
         Connection cnx = new Connection(_connectionString);
 
         Command cmd = new Command("RegisterAccessCustomer", true);
@@ -72,11 +111,16 @@ public class AuthService : IAuthService
         cmd.AddParameter("Id", form.Id);
 
         return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool UpdateAccessContractor(FormUpdate form)
     {
-
+        try {
         Connection cnx = new Connection(_connectionString);
 
         Command cmd = new Command("UpdateAccessContractor", true);
@@ -85,6 +129,11 @@ public class AuthService : IAuthService
         cmd.AddParameter("New_Password", form.PasswordNew);
 
         return cnx.ExecuteNonQuery(cmd) == 1;
+    }
+        catch(Exception)
+        {
+            return false;
+        }
     }
 
 

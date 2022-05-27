@@ -18,6 +18,7 @@ builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
 //builder.Services.AddSingleton<IPlanningService, PlanningService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IRondeService , RondeService>();
+builder.Services.AddSingleton<IWorkService , WorkService>();
 
 
 //BLL Services
@@ -27,6 +28,7 @@ builder.Services.AddSingleton<IEmployeeServices, EmployeeServices>();
 builder.Services.AddSingleton<IRapportService , RapportService>();
 builder.Services.AddSingleton<IAuthServices, AuthServices>();
 builder.Services.AddSingleton<IRondeServices, RondeServices>();
+builder.Services.AddSingleton<IWorkServices, WorkServices>();
 
 //Api
 builder.Services.AddSingleton<TokenService>();

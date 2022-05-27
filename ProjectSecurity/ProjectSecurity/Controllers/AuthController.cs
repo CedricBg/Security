@@ -17,43 +17,89 @@ public class AuthController : ControllerBase
 
     public AuthController(IAuthServices servicesAuth)
     {
-        _servicesAuth = servicesAuth;
-       
+        _servicesAuth = servicesAuth; 
     }
-
 
     [HttpPost("employee/")]
     public IActionResult Post(RegForm form)
     {
-        _servicesAuth.RegisterAccessEmployee(form.AspToBllRegister());
-        return StatusCode(StatusCodes.Status201Created);
+        try
+        {
+            _servicesAuth.RegisterAccessEmployee(form.AspToBllRegister());
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status400BadRequest);
+        } 
     }
 
     [HttpPost("contrator/")]
     public IActionResult RegisterContractor(RegForm form)
     {
-        _servicesAuth.RegisterAccessContract(form.AspToBllRegister());
-        return StatusCode(StatusCodes.Status201Created);
+        try
+        {
+            _servicesAuth.RegisterAccessContract(form.AspToBllRegister());
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status400BadRequest);
+        }
     }
 
     [HttpPost("customer/")]
     public IActionResult RegisterCustomer(RegForm form)
     {
-        _servicesAuth.RegisterAccessCustomer(form.AspToBllRegister());
-        return StatusCode(StatusCodes.Status201Created);
+        try
+        {
+            _servicesAuth.RegisterAccessCustomer(form.AspToBllRegister());
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status400BadRequest);
+        }
     }
 
     [HttpPut]
     public IActionResult Post(UpdateForm form)
     {
-       return Ok(_servicesAuth.UpdateAccessContractor(form.AspToBLLUpdate())); 
+        try
+        {
+            return Ok(_servicesAuth.UpdateAccessContractor(form.AspToBLLUpdate()));
+        }
+        catch (Exception)
+        {
+            return BadRequest();
+        }
     }
 
    
-    [HttpPost("Login/")]
+    [HttpPost("Employee/Login/")]
     public IActionResult Login(RegForm form)
     {
-        return Ok(_servicesAuth.Login(form.AspToBllRegister()));
+        try
+        {
+            return Ok(_servicesAuth.Login(form.AspToBllRegister()));
+        }
+        catch (Exception)
+        {
+            return BadRequest();
+        }
+    }
+
+    [HttpPost("Customer/Login/")]
+    public IActionResult Logincust(RegForm form)
+    {
+        try
+        {
+            return Ok(_servicesAuth.LoginCust(form.AspToBllRegister()));
+        }
+        catch (Exception)
+        {
+            return BadRequest();
+        }
     }
 
 

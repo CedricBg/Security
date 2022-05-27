@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ASP = ProjectSecurity.Models.Customer;
 using ProjectSecurity.Tools;
-
+using ProjectSecurity.Models.Employee;
 
 namespace ProjectSecurity.Controllers;
 
@@ -46,7 +46,6 @@ public class CustomerController : ControllerBase
     [HttpPut]
     public IActionResult Put(ASP.PutCustomer form)
     {
-       
         return Ok(_customerService.PutCustomer(form.AspPutCustomerToBll()));
     }
 

@@ -18,5 +18,6 @@ namespace BusinessAccessLayer.Models.Employee
         public string RegistreNational { get; set; }
         public int IdLanguage { get; set; }
         public int IdInformation { get; set; }
+        public int IdDepartement { get; set; }
     }
 }

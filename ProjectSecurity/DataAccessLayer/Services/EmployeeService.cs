@@ -36,6 +36,7 @@ public class EmployeeService : IEmployeeService
         cmd.AddParameter("IdLanguage", employee.IdLanguage);
         cmd.AddParameter("IdInformation", employee.IdInformation);
         cmd.AddParameter("IdStatut", employee.IdStatut);
+        cmd.AddParameter("IdDepartement", employee.IdDepartement);
 
         return cnx.ExecuteNonQuery(cmd) == 1;
     }
@@ -53,8 +54,9 @@ public class EmployeeService : IEmployeeService
     {
         Connection cnx = new Connection(_connectionString);
         Command cmd = new Command("GatAllEmployee", true);
+        IEnumerable<Employee> employees = cnx.ExecuteReader(cmd, dr => dr.ReadToAspData());
 
-       return cnx.ExecuteReader(cmd, dr => dr.ReadToAspData());
+        return employees;
     }
 
     public bool DeleteEmployee(int Id)
@@ -80,8 +82,8 @@ public class EmployeeService : IEmployeeService
         cmd.AddParameter("IdLanguage", form.IdLanguage);
         cmd.AddParameter("IdInformation", form.IdInformation);
         cmd.AddParameter("IdEmployee", form.IdInformation);
+        cmd.AddParameter("IdDepartement", form.IdDepartement);
 
-        
 
         return cnx.ExecuteNonQuery(cmd) == 1;
     }

@@ -11,6 +11,18 @@ namespace BusinessAccessLayer.Tools;
 
 public static class Mapper
 {
+    public static JwtUser DataToBllJwtCustomer(this DATAauth.JwtCustomer form)
+    {
+        return new JwtUser
+        {
+            IdLanguage = form.IdLanguage,
+            Name = form.Name,
+            Login = form.Login,
+            Role = form.Role,
+            IdUser = form.IdCust,
+        };
+    }
+
 
     public static JwtUser DataToBllJwtUser(this DATAauth.JwtUser form)
     {
@@ -63,6 +75,25 @@ public static class Mapper
             IdUsers = form.IdUsers,
             RegistreNational = form.RegistreNational,
             EntryService = form.EntryService
+        };
+    }
+
+    public static AllCustomer DataToBllAllCustomer(this DATA.AllCustomer form)
+    {
+        return new AllCustomer
+        {
+            IdCustomer = form.IdCustomer,
+            Name = form.Name,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            GeneralPhone = form.GeneralPhone,
+            Email = form.Email,
+            Phone = form.Phone,
+            PostCode = form.PostCode,
+            Street= form.Street,
+            StreetNumber = form.StreetNumber,
+            Language = form.Language,
+            Country = form.Country,
         };
     }
 
@@ -147,7 +178,8 @@ public static class Mapper
             GeneralPhone = form.GeneralPhone,
             Country = form.Country,
             IdUsers = form.IdUsers,
-            IdInformation = form.IdInformation
+            IdInformation = form.IdInformation,
+            IdLanguage = form.IdLanguage,
         };
     }
     public static DATA.PutCustomer BllPutCustomerToData(this PutCustomer form)

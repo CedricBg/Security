@@ -24,6 +24,6 @@ Set NOCOUNT ON
 	OUTPUT inserted.IdUser INTO  @IDUser
 	Values(@Salt, @password_hash,@Login)
 
-	UPDATE Customer SET IdUsers = (SELECT id FROM @IDUser) where IdUsers = @Id
+	UPDATE Customer SET IdUsers = (SELECT id FROM @IDUser) where IdCustomer = @Id
 
 End

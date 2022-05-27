@@ -12,6 +12,18 @@ namespace DataAccessLayer.Tools
 {
     public static class Mapper
     {
+        public static JwtCustomer ReadToDataJwtCustomer(this SqlDataReader reader)
+        {
+            return new JwtCustomer
+            {
+                IdCust = (int)reader["IdCustomer"],
+                Name = Convert.ToString(reader["Name"]),
+                Login = Convert.ToString(reader["Login"]),
+                IdLanguage = (int)reader["IdLanguages"],
+                Role = Convert.ToString(reader["Classe"]),
+            };
+        }
+
         public static JwtUser ReadJwtUserToBll(this SqlDataReader reader)
         {
             return new JwtUser
@@ -44,6 +56,25 @@ namespace DataAccessLayer.Tools
                 Country = Convert.ToString(reader["Country"]),
                 Phone = Convert.ToString(reader["Phone"]),
                 GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
+                IdLanguage  = (int)reader["IdLanguages"],
+    };
+        }
+        public static AllCustomer ReadAllCustomerToBll(this SqlDataReader reader)
+        {
+            return new AllCustomer
+            {
+                IdCustomer = (int)reader["IdCustomer"],
+                Name = Convert.ToString(reader["Name"]),
+                EmergencyEmail = Convert.ToString(reader["EmergencyEmail"]),
+                EmergencyPhone = Convert.ToString(reader["EmergencyPhone"]),
+                GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
+                Email = Convert.ToString(reader["Email"]),
+                Phone = Convert.ToString(reader["Phone"]),
+                PostCode = Convert.ToString(reader["PostCode"]),
+                Street = Convert.ToString(reader["Street"]),
+                StreetNumber = Convert.ToString(reader["StreetNumber"]),
+                Language = Convert.ToString(reader["Languages"]),
+                Country = Convert.ToString(reader["Country"]),
             };
         }
 
@@ -64,7 +95,8 @@ namespace DataAccessLayer.Tools
                 IdStatut = (int)reader["IdStatut"],
                 IdInformation = (int)reader["IdInformation"],
                 IdLanguage = (int)reader["IdLanguage"],
-                IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"]
+                IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"],
+                IdDepartement = (int)reader["IdDepartement"]
             };
         }
         public static Planning ReadToAccessPlanning(this SqlDataReader reader)

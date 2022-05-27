@@ -40,8 +40,8 @@ public class ClientServices : IClientServices
         return _customerService.DeleteCustomer(Id);
     }
 
-    public IEnumerable<BUSI.Customer.Customer> GetAll()
+    public IEnumerable<BUSI.Customer.AllCustomer> GetAll()
     {
-        return _customerService.GetAll().Select(x => x.DataCustomerToBll());
+        return _customerService.GetAll().Select(x => x.DataToBllAllCustomer());
     }
 }

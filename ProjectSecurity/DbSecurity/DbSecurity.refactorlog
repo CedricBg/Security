@@ -287,4 +287,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IDRfid" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="636f0906-69d3-4e13-a7a1-574dd12c6185" ChangeDateTime="05/27/2022 18:18:31">
+    <Property Name="ElementName" Value="[dbo].[Customer].[IdLanguage]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Customer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdLanguages" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b3d52e00-c3a8-4a89-a00c-a67cdc0acb38" ChangeDateTime="05/27/2022 18:18:34">
+    <Property Name="ElementName" Value="[dbo].[Customer].[IdStatut]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Customer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdStatuts" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1f9482b6-67fd-4197-9314-05aa54382378" ChangeDateTime="05/27/2022 18:23:08">
+    <Property Name="ElementName" Value="[dbo].[Customer].[IdStatuts]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Customer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdStatut" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3cb22bd9-2647-4bc1-97fd-74cc99f1bbf3" ChangeDateTime="05/27/2022 18:23:10">
+    <Property Name="ElementName" Value="[dbo].[Customer].[IdLanguages]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Customer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdLanguage" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="feeb9a9e-babc-447e-9c92-2153d74c0d25" ChangeDateTime="05/27/2022 18:24:32">
+    <Property Name="ElementName" Value="[dbo].[Customer].[IdLanguage]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Customer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdLanguages" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="dea4592e-9cfe-409c-acbd-0c52be5233d4" ChangeDateTime="05/27/2022 18:24:36">
+    <Property Name="ElementName" Value="[dbo].[Customer].[IdStatut]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Customer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdStatuts" />
+  </Operation>
 </Operations>

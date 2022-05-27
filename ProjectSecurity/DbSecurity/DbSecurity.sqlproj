@@ -67,6 +67,7 @@
     <Folder Include="ProcStored\Employee" />
     <Folder Include="ProcStored\Auth" />
     <Folder Include="ProcStored\Rondes" />
+    <Folder Include="ProcStored\Work" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Employee.sql" />
@@ -119,6 +120,9 @@
     <Build Include="ProcStored\Rondes\CreateRonde.sql" />
     <Build Include="ProcStored\Rondes\PutRonde.sql" />
     <Build Include="ProcStored\Rondes\DeleteRonde.sql" />
+    <Build Include="ProcStored\Work\StartWork.sql" />
+    <Build Include="ProcStored\Work\EndWork.sql" />
+    <Build Include="ProcStored\Auth\LoginCustomer.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

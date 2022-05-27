@@ -49,12 +49,11 @@ public class AuthController : ControllerBase
        return Ok(_servicesAuth.UpdateAccessContractor(form.AspToBLLUpdate())); 
     }
 
+   
     [HttpPost("Login/")]
     public IActionResult Login(RegForm form)
     {
         return Ok(_servicesAuth.Login(form.AspToBllRegister()));
-
-        
     }
 
 

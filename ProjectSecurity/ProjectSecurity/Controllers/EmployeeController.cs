@@ -1,5 +1,6 @@
 ﻿using BusinessAccessLayer.Services;
 using DataAccessLayer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjectSecurity.Models.Employee;
 using ProjectSecurity.Tools;
@@ -36,7 +37,7 @@ namespace ProjectSecurity.Controllers
             }
             return NotFound();
         }
-
+        
         [HttpGet]
         public IActionResult GetAll()
         {

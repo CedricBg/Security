@@ -39,7 +39,7 @@ builder.Services.AddCors();
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("AgentPolicy", policy => policy.RequireRole("Agent", "M1", "M2", "TR","OP", "SB", "DIR", "SQ", "SE", "SEL", "BI", "SBG", "MB", "SMBP", "MBB", "ADM", "TM", "PRVA" ));
+    options.AddPolicy("AGENTPolicy", policy => policy.RequireRole("Agent", "M1", "M2", "TR","OP", "SB", "DIR", "SQ", "SE", "SEL", "BI", "SBG", "MB", "SMBP", "MBB", "ADM", "TM", "PRVA" ));
     options.AddPolicy("DIRPolicy"       , policy => policy.RequireRole("DIR"));
     options.AddPolicy("OPPolicy"        , policy => policy.RequireRole("OP", "DIR"));
     options.AddPolicy("ADM"             , policy => policy.RequireRole("ADM", "DIR"));
@@ -57,6 +57,8 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("PRVAPolicy"      , policy => policy.RequireRole("PRVA", "DIR"));
     options.AddPolicy("BIPolicy"        , policy => policy.RequireRole("BI" , "DIR"));
     options.AddPolicy("TMPolicy"        , policy => policy.RequireRole("TM" , "DIR"));
+    options.AddPolicy("SUBPolicy"        , policy => policy.RequireRole("SUB", "DIR"));
+    options.AddPolicy("CUSTPolicy"        , policy => policy.RequireRole("CUST", "DIR"));
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

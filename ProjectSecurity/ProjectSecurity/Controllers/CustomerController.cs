@@ -50,7 +50,7 @@ public class CustomerController : ControllerBase
         return Ok(_customerService.PutCustomer(form.AspPutCustomerToBll()));
     }
 
-    // DELETE api/<CustomerController>/5
+    
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {

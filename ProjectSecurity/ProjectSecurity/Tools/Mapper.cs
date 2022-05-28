@@ -14,6 +14,35 @@ namespace ProjectSecurity.Tools;
 
 public static class Mapper
 {
+    public static BUSICust.PostCustomer ASPToBllPostCustomer(this ASPCustomer.PostCustomer form)
+    {
+        return new BUSICust.PostCustomer
+        {
+            Email = form.Email,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            Street = form.Street,
+            StreetNumber = form.StreetNumber,
+            GeneralPhone = form.GeneralPhone,
+            IdCountry = form.IdCountry,
+            IdInformation = form.IdInformation,
+            IdLanguage = form.IdLanguage,
+            Name = form.Name,
+            Phone = form.Phone,
+            PostCode = form.PostCode,
+            Role = form.Role,
+        };
+    }
+
+    public static BUSIEmplo.Belongs ASPToBllBelongs(this ASPEmplo.Belongs form)
+    {
+        return new BUSIEmplo.Belongs
+        {
+            IdDepartement = form.IdDepartement,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
     public static BUSIWork.StartForm ASPTOBllWork(this ASPWork.StartForm form) 
     {
         return new BUSIWork.StartForm
@@ -79,6 +108,7 @@ public static class Mapper
             StreetNumber = form.StreetNumber,
             Language = form.Language,
             Country = form.Country,
+            Role = form.Role,
         };
     }
 
@@ -98,7 +128,9 @@ public static class Mapper
             IdCountry = form.IdCountry,
             Phone = form.Phone,
             Email = form.Email,
-            IdLanguage = form.IdLanguage
+            IdLanguage = form.IdLanguage,
+            Role = form.Role,
+            
         };
     }
 
@@ -120,7 +152,10 @@ public static class Mapper
             Country = form.Country,
             IdUsers = form.IdUsers,
             IdInformation = form.IdInformation,
-            IdLanguage  = form.IdLanguage
+            IdLanguage  = form.IdLanguage,
+            Role =  form.Role,
+            Language = form.Language,
+            
         };
     }
 
@@ -139,6 +174,7 @@ public static class Mapper
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
             IdLanguage = form.IdLanguage
+            
         };
     }
 
@@ -154,24 +190,23 @@ public static class Mapper
         };
     }
    
-    public static BUSIEmplo.Employee AspToBllEmployee(this ASPEmplo.Employee form)
+    public static BUSIEmplo.AddEmployee AspToBllEmployee(this ASPEmplo.AddEmployee form)
     {
-        return new BUSIEmplo.Employee
+        return new BUSIEmplo.AddEmployee
         {
-            Id = form.Id,
             Name = form.Name,
-            FirstName = form.FirstName,
-            Vehicle = form.Vehicle,
             BirthDate = form.BirthDate,
-            EmployeeCardNumber = form.EmployeeCardNumber,
             SecurityCard = form.SecurityCard,
+            EntryService = form.EntryService,
             IdStatut = form.IdStatut,
+            IdDepartement = form.IdDepartement,
+            EmployeeCardNumber = form.EmployeeCardNumber,
+            FirstName = form.FirstName,
             IdInformation = form.IdInformation,
             IdLanguage = form.IdLanguage,
-            IdUsers = form.IdUsers,
             RegistreNational = form.RegistreNational,
-            EntryService = form.EntryService,
-            IdDepartement = form.IdDepartement
+            Vehicle = form.Vehicle
+
         };
     }
 
@@ -188,10 +223,16 @@ public static class Mapper
             EntryService = form.EntryService,
             RegistreNational = form.RegistreNational,
             EmployeeCardNumber = form.EmployeeCardNumber,
-            IdStatut = form.IdStatut,
-            IdInformation = form.IdInformation,
-            IdLanguage = form.IdLanguage,
-            IdUsers = form.IdUsers
+            Country = form.Country,
+            street = form.street,
+            Departement=form.Departement,
+            Email = form.Email,
+            StreetNumber=form.StreetNumber,
+            Language=form.Language,
+            Phone=form.Phone,
+            Postcode=form.Postcode,
+            Role=form.Role,
+            
         };
     }
     public static BUSIAuth.updateForm AspToBLLUpdate(this ASPAuth.UpdateForm form)

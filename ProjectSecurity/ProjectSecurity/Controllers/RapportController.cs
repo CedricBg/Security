@@ -21,14 +21,28 @@ namespace ProjectSecurity.Controllers
         [HttpPost]
         public IActionResult Post(RapportPost rapport)
         {
-            return Ok(_rapportService.PostRapport(rapport.ASPToBllPost()));
+            try
+            {
+                return Ok(_rapportService.PostRapport(rapport.ASPToBllPost()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut]
 
         public IActionResult PutRapport(RapportPut rapport)
         {
-            return Ok(_rapportService.PutRapport(rapport.ASPToBllPut()));
+            try
+            {
+                return Ok(_rapportService.PutRapport(rapport.ASPToBllPut()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         [HttpPut("pdf/")]

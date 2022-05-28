@@ -29,7 +29,7 @@ namespace DataAccessLayer.Services
             return cnx.ExecuteReader(cmd,dr => dr.ReadCustomerToBLL()).Single();
         }
 
-        public bool AddCustomer(Customer form)
+        public bool AddCustomer(PostCustomer form)
         {
             Connection cnx = new Connection(_connectionString);
             Command cmd = new Command("AddCustomer", true);
@@ -44,6 +44,7 @@ namespace DataAccessLayer.Services
             cmd.AddParameter("Phone", form.Phone);
             cmd.AddParameter("Email", form.Email);
             cmd.AddParameter("IdLanguage", form.IdLanguage);
+            cmd.AddParameter("Role", form.Role);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
         }

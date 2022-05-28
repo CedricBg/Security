@@ -20,9 +20,9 @@ public class ClientServices : IClientServices
         _customerService = customerService;
     }
 
-    public bool AddCustomer(BUSI.Customer.Customer form)
+    public bool AddCustomer(BUSI.Customer.PostCustomer form)
     {
-        return _customerService.AddCustomer(form.BusiCustomerToData());
+        return _customerService.AddCustomer(form.BllToDataPostCutomer());
     }
 
     public BUSI.Customer.Customer CustomerById(int Id)

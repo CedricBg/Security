@@ -31,9 +31,9 @@ namespace DataAccessLayer.Tools
                 IdUser = (int)reader["IdEmployee"],
                 Name = (string)reader["Name"],
                 FirstName = Convert.ToString(reader["FirstName"]),
-                IdLanguage = (int)reader["IdLanguages"],
+                IdLanguage = (int)reader["IdLanguage"],
                 Role = Convert.ToString(reader["Classe"]),
-                Login = Convert.ToString(reader["Login"])
+                Login = Convert.ToString(reader["Login"]),
 
             };
         }
@@ -44,19 +44,17 @@ namespace DataAccessLayer.Tools
             {
                 IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"],
                 Name = Convert.ToString(reader["Name"]),
-                IdInformation = (int)reader["IdInformation"],
-                IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"],
                 Email = Convert.ToString(reader["Email"]),
                 EmergencyEmail = Convert.ToString(reader["EmergencyEmail"]),
                 EmergencyPhone = Convert.ToString(reader["EmergencyPhone"]),
                 Street = Convert.ToString(reader["Street"]),
-                IdCountry = reader["IdCountry"] is DBNull ? null : (int)reader["IdCountry"],
                 StreetNumber = Convert.ToString(reader["StreetNumber"]),
                 PostCode = Convert.ToString(reader["PostCode"]),
                 Country = Convert.ToString(reader["Country"]),
                 Phone = Convert.ToString(reader["Phone"]),
                 GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
-                IdLanguage  = (int)reader["IdLanguages"],
+                Role = Convert.ToString(reader["ClasseName"]), 
+                Language = Convert.ToString(reader["Language"])
     };
         }
         public static AllCustomer ReadAllCustomerToBll(this SqlDataReader reader)
@@ -75,6 +73,8 @@ namespace DataAccessLayer.Tools
                 StreetNumber = Convert.ToString(reader["StreetNumber"]),
                 Language = Convert.ToString(reader["Language"]),
                 Country = Convert.ToString(reader["Country"]),
+                Role = Convert.ToString(reader["ClasseName"]),
+
             };
         }
 
@@ -90,13 +90,17 @@ namespace DataAccessLayer.Tools
                 Vehicle = (bool)reader["Vehicle"],
                 SecurityCard = reader["SecurityCardNumber"] is DBNull ? null : (int)reader["SecurityCardNumber"],
                 EntryService = Convert.ToString(reader["EntryService"]),
-                RegistreNational = Convert.ToString(reader["RegistreNational"]),
                 EmployeeCardNumber = reader["EmployeeCardNumber"] is DBNull ? null : Convert.ToString(reader["EmployeeCardNumber"]),
-                IdStatut = (int)reader["IdStatut"],
-                IdInformation = (int)reader["IdInformation"],
-                IdLanguage = (int)reader["IdLanguage"],
-                IdUsers = reader["IdUsers"] is DBNull ? null : (int)reader["IdUsers"],
-                IdDepartement = (int)reader["IdDepartement"]
+                RegistreNational = Convert.ToString(reader["RegistreNational"]),
+                Role = Convert.ToString(reader["ClasseName"]),
+                Language = Convert.ToString(reader["Language"]),
+                street = Convert.ToString(reader["Street"]),
+                Postcode = Convert.ToString(reader["PostCode"]),
+                StreetNumber = Convert.ToString(reader["StreetNumber"]),
+                Phone = Convert.ToString(reader["Phone"]),
+                Email = Convert.ToString(reader["Email"]),
+                Country = Convert.ToString(reader["Country"]),
+                Departement = Convert.ToString(reader["NameDepartement"])
             };
         }
         public static Planning ReadToAccessPlanning(this SqlDataReader reader)

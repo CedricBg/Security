@@ -34,7 +34,7 @@ public class EmployeeServices : IEmployeeServices
         return _employeeService.PutEmployee(form.BllPutEmployeeToData());
     }
 
-    public bool AddEmployee(Employee form) 
+    public bool AddEmployee(AddEmployee form) 
     {
         return _employeeService.AddEmployee(form.BllToDataEmployee());            
     }
@@ -42,11 +42,23 @@ public class EmployeeServices : IEmployeeServices
     public Employee GetOne(int Id)
     {
         try{
-            return _employeeService.GetOne(Id).DataToBllEmployee();
+            Employee employee = _employeeService.GetOne(Id).DataToBllEmployee();
+            return employee;
         }
-        catch
+        catch(Exception)
         {
             return null;
+        }
+    }
+    public bool DepartementTo(Belongs form)
+    {
+        try
+        {
+            return _employeeService.DepartementTo(form.bllToDataBelongs());
+        }
+        catch (Exception)
+        {
+            return false;
         }
     }
 

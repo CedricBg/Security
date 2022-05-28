@@ -11,6 +11,37 @@ namespace BusinessAccessLayer.Tools;
 
 public static class Mapper
 {
+    public static DATA.PostCustomer BllToDataPostCutomer(this PostCustomer form)
+    {
+        return new DATA.PostCustomer
+        {
+            Email = form.Email,
+            EmergencyEmail = form.EmergencyEmail,
+            EmergencyPhone = form.EmergencyPhone,
+            GeneralPhone = form.GeneralPhone,
+            IdCountry = form.IdCountry,
+            IdInformation = form.IdInformation,
+            StreetNumber = form.StreetNumber,
+            Street = form.Street,
+            IdLanguage = form.IdLanguage,
+            Name = form.Name,
+            Phone = form.Phone,
+            PostCode = form.PostCode,
+            Role = form.Role,
+            
+            
+        };
+    }
+
+    public static DATA.Belongs bllToDataBelongs(this Belongs form)
+    {
+        return new DATA.Belongs
+        {
+            IdDepartement = form.IdDepartement,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
     public static JwtUser DataToBllJwtCustomer(this DATAauth.JwtCustomer form)
     {
         return new JwtUser
@@ -22,7 +53,6 @@ public static class Mapper
             IdUser = form.IdCust,
         };
     }
-
 
     public static JwtUser DataToBllJwtUser(this DATAauth.JwtUser form)
     {
@@ -37,23 +67,23 @@ public static class Mapper
         };
     }
 
-    public static DATA.Employee BllToDataEmployee(this Employee form)
+    public static DATA.AddEmployee BllToDataEmployee(this AddEmployee form)
     {
-        return new DATA.Employee
+        return new DATA.AddEmployee
         {
-            Id = form.Id,
             Name = form.Name,
-            FirstName = form.FirstName,
-            Vehicle = form.Vehicle,
             BirthDate = form.BirthDate,
-            EmployeeCardNumber = form.EmployeeCardNumber,
             SecurityCard = form.SecurityCard,
-            IdStatut = form.IdStatut,
+            IdDepartement = form.IdDepartement,
+            EmployeeCardNumber = form.EmployeeCardNumber,
+            EntryService = form.EntryService,
+            FirstName = form.FirstName,
             IdInformation = form.IdInformation,
             IdLanguage = form.IdLanguage,
-            IdUsers = form.IdUsers,
+            IdStatut = form.IdStatut,
             RegistreNational = form.RegistreNational,
-            EntryService = form.EntryService
+            Vehicle = form.Vehicle
+            
         };
     }
 
@@ -69,12 +99,21 @@ public static class Mapper
             BirthDate = form.BirthDate,
             EmployeeCardNumber = form.EmployeeCardNumber,
             SecurityCard = form.SecurityCard,
-            IdStatut = form.IdStatut,
-            IdInformation = form.IdInformation,
-            IdLanguage = form.IdLanguage,
             IdUsers = form.IdUsers,
             RegistreNational = form.RegistreNational,
-            EntryService = form.EntryService
+            EntryService = form.EntryService,
+            street = form.street,
+            Postcode=form.Postcode,
+            Phone = form.Phone,
+            StreetNumber=form.StreetNumber,
+            Country = form.Country,
+            Departement =form.Departement,
+            Email = form.Email,
+            Language = form.Language,
+            Role = form.Role,
+            
+            
+            
         };
     }
 
@@ -94,6 +133,7 @@ public static class Mapper
             StreetNumber = form.StreetNumber,
             Language = form.Language,
             Country = form.Country,
+            Role = form.Role,
         };
     }
 
@@ -129,6 +169,7 @@ public static class Mapper
             RegistreNational = form.RegistreNational,
             IdInformation = form.IdInformation,
             IdLanguage = form.IdLanguage
+
         };
     }
 
@@ -157,6 +198,7 @@ public static class Mapper
             IdCountry = form.IdCountry,
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
+            IdLanguage = form.IdLanguage,
 
         };
     }
@@ -180,6 +222,8 @@ public static class Mapper
             IdUsers = form.IdUsers,
             IdInformation = form.IdInformation,
             IdLanguage = form.IdLanguage,
+            Role= form.Role,
+            Language= form.Language,
         };
     }
     public static DATA.PutCustomer BllPutCustomerToData(this PutCustomer form)
@@ -197,7 +241,10 @@ public static class Mapper
             IdCountry = form.IdCountry,
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
-            IdInformation = form.IdInformation
+            IdInformation = form.IdInformation,
+            Role = form.Role,
+            IdLanguage = form.IdLanguage
+            
         };
     }
 

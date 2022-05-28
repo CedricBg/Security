@@ -14,14 +14,21 @@ namespace ProjectSecurity.Controllers
 
         public RondeController(IRondeServices serviceRonde)
         {
-            _serviceRonde = serviceRonde;
+                _serviceRonde = serviceRonde;
         }
 
         [HttpPost]
         public IActionResult AddRonde(AddRonde form)
         {
-            _serviceRonde.AddRonde(form.AdDRonde());
-            return StatusCode(StatusCodes.Status201Created);
+            try
+            {
+                _serviceRonde.AddRonde(form.AdDRonde());
+                return StatusCode(StatusCodes.Status201Created);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

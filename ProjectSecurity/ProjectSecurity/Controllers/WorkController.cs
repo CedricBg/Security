@@ -21,15 +21,27 @@ namespace ProjectSecurity.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_workServices.EndWork(id));
+            try
+            {
+                return Ok(_workServices.EndWork(id));
+            }
+            catch(Exception)
+            {
+                return BadRequest();
+            }
         }
 
-        
         [HttpPost]
         public IActionResult Post(StartForm form)
         {
-            return Ok(_workServices.StartWork(form.ASPTOBllWork()));
+            try
+            {
+                return Ok(_workServices.StartWork(form.ASPTOBllWork()));
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
-
     }
 }

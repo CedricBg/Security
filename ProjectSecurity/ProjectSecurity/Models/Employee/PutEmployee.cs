@@ -13,4 +13,5 @@ public class PutEmployee
     public int IdLanguage { get; set; }
     public int IdInformation { get; set; }
     public int IdDepartement { get; set; }
+
 }

@@ -71,6 +71,8 @@ ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_CUST FOREIGN KEY (IdCustomer)
 
 ALTER TABLE Departement ADD CONSTRAINT UK_DEPARTMENT_NAME UNIQUE (NameDepartement)
 
+ALTER TABLE Belongs ADD CONSTRAINT FK_BELONGS_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
+ALTER TABLE Belongs ADD CONSTRAINT FK_BELONGS_DEPARTE FOREIGN KEY (IdDepartement) REFERENCES Departement(IdDepartement)
 
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SB'    , 'Agent statique' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SQ'    , 'Agent statique qualifié' )
@@ -302,12 +304,18 @@ INSERT INTO Employee_Language Values('french')
 INSERT INTO Employee_Language Values('Nederlands')
 INSERT INTO Employee_Language Values('English')
 
-INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) Values('Rue Simon', '48', '6990', 'bogaert@outlook.com', '0487345912' ,1)
 
-INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) Values ('Danone','0455555555','101','emerg@email.com', 1, 1,21)
+
+INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
+Values('Rue Simon', '48', '6990', 'bogaert@outlook.com', '0487345912' ,1)
+
+INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) 
+Values ('Danone','0455555555','101','emerg@email.com', 1, 1,21)
 
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
-              Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
+Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
+
+INSERT INTO Belongs (IdDepartement, IdEmployee) Values(2,1)
 
 INSERT INTO Manage Values(1,1)
 

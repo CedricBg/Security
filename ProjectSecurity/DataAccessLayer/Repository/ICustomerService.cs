@@ -4,7 +4,7 @@ namespace DataAccessLayer.Services
 {
     public interface ICustomerService
     {
-        bool AddCustomer(Customer form);
+        bool AddCustomer(PostCustomer form);
         Customer CustomerById(int Id);
         bool PutCustomer(PutCustomer form);
         bool DeleteCustomer(int Id);

@@ -21,7 +21,7 @@ namespace ProjectSecurity.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Employee form)
+        public IActionResult Post(AddEmployee form)
         {
             _EmployeeServices.AddEmployee(form.AspToBllEmployee());
             return StatusCode(StatusCodes.Status201Created);
@@ -54,6 +54,19 @@ namespace ProjectSecurity.Controllers
         public IActionResult PutEmployee(PutEmployee form)
         {
             return Ok(_EmployeeServices.PutEmployee(form.AspPutEmployeeToBusi()));
+        }
+
+        [HttpPost("Departement/")]
+        public IActionResult DepartementTo(Belongs form)
+        {
+            try
+            {
+                return Ok(_EmployeeServices.DepartementTo(form.ASPToBllBelongs()));
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

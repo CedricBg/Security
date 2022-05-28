@@ -15,4 +15,5 @@ public class PutCustomer
     public string Phone { get; set; }
     public string Email { get; set; }
     public int IdLanguage { get; set; }
+    public int Role { get; set; }
 }

@@ -19,9 +19,9 @@ public class CustomerController : ControllerBase
 
 
     [HttpPost]
-    public void Post(ASP.Customer form)
+    public void Post(ASP.PostCustomer form)
     {
-        Ok(_customerService.AddCustomer(form.AspCustomerToBll()));
+        Ok(_customerService.AddCustomer(form.ASPToBllPostCustomer()));
     }
 
     [HttpGet]
@@ -41,7 +41,6 @@ public class CustomerController : ControllerBase
         }
         return NotFound();
     }
-
 
     [HttpPut]
     public IActionResult Put(ASP.PutCustomer form)

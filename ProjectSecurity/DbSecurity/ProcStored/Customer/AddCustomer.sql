@@ -8,7 +8,9 @@
 	@StreetNumber varchar(20),
 	@IdCountry int,
 	@Phone varchar(50),
-	@Email varchar(50)
+	@Email varchar(50),
+	@IdLanguage int,
+	@Role int
 
 
 AS
@@ -27,8 +29,8 @@ Set NOCOUNT ON
 	Declare @info int 
 	Set @info = (Select Id from @IdInfo)
 
-	Insert into Customer ([Name], GeneralPhone, EmergencyPhone,EmergencyEmail,IdInformation) 
-	values(@Name, @GeneralPhone, @EmergencyPhone,@EmergencyEmail,@info) 
+	Insert into Customer ([Name], GeneralPhone, EmergencyPhone,EmergencyEmail,IdInformation, IdLanguages, IdStatuts) 
+	values(@Name, @GeneralPhone, @EmergencyPhone,@EmergencyEmail,@info, @IdLanguage, @Role) 
 
 	
 End

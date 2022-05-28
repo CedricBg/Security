@@ -13,9 +13,12 @@ begin
 	info.Street,
 	info.StreetNumber,
 	E.[Language],
-	c.Country
-		FROM Customer cust , Informations info, Countrys C , Employee_Language E
+	c.Country,
+	S.ClasseName
+		FROM Customer cust , Informations info, Countrys C , Employee_Language E,StatutAgent S
 		Where info.IdInformation = cust.IdInformation 
 		AND C.IdCountrys = info.IdCountry
 		and cust.IdLanguages = E.IdLanguage
+		and S.IdStatut = cust.IdStatuts
+		and cust.Active = 'True'
 End

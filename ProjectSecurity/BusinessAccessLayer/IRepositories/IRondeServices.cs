@@ -5,5 +5,6 @@ namespace BusinessAccessLayer.IRepositories
     public interface IRondeServices
     {
         bool AddRonde(Addronde form);
+        bool AddRfid(AddRfid form);
     }
 }

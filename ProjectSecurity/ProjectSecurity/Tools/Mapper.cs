@@ -14,6 +14,16 @@ namespace ProjectSecurity.Tools;
 
 public static class Mapper
 {
+    public static BUSIRonde.AddRfid AddRfid(this ASPRonde.AddRfid form)
+    {
+        return new BUSIRonde.AddRfid
+        {
+            IdCustomer = form.IdCustomer,
+            Location = form.Location,
+            RfidNumber = form.RfidNumber,
+        };
+    }
+    
     public static BUSICust.PostCustomer ASPToBllPostCustomer(this ASPCustomer.PostCustomer form)
     {
         return new BUSICust.PostCustomer

@@ -25,9 +25,9 @@ namespace ProjectSecurity.Controllers
             {
                 return Ok(_workServices.EndWork(id));
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -38,9 +38,9 @@ namespace ProjectSecurity.Controllers
             {
                 return Ok(_workServices.StartWork(form.ASPTOBllWork()));
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
     }

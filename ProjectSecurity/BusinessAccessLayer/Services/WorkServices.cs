@@ -28,14 +28,19 @@ namespace BusinessAccessLayer.Services
             catch
             {
                 return 0;
-            }
-            
+            } 
         }
 
         public bool EndWork(int Id)
         {
-            return _workService.EndWork(Id);
+            try
+            {
+                return _workService.EndWork(Id);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-
     }
 }

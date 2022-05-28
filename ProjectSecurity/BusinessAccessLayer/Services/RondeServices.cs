@@ -21,7 +21,25 @@ namespace BusinessAccessLayer.Services
 
         public bool AddRonde(Addronde form)
         {
-            return _serviceRonde.AddRonde(form.AddRonde());
+            try
+            {
+                return _serviceRonde.AddRonde(form.AddRonde());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool AddRfid(AddRfid form)
+        {
+            try
+            {
+                return _serviceRonde.AddRfid(form.AddRfid());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

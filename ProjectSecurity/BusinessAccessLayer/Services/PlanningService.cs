@@ -28,7 +28,14 @@ namespace BusinessAccessLayer.Services
 
         public IEnumerable<Planning> getOneByCustomer(int IdCustomer)
         {
-            return _planningService.getOneByCustomer(IdCustomer).Select(dr => dr.DataPlanningToBusi());
+            try
+            {
+                return _planningService.getOneByCustomer(IdCustomer).Select(dr => dr.DataPlanningToBusi());
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
         }
     }

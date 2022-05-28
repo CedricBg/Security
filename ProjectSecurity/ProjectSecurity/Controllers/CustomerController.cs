@@ -19,39 +19,77 @@ public class CustomerController : ControllerBase
 
 
     [HttpPost]
-    public void Post(ASP.PostCustomer form)
+    public IActionResult Post(ASP.PostCustomer form)
     {
-        Ok(_customerService.AddCustomer(form.ASPToBllPostCustomer()));
+        try
+        {
+            _customerService.AddCustomer(form.ASPToBllPostCustomer());
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok(_customerService.GetAll());
+        try
+        {
+            return Ok(_customerService.GetAll());
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpGet("{Id}")]
     public IActionResult Get(int Id)
     {
-        ASP.Customer customer = _customerService.CustomerById(Id).BusiCustomerToAsp();
-
-        if (customer is not null)
+        try
         {
-            return Ok(customer);
+            ASP.Customer customer = _customerService.CustomerById(Id).BusiCustomerToAsp();
+
+            if (customer is not null)
+            {
+                return Ok(customer);
+            }
+            return NotFound();
         }
-        return NotFound();
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpPut]
     public IActionResult Put(ASP.PutCustomer form)
     {
-        return Ok(_customerService.PutCustomer(form.AspPutCustomerToBll()));
+        try
+        {
+            _customerService.PutCustomer(form.AspPutCustomerToBll());
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        return Ok(_customerService.DeleteCustomer(id));
+        try
+        {
+            _customerService.DeleteCustomer(id);
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 }

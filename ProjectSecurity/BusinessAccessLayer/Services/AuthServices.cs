@@ -33,7 +33,7 @@ public class AuthServices : IAuthServices
         }
         catch(Exception ex)
         {
-            return ex.Message.ToString();
+            return ex.Message;
         }
     }
 
@@ -47,7 +47,7 @@ public class AuthServices : IAuthServices
         }
         catch (Exception ex)
         {
-            return ex.Message.ToString();
+            return ex.Message;
         }
     }
 

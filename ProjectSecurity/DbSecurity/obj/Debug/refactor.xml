@@ -329,4 +329,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdStatuts" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="58cb1297-f1a7-4cf7-ac5f-ab3487d72a6f" ChangeDateTime="05/28/2022 13:33:12" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[RfidPatrol].[Rfid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RfidPatrol]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RfidNumber" />
+  </Operation>
 </Operations>

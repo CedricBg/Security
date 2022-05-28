@@ -124,6 +124,8 @@
     <Build Include="ProcStored\Work\EndWork.sql" />
     <Build Include="ProcStored\Auth\LoginCustomer.sql" />
     <Build Include="ProcStored\Employee\DepartementOnEmployee.sql" />
+    <Build Include="ProcStored\Rondes\AddPassage.sql" />
+    <Build Include="ProcStored\Rondes\RfidRondes.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

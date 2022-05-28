@@ -18,7 +18,14 @@ namespace ProjectSecurity.Controllers
         [HttpGet]
         public IActionResult GetOneById(int Id)
         {
-            return Ok(_planningServices.getOneByCustomer(Id));
+            try
+            {
+                return Ok(_planningServices.getOneByCustomer(Id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);    
+            }
         }
     }
 }

@@ -5,5 +5,6 @@ namespace DataAccessLayer.Repository
     public interface IRondeService
     {
         bool AddRonde(AddRonde form);
+        bool AddRfid(AddRfid form);
     }
 }

@@ -21,22 +21,50 @@ public class EmployeeServices : IEmployeeServices
 
     public IEnumerable<Employee> GetAll()
     {
-        return _employeeService.GetAll().Select(dr => dr.DataToBllEmployee());
+        try
+        {
+            return _employeeService.GetAll().Select(dr => dr.DataToBllEmployee());
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
 
     public bool DeleteEmployee(int Id)
     {
-        return _employeeService.DeleteEmployee(Id);
+        try
+        {
+            return _employeeService.DeleteEmployee(Id);
+        }
+        catch(Exception)
+        {
+            return false;
+        }
     }
 
     public bool PutEmployee(PutEmployee form)
     {
-        return _employeeService.PutEmployee(form.BllPutEmployeeToData());
+        try
+        {
+            return _employeeService.PutEmployee(form.BllPutEmployeeToData());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool AddEmployee(AddEmployee form) 
     {
-        return _employeeService.AddEmployee(form.BllToDataEmployee());            
+        try
+        {
+            return _employeeService.AddEmployee(form.BllToDataEmployee());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public Employee GetOne(int Id)

@@ -22,26 +22,61 @@ public class ClientServices : IClientServices
 
     public bool AddCustomer(BUSI.Customer.PostCustomer form)
     {
-        return _customerService.AddCustomer(form.BllToDataPostCutomer());
+        try
+        {
+            return _customerService.AddCustomer(form.BllToDataPostCutomer());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public BUSI.Customer.Customer CustomerById(int Id)
     {
-        return _customerService.CustomerById(Id).DataCustomerToBll();
+        try
+        {
+            return _customerService.CustomerById(Id).DataCustomerToBll();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
 
     public bool PutCustomer(BUSI.Customer.PutCustomer form)
     {
-        return _customerService.PutCustomer(form.BllPutCustomerToData());
+        try
+        {
+            return _customerService.PutCustomer(form.BllPutCustomerToData());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool DeleteCustomer(int Id)
     {
-        return _customerService.DeleteCustomer(Id);
+        try
+        {
+            return _customerService.DeleteCustomer(Id);
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public IEnumerable<BUSI.Customer.AllCustomer> GetAll()
     {
-        return _customerService.GetAll().Select(x => x.DataToBllAllCustomer());
+        try
+        {
+            return _customerService.GetAll().Select(x => x.DataToBllAllCustomer());
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
 }

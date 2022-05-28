@@ -13,4 +13,16 @@ public static class Mapper
             NameRonde = form.NameRonde,
         };
     } 
+
+    public static DATA.AddRfid AddRfid(this Bll.AddRfid form)
+    {
+        return new DATA.AddRfid
+        {
+            IdCustomer = form.IdCustomer,
+            Location = form.Location,
+            RfidNumber = form.RfidNumber,
+        };
+    }
+
+    
 }

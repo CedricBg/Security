@@ -28,5 +28,16 @@ namespace DataAccessLayer.Services
 
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
+        public bool AddRfid(AddRfid form)
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("RfidRondes", true);
+
+            cmd.AddParameter("RfidNumber", form.RfidNumber);
+            cmd.AddParameter("IdCustomer", form.IdCustomer);
+            cmd.AddParameter("Location",form.Location);
+
+            return cnx.ExecuteNonQuery(cmd) == 1;
+        }
     }
 }

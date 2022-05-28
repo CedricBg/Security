@@ -6,7 +6,6 @@ using ProjectSecurity.Models.Employee;
 using ProjectSecurity.Tools;
 
 
-
 namespace ProjectSecurity.Controllers
 {
     [Route("api/[controller]")]
@@ -23,8 +22,15 @@ namespace ProjectSecurity.Controllers
         [HttpPost]
         public IActionResult Post(AddEmployee form)
         {
-            _EmployeeServices.AddEmployee(form.AspToBllEmployee());
-            return StatusCode(StatusCodes.Status201Created);
+            try
+            {
+                _EmployeeServices.AddEmployee(form.AspToBllEmployee());
+                return StatusCode(StatusCodes.Status201Created);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status404NotFound);
+            }
         }
 
         [HttpGet("{Id}")]
@@ -41,19 +47,41 @@ namespace ProjectSecurity.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(_EmployeeServices.GetAll());
+            try
+            {
+                return Ok(_EmployeeServices.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("{Id}")]
         public IActionResult DeleteEmployee(int Id)
         {
-            return Ok(_EmployeeServices.DeleteEmployee(Id));
+            try
+            {
+                return Ok(_EmployeeServices.DeleteEmployee(Id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut]
         public IActionResult PutEmployee(PutEmployee form)
         {
-            return Ok(_EmployeeServices.PutEmployee(form.AspPutEmployeeToBusi()));
+            try
+            {
+                return Ok(_EmployeeServices.PutEmployee(form.AspPutEmployeeToBusi()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpPost("Departement/")]
@@ -63,9 +91,9 @@ namespace ProjectSecurity.Controllers
             {
                 return Ok(_EmployeeServices.DepartementTo(form.ASPToBllBelongs()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
     }

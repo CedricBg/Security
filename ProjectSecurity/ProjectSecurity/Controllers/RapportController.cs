@@ -17,7 +17,6 @@ namespace ProjectSecurity.Controllers
         }
 
 
-        // POST api/<RapportController>
         [HttpPost]
         public IActionResult Post(RapportPost rapport)
         {
@@ -32,7 +31,6 @@ namespace ProjectSecurity.Controllers
         }
 
         [HttpPut]
-
         public IActionResult PutRapport(RapportPut rapport)
         {
             try
@@ -46,10 +44,16 @@ namespace ProjectSecurity.Controllers
         }
 
         [HttpPut("pdf/")]
-        
         public IActionResult SaveRapport(RapportPut rapport)
         {
-            return Ok(_rapportService.SaveRapport(rapport.ASPToBllPut()));
+            try
+            {
+                return Ok(_rapportService.SaveRapport(rapport.ASPToBllPut()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
     }
 }

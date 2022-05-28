@@ -30,5 +30,18 @@ namespace ProjectSecurity.Controllers
                 return BadRequest();
             }
         }
+        [HttpPost("rfid/")]
+        public IActionResult AddRfid(AddRfid form)
+        {
+            try
+            {
+                _serviceRonde.AddRfid(form.AddRfid());
+                return StatusCode(StatusCodes.Status201Created);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

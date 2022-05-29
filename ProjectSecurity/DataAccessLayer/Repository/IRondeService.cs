@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Models.Ronde;
+﻿using DataAccessLayer.Models;
+using DataAccessLayer.Models.Ronde;
 
 namespace DataAccessLayer.Repository
 {
@@ -6,5 +7,7 @@ namespace DataAccessLayer.Repository
     {
         bool AddRonde(AddRonde form);
         bool AddRfid(AddRfid form);
+        bool AddRfidToRonde(RfidToRonde form);
+        IEnumerable<GetRonde> GetRonde(int Id);
     }
 }

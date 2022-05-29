@@ -93,7 +93,6 @@
     <Build Include="Tables\RackProduct.sql" />
     <Build Include="Tables\Searching.sql" />
     <Build Include="Tables\Ronde.sql" />
-    <Build Include="Tables\Rondier.sql" />
     <Build Include="Tables\passage.sql" />
     <Build Include="Tables\RfidPatrol.sql" />
     <Build Include="Tables\StatutAgent.sql" />
@@ -126,6 +125,7 @@
     <Build Include="ProcStored\Employee\DepartementOnEmployee.sql" />
     <Build Include="ProcStored\Rondes\AddPassage.sql" />
     <Build Include="ProcStored\Rondes\RfidRondes.sql" />
+    <Build Include="ProcStored\Rondes\GetRonde.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

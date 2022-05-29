@@ -6,5 +6,7 @@ namespace BusinessAccessLayer.IRepositories
     {
         bool AddRonde(Addronde form);
         bool AddRfid(AddRfid form);
+        bool AddRfidToRonde(RfidToRonde form);
+        IEnumerable<GetRonde> GetRonde(int Id);
     }
 }

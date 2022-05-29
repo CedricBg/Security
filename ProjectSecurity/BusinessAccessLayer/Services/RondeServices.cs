@@ -19,6 +19,18 @@ namespace BusinessAccessLayer.Services
             _serviceRonde = rondeService;
         }
 
+        public IEnumerable<GetRonde> GetRonde(int Id)
+        {
+            try
+            {
+                return _serviceRonde.GetRonde(Id).Select(c => c.GetRonde());
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public bool AddRonde(Addronde form)
         {
             try
@@ -35,6 +47,17 @@ namespace BusinessAccessLayer.Services
             try
             {
                 return _serviceRonde.AddRfid(form.AddRfid());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool AddRfidToRonde(RfidToRonde form)
+        {
+            try
+            {
+                return _serviceRonde.AddRfidToRonde(form.RfiToRondeToData());
             }
             catch (Exception)
             {

@@ -8,6 +8,7 @@ using System.Text;
 using BusinessAccessLayer.Services;
 using ProjectSecurity.Tools;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -35,9 +36,15 @@ builder.Services.AddSingleton<TokenService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    string basePath = AppContext.BaseDirectory;
+    string xmlPath = Path.Combine(basePath, "SwaggerDemo.xml");
+    c.IncludeXmlComments(xmlPath);
+});
 
 builder.Services.AddAuthorization(options =>
 {
@@ -79,6 +86,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         
     };
 });
+
+
 
 var app = builder.Build();
 

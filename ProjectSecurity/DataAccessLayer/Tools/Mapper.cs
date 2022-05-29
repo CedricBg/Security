@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Models;
+using DataAccessLayer.Models.Ronde;
 using DataAccessLayer.Models.Auth;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,15 @@ namespace DataAccessLayer.Tools
 {
     public static class Mapper
     {
+        public static GetRonde GetRonde(this SqlDataReader reader)
+        {
+            return new GetRonde
+            {
+                Location = Convert.ToString(reader["Location"]),
+                NameRonde = Convert.ToString(reader["NameRonde"]),
+            };
+        }
+
         public static JwtCustomer ReadToDataJwtCustomer(this SqlDataReader reader)
         {
             return new JwtCustomer

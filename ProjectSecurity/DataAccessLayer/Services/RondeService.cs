@@ -1,5 +1,7 @@
 ﻿using AdoToolbox;
+using DataAccessLayer.Models;
 using DataAccessLayer.Models.Ronde;
+using DataAccessLayer.Tools;
 using DataAccessLayer.Repository;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -38,6 +40,27 @@ namespace DataAccessLayer.Services
             cmd.AddParameter("Location",form.Location);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+
+        public bool AddRfidToRonde(RfidToRonde form)
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("AddPassage", true);
+
+            cmd.AddParameter("IdRfid", form.IdRfid);
+            cmd.AddParameter("IdRonde", form.IdRondes);
+
+            return cnx.ExecuteNonQuery(cmd) == 1;
+        }
+
+        public IEnumerable<GetRonde> GetRonde(int Id)
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("GetRonde", true);
+
+            cmd.AddParameter("IdCustomer", Id);
+
+            return cnx.ExecuteReader(cmd, c => c.GetRonde());
         }
     }
 }

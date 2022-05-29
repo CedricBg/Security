@@ -11,9 +11,35 @@ using ASPWork = ProjectSecurity.Models.Work;
 
 namespace ProjectSecurity.Tools;
 
-
+/// <summary>
+/// Classe de mapper
+/// </summary>
 public static class Mapper
 {
+    /// <summary>
+    /// Mapper pour la récupération d'une ronde
+    /// </summary>
+    public static BUSIRonde.GetRonde GetRonde(ASPRonde.GetRonde form)
+    {
+        return new BUSIRonde.GetRonde
+        {
+            Location = form.Location,
+            NameRonde = form.NameRonde,
+        };
+    }
+
+    /// <summary>
+    /// Mapper ajout d'une passtille à une ronde
+    /// </summary>
+    public static BUSIRonde.RfidToRonde RfidToRondeToBll(this ASPRonde.RfidToRonde form)
+    {
+        return new BUSIRonde.RfidToRonde
+        {
+            IdRfid = form.IdRfid,
+            IdRondes = form.IdRondes,
+        };
+    }
+
     public static BUSIRonde.AddRfid AddRfid(this ASPRonde.AddRfid form)
     {
         return new BUSIRonde.AddRfid
@@ -188,7 +214,6 @@ public static class Mapper
         };
     }
 
-   
 
     public static BUSIAuth.RegForm AspToBllRegister(this ASPAuth.RegForm form)
     {

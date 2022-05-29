@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjectSecurity</name>
+    </assembly>
+    <members>
+        <member name="T:ProjectSecurity.Controllers.AuthController">
+            <summary>
+            Controller pour l'authentification
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.Post(ProjectSecurity.Models.Auth.RegForm)">
+            <summary>
+            Activation de la connexion au site pour les employées
+            </summary>
+            <param name="form"></param>
+            <returns>Code 201 ou Bad request</returns>
+            
+        </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.RegisterContractor(ProjectSecurity.Models.Auth.RegForm)">
+            <summary>
+            Activation de la connexion aun site pour les sous-traitans
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.RegisterCustomer(ProjectSecurity.Models.Auth.RegForm)">
+            <summary>
+            Activation de la connexion aun site pour les Clients
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.Post(ProjectSecurity.Models.Auth.UpdateForm)">
+            <summary>
+            Mise à jour du mot de passe de clients, employées ou sous-traitans
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.Login(ProjectSecurity.Models.Auth.RegForm)">
+            <summary>
+            Login pour les employées
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.Logincust(ProjectSecurity.Models.Auth.RegForm)">
+            <summary>
+            Login pour les clients
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectSecurity.Controllers.RondeController">
+            <summary>
+            Controller pour la gestion des rondes
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.AddRonde(ProjectSecurity.Models.Ronde.AddRonde)">
+            <summary>
+            Ajout du nom de la ronde lié à l'id du client
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.AddRfid(ProjectSecurity.Models.Ronde.AddRfid)">
+            <summary>
+            Ajout d'une pastille rfid chez les clients
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.AddRfidToRonde(ProjectSecurity.Models.Ronde.RfidToRonde)">
+            <summary>
+            Ajout d'une pastille à une ronde
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.WorkController.Get(System.Int32)">
+            <summary>
+            <remarks>test</remarks>
+            </summary>
+            <param name="id">id du client a retourné</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="T:ProjectSecurity.Models.Auth.RegForm">
+            <summary>
+            Class pour le login et activation de l'éspace de connexion 
+            </summary>
+        </member>
+        <member name="P:ProjectSecurity.Models.Auth.RegForm.Id">
+            <summary>
+            id de l'utilisateur pour activation de l'éspace de connexion
+            </summary>
+        </member>
+        <member name="T:ProjectSecurity.Models.Ronde.AddRfid">
+            <summary>
+            Info de la passtille Rfid 
+            </summary>
+        </member>
+        <member name="T:ProjectSecurity.Models.Ronde.GetRonde">
+            <summary>
+            Classe pour la récupération d'une ronde
+            </summary>
+        </member>
+        <member name="T:ProjectSecurity.Models.Ronde.RfidToRonde">
+            <summary>
+            Informations pour ajouter une pastille rfid à uine ronde
+            </summary>
+        </member>
+        <member name="T:ProjectSecurity.Tools.Mapper">
+            <summary>
+            Classe de mapper
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Tools.Mapper.GetRonde(ProjectSecurity.Models.Ronde.GetRonde)">
+            <summary>
+            Mapper pour la récupération d'une ronde
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Tools.Mapper.RfidToRondeToBll(ProjectSecurity.Models.Ronde.RfidToRonde)">
+            <summary>
+            Mapper ajout d'une passtille à une ronde
+            </summary>
+        </member>
+    </members>
+</doc>

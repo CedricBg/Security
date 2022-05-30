@@ -153,3 +153,5 @@ C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Mi
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\SwaggerDemo.xml
+C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Angular\Security\Security\ProjectSecurity\ProjectSecurity\bin\Debug\net6.0\SwaggerDemo.xml

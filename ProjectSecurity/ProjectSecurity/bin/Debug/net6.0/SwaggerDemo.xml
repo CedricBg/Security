@@ -74,6 +74,26 @@
             Ajout d'une pastille à une ronde
             </summary>
         </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.GetRonde(System.Int32)">
+            <summary>
+            récupération des rondes par client
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.StartRonde(ProjectSecurity.Models.Ronde.Start)">
+            <summary>
+            Démarrage d'une ronde
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.EndRonde(System.Int32)">
+            <summary>
+            Fin de la ronde
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.CheckPastille(ProjectSecurity.Models.Ronde.CheckPastille)">
+            <summary>
+            Action de scanner une pastille Rfid
+            </summary>
+        </member>
         <member name="M:ProjectSecurity.Controllers.WorkController.Get(System.Int32)">
             <summary>
             <remarks>test</remarks>
@@ -96,6 +116,11 @@
             Info de la passtille Rfid 
             </summary>
         </member>
+        <member name="T:ProjectSecurity.Models.Ronde.CheckPastille">
+            <summary>
+            Classe pour le check de la pastille par l'agent
+            </summary>
+        </member>
         <member name="T:ProjectSecurity.Models.Ronde.GetRonde">
             <summary>
             Classe pour la récupération d'une ronde
@@ -106,9 +131,20 @@
             Informations pour ajouter une pastille rfid à uine ronde
             </summary>
         </member>
+        <member name="T:ProjectSecurity.Models.Ronde.Start">
+            <summary>
+            Classe démarrage d'une ronde
+            </summary>
+            
+        </member>
         <member name="T:ProjectSecurity.Tools.Mapper">
             <summary>
             Classe de mapper
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Tools.Mapper.StartRonde(ProjectSecurity.Models.Ronde.Start)">
+            <summary>
+            Mapper pour le démarrage d'une ronde
             </summary>
         </member>
         <member name="M:ProjectSecurity.Tools.Mapper.GetRonde(ProjectSecurity.Models.Ronde.GetRonde)">

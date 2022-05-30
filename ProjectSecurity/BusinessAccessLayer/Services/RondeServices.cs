@@ -8,61 +8,93 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessAccessLayer.Services
+namespace BusinessAccessLayer.Services;
+
+public class RondeServices : IRondeServices
 {
-    public class RondeServices : IRondeServices
+    private readonly IRondeService _serviceRonde;
+
+    public RondeServices(IRondeService rondeService)
     {
-        private readonly IRondeService _serviceRonde;
+        _serviceRonde = rondeService;
+    }
 
-        public RondeServices(IRondeService rondeService)
+    public IEnumerable<GetRonde> GetRonde(int Id)
+    {
+        try
         {
-            _serviceRonde = rondeService;
+            return _serviceRonde.GetRonde(Id).Select(c => c.GetRonde());
         }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 
-        public IEnumerable<GetRonde> GetRonde(int Id)
+    public bool AddRonde(Addronde form)
+    {
+        try
         {
-            try
-            {
-                return _serviceRonde.GetRonde(Id).Select(c => c.GetRonde());
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            return _serviceRonde.AddRonde(form.AddRonde());
         }
-
-        public bool AddRonde(Addronde form)
+        catch (Exception)
         {
-            try
-            {
-                return _serviceRonde.AddRonde(form.AddRonde());
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            return false;
         }
-        public bool AddRfid(AddRfid form)
+    }
+    public bool AddRfid(AddRfid form)
+    {
+        try
         {
-            try
-            {
-                return _serviceRonde.AddRfid(form.AddRfid());
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            return _serviceRonde.AddRfid(form.AddRfid());
         }
-        public bool AddRfidToRonde(RfidToRonde form)
+        catch (Exception)
         {
-            try
-            {
-                return _serviceRonde.AddRfidToRonde(form.RfiToRondeToData());
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            return false;
+        }
+    }
+    public bool AddRfidToRonde(RfidToRonde form)
+    {
+        try
+        {
+            return _serviceRonde.AddRfidToRonde(form.RfiToRondeToData());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+    public bool StartRonde(Start form)
+    {
+        try
+        {
+            return _serviceRonde.StartRonde(form.StartRonde());
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+    public bool EndRonde(int id)
+    {
+        try
+        {
+            return _serviceRonde.EndRonde(id);
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+    public bool CheckPastille(CheckPastille form)
+    {
+        try
+        {
+            return _serviceRonde.CheckPastille(form.Check());
+        }
+        catch (Exception)
+        {
+            return false;
         }
     }
 }

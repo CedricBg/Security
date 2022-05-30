@@ -126,6 +126,10 @@
     <Build Include="ProcStored\Rondes\AddPassage.sql" />
     <Build Include="ProcStored\Rondes\RfidRondes.sql" />
     <Build Include="ProcStored\Rondes\GetRonde.sql" />
+    <Build Include="ProcStored\Rondes\StartRonde.sql" />
+    <Build Include="ProcStored\Rondes\EndRonde.sql" />
+    <Build Include="ProcStored\Rondes\AddSelectToRonde.sql" />
+    <Build Include="Tables\AddCheckRfid.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

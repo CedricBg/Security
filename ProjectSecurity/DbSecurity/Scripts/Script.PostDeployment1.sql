@@ -45,9 +45,9 @@ ALTER TABLE Rapport ADD CONSTRAINT FK_RAPPORT_CUST_EMPLOYEE FOREIGN KEY (IdCusto
 ALTER TABLE Rapport ADD CONSTRAINT FK_RAPPORT_EMPLOYEE_CUST FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee)
 
 ALTER TABLE Ronde ADD CONSTRAINT FK_RONDE_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
-
+ALTER TABLE Ronde ADD CONSTRAINT FK_RONDE_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
 Alter Table RfidPatrol ADD CONSTRAINT FK_PASSAGE_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer) 
-
+ALTER TABLE RfidPatrol ADD constraint UK_RFID_PATROL UNIQUE (RfidNumber)
 
 Alter TABLE employee ADD CONSTRAINT FK_USERS_EMPLO FOREIGN KEY (IdUsers) REFERENCES Users (IdUser)
 Alter TABLE employee ADD CONSTRAINT FK_INFORMATION_EMPLO FOREIGN KEY (IdInformation) REFERENCES Informations (IdInformation)
@@ -73,6 +73,10 @@ ALTER TABLE Departement ADD CONSTRAINT UK_DEPARTMENT_NAME UNIQUE (NameDepartemen
 
 ALTER TABLE Belongs ADD CONSTRAINT FK_BELONGS_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
 ALTER TABLE Belongs ADD CONSTRAINT FK_BELONGS_DEPARTE FOREIGN KEY (IdDepartement) REFERENCES Departement(IdDepartement)
+
+ALTER TABLE AddCheckRfid ADD CONSTRAINT FK_CHECK_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
+ALTER TABLE AddCheckRfid ADD CONSTRAINT FK_CHECK_RFID FOREIGN KEY (RfidNr) REFERENCES RfidPatrol(RfidNumber)
+ALTER TABLE AddCheckRfid ADD constraint UK_RFID_CHECK UNIQUE (RfidNr)
 
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SB'    , 'Agent statique' )
 INSERT INTO StatutAgent (Classe, ClasseName) Values('SQ'    , 'Agent statique qualifié' )
@@ -305,12 +309,20 @@ INSERT INTO Employee_Language Values('Nederlands')
 INSERT INTO Employee_Language Values('English')
 
 
-
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
 Values('Rue Simon', '48', '6990', 'bogaert@outlook.com', '0487345912' ,1)
 
+INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
+Values('Rue de la gare', '130', '1310', 'bogaert@gmail.com', '047854221' ,3)
+
+INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
+Values('StationStraat', '27', '6945', 'rabbit@gmail.com', '5248551' ,2)
+
 INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) 
 Values ('Danone','0455555555','101','emerg@email.com', 1, 1,21)
+
+INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) 
+Values ('Pfeizer','211562252','12541','Test@test.com', 3, 1,21)
 
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
 Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
@@ -320,3 +332,31 @@ INSERT INTO Belongs (IdDepartement, IdEmployee) Values(2,1)
 INSERT INTO Manage Values(1,1)
 
 INSERT INTO ScheduleGuard (StartTime, EndTime, IdEmployee, IdCustomer) Values(GETDATE(), GETDATE(), 1,1)
+
+insert into RONDE (NameRonde,IdCustomer) Values('Ronde de 23 heure',1)
+insert into RONDE (NameRonde,IdCustomer) Values('Ronde de 01 heure',1)
+insert into RONDE (NameRonde,IdCustomer) Values('Ronde des frigos',2)
+insert into RONDE (NameRonde,IdCustomer) Values('Ronde de fermeture',2)
+
+INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte 23',1,'12562565')
+INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte 24',1,'5221212')
+INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte d''entrée',1,'6332354544')
+
+INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte d''entrée',2,'4778858')
+INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte de sortie',2,'6244554545')
+INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Accès sanitaire',2, '5353456')
+
+insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte nr 10',1,'1251522552')
+insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte nr 11',1,'585812521')
+insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte d''entrée principal',1,'5858225212521')
+
+insert into passage (IdRfid,IdRondes) Values(1,1)
+insert into passage (IdRfid,IdRondes) Values(2,1)
+insert into passage (IdRfid,IdRondes) Values(9,1)
+insert into passage (IdRfid,IdRondes) Values(3,2)
+insert into passage (IdRfid,IdRondes) Values(7,2)
+insert into passage (IdRfid,IdRondes) Values(8,2)
+
+insert into passage (IdRfid,IdRondes) Values(4,3)
+insert into passage (IdRfid,IdRondes) Values(5,3)
+insert into passage (IdRfid,IdRondes) Values(6,3)

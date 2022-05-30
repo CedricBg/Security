@@ -16,6 +16,29 @@ namespace ProjectSecurity.Tools;
 /// </summary>
 public static class Mapper
 {
+    
+    public static BUSIRonde.CheckPastille Check(this ASPRonde.CheckPastille form)
+    {
+        return new BUSIRonde.CheckPastille
+        {
+            IdRfid = form.IdRfid,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
+
+    /// <summary>
+    /// Mapper pour le démarrage d'une ronde
+    /// </summary>
+    public static BUSIRonde.Start StartRonde(this ASPRonde.Start form)
+    {
+        return new BUSIRonde.Start
+        {
+            IdEmployee = form.IdEmployee,
+            IdRonde = form.IdRonde,
+        };
+    }
+
     /// <summary>
     /// Mapper pour la récupération d'une ronde
     /// </summary>

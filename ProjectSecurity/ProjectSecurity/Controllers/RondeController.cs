@@ -73,8 +73,7 @@ namespace ProjectSecurity.Controllers
         /// <summary>
         /// récupération des rondes par client
         /// </summary>
-        /// 
-        [HttpPost("GetRonde")]
+        [HttpGet("GetRonde")]
         public IActionResult GetRonde(int Id)
         {
             try
@@ -84,8 +83,54 @@ namespace ProjectSecurity.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex);
+            } 
+        }
+
+        /// <summary>
+        /// Démarrage d'une ronde
+        /// </summary>
+        [HttpPost("Start/")]
+        public IActionResult StartRonde(Start form)
+        {
+            try
+            {
+                return Ok(_serviceRonde.StartRonde(form.StartRonde()));
             }
-            
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Fin de la ronde
+        /// </summary>
+        [HttpPost("End/")]
+        public IActionResult EndRonde(int Id)
+        {
+            try
+            {
+                return Ok(_serviceRonde.EndRonde(Id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Action de scanner une pastille Rfid
+        /// </summary>
+
+        [HttpPost("Check")]
+        public IActionResult CheckPastille(CheckPastille form)
+        {
+            try
+            {
+                return Ok(_serviceRonde.CheckPastille(form.Check()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

@@ -336,4 +336,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="RfidNumber" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e5b27b31-5179-4326-8e89-f187f6a577c0" ChangeDateTime="05/30/2022 11:29:16">
+    <Property Name="ElementName" Value="[dbo].[AddCheckRfid].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AddCheckRfid]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Idcheck" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6158b98a-90d8-4fd9-8fa8-9044c4d01772" ChangeDateTime="05/30/2022 11:29:21">
+    <Property Name="ElementName" Value="[dbo].[AddCheckRfid].[Idcheck]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AddCheckRfid]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdCheck" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="62d58734-934a-492d-b7aa-4596aec65143" ChangeDateTime="05/30/2022 14:42:34">
+    <Property Name="ElementName" Value="[dbo].[AddCheckRfid].[IdRfid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AddCheckRfid]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RfidNr" />
+  </Operation>
 </Operations>

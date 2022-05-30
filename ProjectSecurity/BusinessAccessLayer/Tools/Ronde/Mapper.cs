@@ -6,6 +6,22 @@ namespace BusinessAccessLayer.Tools.Ronde;
 
 public static class Mapper
 {
+
+    public static DATA.CheckPastille Check(this Bll.CheckPastille form){
+        return new DATA.CheckPastille
+        {
+            IdEmployee = form.IdEmployee,
+            IdRfid = form.IdRfid,
+        };
+    }
+    public static DATA.Start StartRonde(this Bll.Start form)
+    {
+        return new DATA.Start
+        {
+            IdEmployee = form.IdEmployee,
+            IdRonde = form.IdRonde,
+        };
+    }
     public static Bll.GetRonde GetRonde(this DATA.GetRonde form)
     {
         return new Bll.GetRonde

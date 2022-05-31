@@ -9,119 +9,133 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace DataAccessLayer.Tools
+namespace DataAccessLayer.Tools;
+
+
+public static class Mapper
 {
-    public static class Mapper
+
+    public static RondeFinish RondeFinie(this SqlDataReader reader)
     {
-        public static GetRonde GetRonde(this SqlDataReader reader)
+        return new RondeFinish
         {
-            return new GetRonde
-            {
-                Location = Convert.ToString(reader["Location"]),
-                NameRonde = Convert.ToString(reader["NameRonde"]),
-            };
-        }
+            Customer = Convert.ToString(reader["Client"]),
+            Name = Convert.ToString(reader["Agent"]),
+            Location = Convert.ToString(reader["Location"]),
+            Start = (DateTime)reader["Start"],
+            End = (DateTime)reader["End"],
+            TimeCheck = (DateTime)(reader["TimeCheck"]),
+        };
+    }
 
-        public static JwtCustomer ReadToDataJwtCustomer(this SqlDataReader reader)
+    public static GetRonde GetRonde(this SqlDataReader reader)
+    {
+        return new GetRonde
         {
-            return new JwtCustomer
-            {
-                IdCust = (int)reader["IdCustomer"],
-                Name = Convert.ToString(reader["Name"]),
-                Login = Convert.ToString(reader["Login"]),
-                IdLanguage = (int)reader["IdLanguages"],
-                Role = Convert.ToString(reader["Classe"]),
-            };
-        }
+            Location = Convert.ToString(reader["Location"]),
+            NameRonde = Convert.ToString(reader["NameRonde"]),
+        };
+    }
 
-        public static JwtUser ReadJwtUserToBll(this SqlDataReader reader)
+    public static JwtCustomer ReadToDataJwtCustomer(this SqlDataReader reader)
+    {
+        return new JwtCustomer
         {
-            return new JwtUser
-            {
-                IdUser = (int)reader["IdEmployee"],
-                Name = (string)reader["Name"],
-                FirstName = Convert.ToString(reader["FirstName"]),
-                IdLanguage = (int)reader["IdLanguage"],
-                Role = Convert.ToString(reader["Classe"]),
-                Login = Convert.ToString(reader["Login"]),
+            IdCust = (int)reader["IdCustomer"],
+            Name = Convert.ToString(reader["Name"]),
+            Login = Convert.ToString(reader["Login"]),
+            IdLanguage = (int)reader["IdLanguages"],
+            Role = Convert.ToString(reader["Classe"]),
+        };
+    }
 
-            };
-        }
-
-        public static Customer ReadCustomerToBLL(this SqlDataReader reader)
+    public static JwtUser ReadJwtUserToBll(this SqlDataReader reader)
+    {
+        return new JwtUser
         {
-            return new Customer
-            {
-                IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"],
-                Name = Convert.ToString(reader["Name"]),
-                Email = Convert.ToString(reader["Email"]),
-                EmergencyEmail = Convert.ToString(reader["EmergencyEmail"]),
-                EmergencyPhone = Convert.ToString(reader["EmergencyPhone"]),
-                Street = Convert.ToString(reader["Street"]),
-                StreetNumber = Convert.ToString(reader["StreetNumber"]),
-                PostCode = Convert.ToString(reader["PostCode"]),
-                Country = Convert.ToString(reader["Country"]),
-                Phone = Convert.ToString(reader["Phone"]),
-                GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
-                Role = Convert.ToString(reader["ClasseName"]), 
-                Language = Convert.ToString(reader["Language"])
-    };
-        }
-        public static AllCustomer ReadAllCustomerToBll(this SqlDataReader reader)
-        {
-            return new AllCustomer
-            {
-                IdCustomer = (int)reader["IdCustomer"],
-                Name = Convert.ToString(reader["Name"]),
-                EmergencyEmail = Convert.ToString(reader["EmergencyEmail"]),
-                EmergencyPhone = Convert.ToString(reader["EmergencyPhone"]),
-                GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
-                Email = Convert.ToString(reader["Email"]),
-                Phone = Convert.ToString(reader["Phone"]),
-                PostCode = Convert.ToString(reader["PostCode"]),
-                Street = Convert.ToString(reader["Street"]),
-                StreetNumber = Convert.ToString(reader["StreetNumber"]),
-                Language = Convert.ToString(reader["Language"]),
-                Country = Convert.ToString(reader["Country"]),
-                Role = Convert.ToString(reader["ClasseName"]),
+            IdUser = (int)reader["IdEmployee"],
+            Name = (string)reader["Name"],
+            FirstName = Convert.ToString(reader["FirstName"]),
+            IdLanguage = (int)reader["IdLanguage"],
+            Role = Convert.ToString(reader["Classe"]),
+            Login = Convert.ToString(reader["Login"]),
 
-            };
-        }
+        };
+    }
 
-        public static Employee ReadToAspData(this SqlDataReader reader)
+    public static Customer ReadCustomerToBLL(this SqlDataReader reader)
+    {
+        return new Customer
         {
-            
-            return new Employee
-            {
-                Id = (int)reader["IdEmployee"],
-                Name = Convert.ToString(reader["Name"]),
-                FirstName = Convert.ToString(reader["firstName"]),
-                BirthDate = Convert.ToString(reader["BirthDate"]),
-                Vehicle = (bool)reader["Vehicle"],
-                SecurityCard = reader["SecurityCardNumber"] is DBNull ? null : (int)reader["SecurityCardNumber"],
-                EntryService = Convert.ToString(reader["EntryService"]),
-                EmployeeCardNumber = reader["EmployeeCardNumber"] is DBNull ? null : Convert.ToString(reader["EmployeeCardNumber"]),
-                RegistreNational = Convert.ToString(reader["RegistreNational"]),
-                Role = Convert.ToString(reader["ClasseName"]),
-                Language = Convert.ToString(reader["Language"]),
-                street = Convert.ToString(reader["Street"]),
-                Postcode = Convert.ToString(reader["PostCode"]),
-                StreetNumber = Convert.ToString(reader["StreetNumber"]),
-                Phone = Convert.ToString(reader["Phone"]),
-                Email = Convert.ToString(reader["Email"]),
-                Country = Convert.ToString(reader["Country"]),
-                Departement = Convert.ToString(reader["NameDepartement"])
-            };
-        }
-        public static Planning ReadToAccessPlanning(this SqlDataReader reader)
+            IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"],
+            Name = Convert.ToString(reader["Name"]),
+            Email = Convert.ToString(reader["Email"]),
+            EmergencyEmail = Convert.ToString(reader["EmergencyEmail"]),
+            EmergencyPhone = Convert.ToString(reader["EmergencyPhone"]),
+            Street = Convert.ToString(reader["Street"]),
+            StreetNumber = Convert.ToString(reader["StreetNumber"]),
+            PostCode = Convert.ToString(reader["PostCode"]),
+            Country = Convert.ToString(reader["Country"]),
+            Phone = Convert.ToString(reader["Phone"]),
+            GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
+            Role = Convert.ToString(reader["ClasseName"]), 
+            Language = Convert.ToString(reader["Language"])
+};
+    }
+    public static AllCustomer ReadAllCustomerToBll(this SqlDataReader reader)
+    {
+        return new AllCustomer
         {
-            return new Planning
-            {
-                StartTime = (DateTime)reader["StartTime"],
-                EndTime = (DateTime)reader["EndTime"],
-                IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"]
+            IdCustomer = (int)reader["IdCustomer"],
+            Name = Convert.ToString(reader["Name"]),
+            EmergencyEmail = Convert.ToString(reader["EmergencyEmail"]),
+            EmergencyPhone = Convert.ToString(reader["EmergencyPhone"]),
+            GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
+            Email = Convert.ToString(reader["Email"]),
+            Phone = Convert.ToString(reader["Phone"]),
+            PostCode = Convert.ToString(reader["PostCode"]),
+            Street = Convert.ToString(reader["Street"]),
+            StreetNumber = Convert.ToString(reader["StreetNumber"]),
+            Language = Convert.ToString(reader["Language"]),
+            Country = Convert.ToString(reader["Country"]),
+            Role = Convert.ToString(reader["ClasseName"]),
 
-            };
-        }
+        };
+    }
+
+    public static Employee ReadToAspData(this SqlDataReader reader)
+    {
+        
+        return new Employee
+        {
+            Id = (int)reader["IdEmployee"],
+            Name = Convert.ToString(reader["Name"]),
+            FirstName = Convert.ToString(reader["firstName"]),
+            BirthDate = Convert.ToString(reader["BirthDate"]),
+            Vehicle = (bool)reader["Vehicle"],
+            SecurityCard = reader["SecurityCardNumber"] is DBNull ? null : (int)reader["SecurityCardNumber"],
+            EntryService = Convert.ToString(reader["EntryService"]),
+            EmployeeCardNumber = reader["EmployeeCardNumber"] is DBNull ? null : Convert.ToString(reader["EmployeeCardNumber"]),
+            RegistreNational = Convert.ToString(reader["RegistreNational"]),
+            Role = Convert.ToString(reader["ClasseName"]),
+            Language = Convert.ToString(reader["Language"]),
+            street = Convert.ToString(reader["Street"]),
+            Postcode = Convert.ToString(reader["PostCode"]),
+            StreetNumber = Convert.ToString(reader["StreetNumber"]),
+            Phone = Convert.ToString(reader["Phone"]),
+            Email = Convert.ToString(reader["Email"]),
+            Country = Convert.ToString(reader["Country"]),
+            Departement = Convert.ToString(reader["NameDepartement"])
+        };
+    }
+    public static Planning ReadToAccessPlanning(this SqlDataReader reader)
+    {
+        return new Planning
+        {
+            StartTime = (DateTime)reader["StartTime"],
+            EndTime = (DateTime)reader["EndTime"],
+            IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"]
+
+        };
     }
 }

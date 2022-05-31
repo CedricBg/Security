@@ -8,7 +8,7 @@ namespace BusinessAccessLayer.Models.Ronde
 {
     public class CheckPastille
     {
-        public int IdEmployee { get; set; }
-        public int IdRfid { get; set; }
+        public int IdTimeRomnde { get; set; }
+        public string RfidNbr { get; set; }
     }
 }

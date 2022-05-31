@@ -38,6 +38,7 @@ ALTER TABLE Painting ADD CONSTRAINT FK_PAIN_CAT_COL FOREIGN KEY (IdCategory) REF
 ALTER TABLE Painting ADD CONSTRAINT FK_PAIN_COL_CAT FOREIGN KEY (IdColor) REFERENCES Color (IdColor)
 
 ALTER TABLE passage ADD CONSTRAINT FK_PASSA_RFID foreign key (IdRfid) REFERENCES RfidPatrol(IDRfid)
+ALTER TABLE passage ADD CONSTRAINT FK_PASSA_RONDE foreign key (IdRondes) REFERENCES Ronde(IdRonde)
 
 ALTER TABLE Product ADD CONSTRAINT FK_PROD_CATEGORY FOREIGN KEY (IdCategory) REFERENCES  Category(IdCategory)
 
@@ -45,7 +46,10 @@ ALTER TABLE Rapport ADD CONSTRAINT FK_RAPPORT_CUST_EMPLOYEE FOREIGN KEY (IdCusto
 ALTER TABLE Rapport ADD CONSTRAINT FK_RAPPORT_EMPLOYEE_CUST FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee)
 
 ALTER TABLE Ronde ADD CONSTRAINT FK_RONDE_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
-ALTER TABLE Ronde ADD CONSTRAINT FK_RONDE_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
+
+ALTER TABLE TimeRonde ADD CONSTRAINT FK_RONDE_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
+ALTER TABLE TimeRonde ADD CONSTRAINT FK_RONDE_ADD FOREIGN KEY (IdRonde) REFERENCES Ronde(IdRonde)
+
 Alter Table RfidPatrol ADD CONSTRAINT FK_PASSAGE_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer) 
 ALTER TABLE RfidPatrol ADD constraint UK_RFID_PATROL UNIQUE (RfidNumber)
 
@@ -74,7 +78,7 @@ ALTER TABLE Departement ADD CONSTRAINT UK_DEPARTMENT_NAME UNIQUE (NameDepartemen
 ALTER TABLE Belongs ADD CONSTRAINT FK_BELONGS_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
 ALTER TABLE Belongs ADD CONSTRAINT FK_BELONGS_DEPARTE FOREIGN KEY (IdDepartement) REFERENCES Departement(IdDepartement)
 
-ALTER TABLE AddCheckRfid ADD CONSTRAINT FK_CHECK_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee(IdEmployee)
+ALTER TABLE AddCheckRfid ADD CONSTRAINT FK_CHECK_TIME FOREIGN KEY (IdTimeRonde) REFERENCES TimeRonde(Id)
 ALTER TABLE AddCheckRfid ADD CONSTRAINT FK_CHECK_RFID FOREIGN KEY (RfidNr) REFERENCES RfidPatrol(RfidNumber)
 ALTER TABLE AddCheckRfid ADD constraint UK_RFID_CHECK UNIQUE (RfidNr)
 
@@ -327,6 +331,9 @@ Values ('Pfeizer','211562252','12541','Test@test.com', 3, 1,21)
 INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
 Values ('Bogaert','Cédric', '1978/04/01','489513574','2009/09/08','15234576464', '215-58.15-58', 1,1,3)
 
+INSERT INTO Employee ([Name], firstName, BirthDate, SecurityCardNumber, EntryService, EmployeeCardNumber, RegistreNational, IdLanguage, IdInformation, IdStatut)
+Values ('Rabbit','Roger', '1985/08/26','048218521','2015/09/08','864557878', '215-6-58.15-60', 1,2,2)
+
 INSERT INTO Belongs (IdDepartement, IdEmployee) Values(2,1)
 
 INSERT INTO Manage Values(1,1)
@@ -348,7 +355,7 @@ INSERT INTO RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Accès sanitai
 
 insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte nr 10',1,'1251522552')
 insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte nr 11',1,'585812521')
-insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte d''entrée principal',1,'5858225212521')
+insert into RfidPatrol ([Location],IdCustomer,RfidNumber) Values('Porte d''entrée principal',1,'8524566')
 
 insert into passage (IdRfid,IdRondes) Values(1,1)
 insert into passage (IdRfid,IdRondes) Values(2,1)

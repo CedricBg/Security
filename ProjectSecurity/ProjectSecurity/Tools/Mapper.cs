@@ -21,8 +21,8 @@ public static class Mapper
     {
         return new BUSIRonde.CheckPastille
         {
-            IdRfid = form.IdRfid,
-            IdEmployee = form.IdEmployee,
+            RfidNbr = form.RfidNbr,
+            IdTimeRomnde = form.IdTimeRomnde,
         };
     }
 

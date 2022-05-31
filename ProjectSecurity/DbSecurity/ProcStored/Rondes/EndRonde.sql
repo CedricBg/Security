@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[EndRonde]
-	@IdRonde int
+	@IdTime int
 AS
 begin
-	UPDATE Ronde SET [End] = GETDATE() where IdRonde = @IdRonde
+	UPDATE TimeRonde Set [End] = GETDATE() where Id = @IdTime
 end

@@ -132,5 +132,22 @@ namespace ProjectSecurity.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Récupération des rondes finies par client
+        /// </summary>
+
+        [HttpGet("Finished")]
+        public IActionResult RondeFinishByCustomer(int Id)
+        {
+            try
+            {
+                return Ok(_serviceRonde.RondeFinie(Id));
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+            
+        }
     }
 }

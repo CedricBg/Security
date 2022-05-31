@@ -64,7 +64,7 @@ public class RondeServices : IRondeServices
             return false;
         }
     }
-    public bool StartRonde(Start form)
+    public int StartRonde(Start form)
     {
         try
         {
@@ -72,7 +72,7 @@ public class RondeServices : IRondeServices
         }
         catch (Exception)
         {
-            return false;
+            return 0;
         }
     }
     public bool EndRonde(int id)
@@ -97,4 +97,15 @@ public class RondeServices : IRondeServices
             return false;
         }
     }
+    public IEnumerable<RondeFinish> RondeFinie(int Id)
+    {
+        try
+        {
+            return _serviceRonde.RondeFinishByCustomer(Id).Select(c => c.RondeFinie());
+        }
+        catch(Exception)
+        {
+            return null;
+        }
+    } 
 }

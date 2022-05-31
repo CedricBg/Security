@@ -1,7 +1,7 @@
-﻿CREATE PROCEDURE [dbo].[StartRonde]
+﻿CREATE PROCEDURE StartRonde
 	@idRonde int,
 	@IdEmployee int 
 AS
 Begin
-	UPDATE Ronde Set Start = GETDATE(), IdEmployee = @IdEmployee where IdRonde = @idRonde
+	INSERT INTO TimeRonde ([Start], IdRonde, IdEmployee)output inserted.Id Values(GETDATE(),@idRonde,@IdEmployee)
 End

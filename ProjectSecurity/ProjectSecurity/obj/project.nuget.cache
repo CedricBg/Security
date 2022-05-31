@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OCy4phJgJaJg8P0FT4K6ldou6UhXHHKgFowbayZLwrDBVlfngY/AqYf5RTyAgowDdlyYS1v0FqWmt51cdQrclw==",
+  "dgSpecHash": "xV6p+nA80KFj4RW1ujdC7n4LvH1/aSUDA7JctyDZ1+sp8usMrTJXLnjDtMbpSRSh8CjNpC1CUAL79vDUAPmVlQ==",
   "success": true,
-  "projectFilePath": "C:\\Angular\\Security\\Security\\ProjectSecurity\\ProjectSecurity\\ProjectSecurity.csproj",
+  "projectFilePath": "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\ProjectSecurity\\ProjectSecurity\\ProjectSecurity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cedri\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.5\\microsoft.aspnetcore.authentication.jwtbearer.6.0.5.nupkg.sha512",
     "C:\\Users\\cedri\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[AddSelectToRonde]
-	@IdEmployee int,
+	@IdTimeRonde int,
 	@RfidNr varchar(255)
 AS
 
-	INSERT INTO AddCheckRfid (IdEmployee,RfidNr,timeCheck) Values(@IdEmployee,@RfidNr,GETDATE())
+	INSERT INTO AddCheckRfid (IdTimeRonde,RfidNr,timeCheck) Values(@IdTimeRonde,@RfidNr,GETDATE())
 RETURN 0

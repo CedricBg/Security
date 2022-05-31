@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="DbSecurity.dll" />
-			<Metadata Name="FileName" Value="C:\ANGULAR\SECURITY\SECURITY\PROJECTSECURITY\DBSECURITY\OBJ\DEBUG\DBSECURITY.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\CEDRI\DOCUMENTS\PROJET FORMATION\SECURITY\PROJECTSECURITY\DBSECURITY\OBJ\DEBUG\DBSECURITY.DLL" />
 			<Metadata Name="AssemblyName" Value="DbSecurity" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -640,6 +640,25 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
+								<References Name="[dbo].[TimeRonde].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[TimeRonde]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
 								<References Name="[dbo].[AddCheckRfid].[IdCheck]" />
 							</Entry>
 						</Relationship>
@@ -651,7 +670,7 @@
 					<References Name="[dbo].[AddCheckRfid]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[AddCheckRfid]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -671,7 +690,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="35" />
+						<AttachedAnnotation Disambiguator="36" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -697,10 +716,9 @@
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="7" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -709,7 +727,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[AddCheckRfid].[IdEmployee]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[AddCheckRfid].[IdTimeRonde]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1483,7 +1501,7 @@ end]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 
-	INSERT INTO AddCheckRfid (IdEmployee,RfidNr,timeCheck) Values(@IdEmployee,@RfidNr,GETDATE())
+	INSERT INTO AddCheckRfid (IdTimeRonde,RfidNr,timeCheck) Values(@IdTimeRonde,@RfidNr,GETDATE())
 RETURN 0]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1492,7 +1510,7 @@ RETURN 0]]></Value>
 					<References Name="[dbo].[AddCheckRfid]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[AddCheckRfid].[IdEmployee]" />
+					<References Name="[dbo].[AddCheckRfid].[IdTimeRonde]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddCheckRfid].[RfidNr]" />
@@ -1501,7 +1519,7 @@ RETURN 0]]></Value>
 					<References Name="[dbo].[AddCheckRfid].[timeCheck]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[AddSelectToRonde].[@IdEmployee]" />
+					<References Name="[dbo].[AddSelectToRonde].[@IdTimeRonde]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddSelectToRonde].[@RfidNr]" />
@@ -1509,7 +1527,7 @@ RETURN 0]]></Value>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddSelectToRonde].[@IdEmployee]">
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddSelectToRonde].[@IdTimeRonde]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -1546,10 +1564,10 @@ RETURN 0]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="194" />
+				<Property Name="Length" Value="197" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddSelectToRonde]&#xD;&#xA;&#x9;@IdEmployee int,&#xD;&#xA;&#x9;@RfidNr varchar(255)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddSelectToRonde]&#xD;&#xA;&#x9;@IdTimeRonde int,&#xD;&#xA;&#x9;@RfidNr varchar(255)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Belongs]">
@@ -3013,27 +3031,27 @@ End]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
-	UPDATE Ronde SET [End] = GETDATE() where IdRonde = @IdRonde
+	UPDATE TimeRonde Set [End] = GETDATE() where Id = @IdTime
 end]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[Ronde]" />
+					<References Name="[dbo].[TimeRonde]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Ronde].[End]" />
+					<References Name="[dbo].[TimeRonde].[End]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Ronde].[IdRonde]" />
+					<References Name="[dbo].[TimeRonde].[Id]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[EndRonde].[@IdRonde]" />
+					<References Name="[dbo].[EndRonde].[@IdTime]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[EndRonde].[@IdRonde]">
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[EndRonde].[@IdTime]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3054,10 +3072,10 @@ end]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="126" />
+				<Property Name="Length" Value="123" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[EndRonde]&#xD;&#xA;&#x9;@IdRonde int&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[EndRonde]&#xD;&#xA;&#x9;@IdTime int&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[EndWork]">
@@ -3764,6 +3782,121 @@ End]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetRonde]&#xD;&#xA;&#x9;@IdCustomer int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetRondeFinish]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+SELECT DISTINCT T.[Start], t.[End],timeCheck, RF.Location,
+(SELECT Name FROM Customer where IdCustomer = 1) as Client,
+(Select Name from Employee where IdEmployee = T.IdEmployee) as Agent
+FROM TimeRonde T, AddCheckRfid A,Ronde R,Employee E, RfidPatrol RF
+WHERE T.Id = A.IdTimeRonde
+and R.IdRonde = T.IdRonde
+and RF.RfidNumber = A.RfidNr
+and R.IdCustomer = 1
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[TimeRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddCheckRfid]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Ronde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RfidPatrol]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TimeRonde].[Start]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TimeRonde].[End]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddCheckRfid].[timeCheck]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RfidPatrol].[Location]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TimeRonde].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TimeRonde].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddCheckRfid].[IdTimeRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Ronde].[IdRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TimeRonde].[IdRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RfidPatrol].[RfidNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddCheckRfid].[RfidNr]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Ronde].[IdCustomer]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetRondeFinish].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="431" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetRondeFinish]&#xD;&#xA;&#x9;@Id int&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlScalarFunction" Name="[dbo].[GetSecretKey]">
@@ -5953,7 +6086,7 @@ End]]></Value>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[bigint]" />
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -5988,51 +6121,6 @@ End]]></Value>
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[varchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Ronde].[Start]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[date]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Ronde].[End]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[date]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Ronde].[IdEmployee]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -6294,28 +6382,31 @@ End]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 Begin
-	UPDATE Ronde Set Start = GETDATE(), IdEmployee = @IdEmployee where IdRonde = @idRonde
+	INSERT INTO TimeRonde ([Start], IdRonde, IdEmployee)output inserted.Id Values(GETDATE(),@idRonde,@IdEmployee)
 End]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[Ronde]" />
+					<References Name="[dbo].[TimeRonde]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Ronde].[Start]" />
+					<References Name="[dbo].[TimeRonde].[Start]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Ronde].[IdEmployee]" />
+					<References Name="[dbo].[TimeRonde].[IdRonde]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TimeRonde].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StartRonde].[@idRonde]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[StartRonde].[@IdEmployee]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Ronde].[IdRonde]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[StartRonde].[@idRonde]" />
+					<References Name="[dbo].[TimeRonde].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -6356,10 +6447,10 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="174" />
+				<Property Name="Length" Value="190" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[StartRonde]&#xD;&#xA;&#x9;@idRonde int,&#xD;&#xA;&#x9;@IdEmployee int &#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE StartRonde&#xD;&#xA;&#x9;@idRonde int,&#xD;&#xA;&#x9;@IdEmployee int &#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[StartWork]">
@@ -6596,6 +6687,97 @@ End]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[SubContractors].[IdUsers]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[TimeRonde]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TimeRonde].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="35" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TimeRonde].[Start]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TimeRonde].[End]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TimeRonde].[IdRonde]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TimeRonde].[IdEmployee]">
+						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">

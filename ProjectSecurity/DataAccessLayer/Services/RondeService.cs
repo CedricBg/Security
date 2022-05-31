@@ -90,20 +90,19 @@ public class RondeService : IRondeService
         }
     }
 
-    public bool StartRonde(Start form)
+    public int StartRonde(Start form)
     {
         try
         {
             Connection cnx = new Connection(_connectionString);
             Command cmd = new Command("StartRonde", true);
-            cmd.AddParameter("IdRonde", form.IdRonde);
+            cmd.AddParameter("idRonde", form.IdRonde);
             cmd.AddParameter("IdEmployee", form.IdEmployee);
-
-            return cnx.ExecuteNonQuery(cmd) == 1;
+            return (int)cnx.ExecuteScalar(cmd);
         }
         catch (Exception)
         {
-            return false;
+            return 0;
         }
     }
     public bool EndRonde(int Id)
@@ -111,8 +110,8 @@ public class RondeService : IRondeService
         try
         {
             Connection cnx = new Connection(_connectionString);
-            Command cmd = new Command("AddSelectToTonde", true);
-            cmd.AddParameter("IdRonde", Id);
+            Command cmd = new Command("EndRonde", true);
+            cmd.AddParameter("IdTime", Id);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
@@ -127,15 +126,31 @@ public class RondeService : IRondeService
         try
         {
             Connection cnx = new Connection(_connectionString);
-            Command cmd = new Command("AddSelectToTonde", true);
-            cmd.AddParameter("IdRfid", form.IdRfid);
-            cmd.AddParameter("IdEmployee", form.IdEmployee);
+            Command cmd = new Command("AddSelectToRonde", true);
+            cmd.AddParameter("RfidNr", form.RfidNbr);
+            cmd.AddParameter("IdTimeRonde", form.IdTimeRomnde);
 
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
         catch (Exception)
         {
             return false;
+        }
+    }
+
+    public IEnumerable<RondeFinish> RondeFinishByCustomer(int Id)
+    {
+        try
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("GetRondeFinish", true);
+            cmd.AddParameter("@Id", Id);
+
+            return cnx.ExecuteReader(cmd,c=>c.RondeFinie());
+        }
+        catch (Exception)
+        {
+            return null;
         }
     }
 }

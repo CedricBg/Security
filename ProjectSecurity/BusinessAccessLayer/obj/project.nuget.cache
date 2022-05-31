@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yU+H/zgjLdeYBm8T+L0CCiCJLz4uPd2I/avg682OX/yJyurpadp/F9G/vJ+1+Adw52q+wtvDaICnKAdcDPawDQ==",
+  "dgSpecHash": "ATU4qbpUr+ni0yXRloApymnaq0Cs/M0XmJYprfTMdw87ITQ9fpOim5TboMbsdJS1eHifuKXgejeJP10F25EVsQ==",
   "success": true,
-  "projectFilePath": "C:\\Angular\\Security\\Security\\ProjectSecurity\\BusinessAccessLayer\\BusinessAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\ProjectSecurity\\BusinessAccessLayer\\BusinessAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cedri\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\cedri\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

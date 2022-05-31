@@ -6,12 +6,24 @@ namespace BusinessAccessLayer.Tools.Ronde;
 
 public static class Mapper
 {
+    public static Bll.RondeFinish RondeFinie(this DATA.RondeFinish form)
+    {
+        return new Bll.RondeFinish
+        {
+            Customer = form.Customer,
+            End = form.End,
+            Start = form.Start,
+            Name = form.Name,
+            Location = form.Location,
+            TimeCheck  = form.TimeCheck,
+        };
+    }
 
     public static DATA.CheckPastille Check(this Bll.CheckPastille form){
         return new DATA.CheckPastille
         {
-            IdEmployee = form.IdEmployee,
-            IdRfid = form.IdRfid,
+            IdTimeRomnde = form.IdTimeRomnde,
+            RfidNbr = form.RfidNbr,
         };
     }
     public static DATA.Start StartRonde(this Bll.Start form)

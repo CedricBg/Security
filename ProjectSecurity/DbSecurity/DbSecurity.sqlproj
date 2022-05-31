@@ -130,6 +130,8 @@
     <Build Include="ProcStored\Rondes\EndRonde.sql" />
     <Build Include="ProcStored\Rondes\AddSelectToRonde.sql" />
     <Build Include="Tables\AddCheckRfid.sql" />
+    <Build Include="ProcStored\Rondes\GetRondeFinish.sql" />
+    <Build Include="Tables\TimeRonde.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

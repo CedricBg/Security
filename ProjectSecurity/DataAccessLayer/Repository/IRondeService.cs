@@ -9,8 +9,9 @@ namespace DataAccessLayer.Repository
         bool AddRfid(AddRfid form);
         bool AddRfidToRonde(RfidToRonde form);
         IEnumerable<GetRonde> GetRonde(int Id);
-        bool StartRonde(Start form);
+        int StartRonde(Start form);
         bool EndRonde(int Id);
         bool CheckPastille(CheckPastille form);
+        IEnumerable<RondeFinish> RondeFinishByCustomer(int Id);
     }
 }

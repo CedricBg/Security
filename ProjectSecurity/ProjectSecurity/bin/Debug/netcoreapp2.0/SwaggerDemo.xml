@@ -94,6 +94,11 @@
             Action de scanner une pastille Rfid
             </summary>
         </member>
+        <member name="M:ProjectSecurity.Controllers.RondeController.RondeFinishByCustomer(System.Int32)">
+            <summary>
+            Récupération des rondes finies par client
+            </summary>
+        </member>
         <member name="M:ProjectSecurity.Controllers.WorkController.Get(System.Int32)">
             <summary>
             <remarks>test</remarks>
@@ -129,6 +134,11 @@
         <member name="T:ProjectSecurity.Models.Ronde.RfidToRonde">
             <summary>
             Informations pour ajouter une pastille rfid à uine ronde
+            </summary>
+        </member>
+        <member name="T:ProjectSecurity.Models.Ronde.RondeFinish">
+            <summary>
+            Model pour affiche des rondes finies
             </summary>
         </member>
         <member name="T:ProjectSecurity.Models.Ronde.Start">

@@ -16,14 +16,14 @@ var builder = WebApplication.CreateBuilder(args);
 //Dal Services
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
-//builder.Services.AddSingleton<IPlanningService, PlanningService>();
+builder.Services.AddSingleton<IPlanningService, PlanningService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IRondeService , RondeService>();
 builder.Services.AddSingleton<IWorkService , WorkService>();
 
 
 //BLL Services
-//builder.Services.AddSingleton<IPlanningServices, PlanningService>();
+builder.Services.AddSingleton<IPlanningServices, PlanningServices>();
 builder.Services.AddSingleton<IClientServices , ClientServices>();
 builder.Services.AddSingleton<IEmployeeServices, EmployeeServices>();
 builder.Services.AddSingleton<IRapportService , RapportService>();

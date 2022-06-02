@@ -97,7 +97,6 @@
     <Build Include="Tables\RfidPatrol.sql" />
     <Build Include="Tables\StatutAgent.sql" />
     <Build Include="Functions\GetSecretKey.sql" />
-    <Build Include="ProcStored\planning\getOneByCustomer.sql" />
     <Build Include="ProcStored\planning\getOneByEmployee.sql" />
     <Build Include="ProcStored\Customer\AddCustomer.sql" />
     <Build Include="ProcStored\Customer\CustomerById.sql" />
@@ -132,6 +131,9 @@
     <Build Include="Tables\AddCheckRfid.sql" />
     <Build Include="ProcStored\Rondes\GetRondeFinish.sql" />
     <Build Include="Tables\TimeRonde.sql" />
+    <Build Include="ProcStored\planning\AddDayWork.sql" />
+    <Build Include="ProcStored\planning\GetByCustomer.sql" />
+    <Build Include="ProcStored\planning\PutPlanning.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

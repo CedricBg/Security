@@ -4,6 +4,9 @@ namespace BusinessAccessLayer.IRepositories
 {
     public interface IPlanningServices
     {
-        IEnumerable<Planning> getOneByCustomer(int IdCustomer);
+        public bool PutPlanning(Planning form);
+        IEnumerable<Planning> GetByDay(int Id);
+        bool PostPlanning(Planning form);
+
     }
 }

@@ -4,13 +4,35 @@ using BusinessAccessLayer.Models.Employee;
 using BusinessAccessLayer.Models.Auth;
 using BusinessAccessLayer.Models.Customer;
 using BusinessAccessLayer.Models.Planning;
-using DATAauth = DataAccessLayer.Models.Auth; 
-
+using DATAauth = DataAccessLayer.Models.Auth;
+using DataPl = DataAccessLayer.Models.Planning;
 
 namespace BusinessAccessLayer.Tools;
 
 public static class Mapper
 {
+    public static Planning DataToBllPlanning(this DataPl.Planning form)
+    {
+        return new Planning
+        {
+            EndTime = form.EndTime,
+            StartTime = form.StartTime,
+            IdCustomer = form.IdCustomer,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
+    public static DataPl.Planning BllToDataPlanning(this Planning form)
+    {
+        return new DataPl.Planning
+        {
+            EndTime = form.EndTime,
+            StartTime = form.StartTime,
+            IdCustomer = form.IdCustomer,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
     public static DATA.PostCustomer BllToDataPostCutomer(this PostCustomer form)
     {
         return new DATA.PostCustomer
@@ -173,17 +195,7 @@ public static class Mapper
         };
     }
 
-    public static Planning DataPlanningToBusi(this DATA.Planning form)
-    {
-        return new Planning
-        {
-            Id = form.Id,
-            StartTime = form.StartTime,
-            EndTime = form.EndTime,
-            IdCustomer = form.IdCustomer,
-            IdEmployee = form.IdEmployee
-        };
-    }
+
     public static DATA.Customer BusiCustomerToData(this Customer form)
     {
         return new DATA.Customer

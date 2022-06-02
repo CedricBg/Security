@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Ce fichier est utilisé par le processus de publication/package de votre projet web. Vous pouvez personnaliser le comportement de ce processus
+en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASAACjJyiY0irDJd8UTEuMAAAAAACAAAAAAAQZgAAAAEAACAAAABPXFSTWo8Q7JP9Sa5uVP5oHM/Hzi6Dnlx5TSbwPRzSqgAAAAAOgAAAAAIAACAAAAA/FcsJSt1thuv8Ix09bG6OR8XRWnrgaP8fNh5tZjL+BSAAAAAiPKG1jJuu7Ed6gC4pgDOv7ZPfmLiO2Z8hp5lBmciMK0AAAAAtLCKKacYyNLt/3ZsLy2YMDLISWn58dXjcC161J47hT0v3TTTXM4oMLgktWMXxr3nYOok7zVaqyRuRSiRx7Rli</EncryptedPassword>
+    <History>True|2022-05-31T14:49:39.3122617Z;False|2022-05-31T16:46:18.2326298+02:00;</History>
+    <_PublishTargetUrl>ftp://Security.somee.com/www.Security.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AdoToolBox.dll">
+      <publishTime>05/31/2022 16:11:08</publishTime>
+    </File>
+    <File Include="AdoToolBox.pdb">
+      <publishTime>05/31/2022 16:11:08</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>05/25/2022 00:02:50</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/31/2022 16:33:53</publishTime>
+    </File>
+    <File Include="BusinessAccessLayer.dll">
+      <publishTime>05/31/2022 16:48:08</publishTime>
+    </File>
+    <File Include="BusinessAccessLayer.pdb">
+      <publishTime>05/31/2022 16:48:08</publishTime>
+    </File>
+    <File Include="DataAccessLayer.dll">
+      <publishTime>05/31/2022 16:11:09</publishTime>
+    </File>
+    <File Include="DataAccessLayer.pdb">
+      <publishTime>05/31/2022 16:11:09</publishTime>
+    </File>
+    <File Include="de/PdfSharpCore.resources.dll">
+      <publishTime>04/28/2022 12:10:44</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Authentication.JwtBearer.dll">
+      <publishTime>04/18/2022 14:18:52</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Configuration.dll">
+      <publishTime>02/24/2022 01:12:18</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Abstractions.dll">
+      <publishTime>05/18/2022 18:42:26</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>05/18/2022 18:21:10</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Logging.dll">
+      <publishTime>05/18/2022 18:22:20</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.dll">
+      <publishTime>03/30/2021 21:46:46</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
+      <publishTime>03/30/2021 21:58:02</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>05/18/2022 18:28:20</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 22:14:12</publishTime>
+    </File>
+    <File Include="PdfSharpCore.dll">
+      <publishTime>04/28/2022 12:10:44</publishTime>
+    </File>
+    <File Include="ProjectSecurity.deps.json">
+      <publishTime>05/31/2022 16:48:08</publishTime>
+    </File>
+    <File Include="ProjectSecurity.dll">
+      <publishTime>05/31/2022 16:48:11</publishTime>
+    </File>
+    <File Include="ProjectSecurity.exe">
+      <publishTime>05/31/2022 16:48:11</publishTime>
+    </File>
+    <File Include="ProjectSecurity.pdb">
+      <publishTime>05/31/2022 16:48:11</publishTime>
+    </File>
+    <File Include="ProjectSecurity.runtimeconfig.json">
+      <publishTime>05/31/2022 16:48:08</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>08/16/2021 21:22:22</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/sni.dll">
+      <publishTime>07/12/2017 13:24:24</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/sni.dll">
+      <publishTime>07/12/2017 13:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/sni.dll">
+      <publishTime>07/12/2017 13:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>08/16/2021 21:22:26</publishTime>
+    </File>
+    <File Include="SixLabors.Fonts.dll">
+      <publishTime>06/18/2020 23:51:50</publishTime>
+    </File>
+    <File Include="SixLabors.ImageSharp.dll">
+      <publishTime>09/28/2021 06:02:42</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>04/22/2022 16:09:30</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>04/22/2022 16:09:34</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>04/22/2022 16:09:58</publishTime>
+    </File>
+    <File Include="System.Data.SqlClient.dll">
+      <publishTime>08/16/2021 21:14:56</publishTime>
+    </File>
+    <File Include="System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>05/18/2022 18:18:58</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/31/2022 16:48:11</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

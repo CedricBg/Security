@@ -3,11 +3,13 @@ using BUSICust = BusinessAccessLayer.Models.Customer;
 using BUSIEmplo = BusinessAccessLayer.Models.Employee;
 using BUSIRonde = BusinessAccessLayer.Models.Ronde;
 using BUSIWork = BusinessAccessLayer.Models.Work;
+using BUSIPlan = BusinessAccessLayer.Models.Planning;
 using ASPRonde = ProjectSecurity.Models.Ronde;
 using ASPCustomer = ProjectSecurity.Models.Customer;
 using ASPEmplo = ProjectSecurity.Models.Employee;
 using ASPAuth = ProjectSecurity.Models.Auth;
 using ASPWork = ProjectSecurity.Models.Work;
+using ASPPlan = ProjectSecurity.Models.Planning;
 
 namespace ProjectSecurity.Tools;
 
@@ -16,7 +18,40 @@ namespace ProjectSecurity.Tools;
 /// </summary>
 public static class Mapper
 {
-    
+    /// <summary>
+    /// Mapper pour l'affichage du planning 
+    /// </summary>
+
+    public static ASPPlan.Planning BllTOASPPlanning(this BUSIPlan.Planning form)
+    {
+        return new ASPPlan.Planning
+        {
+            EndTime = form.EndTime,
+            StartTime = form.StartTime,
+            IdCustomer = form.IdCustomer,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
+    /// <summary>
+    /// Mapper pour l'envoi d'une date de planning planning
+    /// </summary>
+
+    public static BUSIPlan.Planning ASPTOBLLPlanning(this ASPPlan.Planning form)
+    {
+        return new BUSIPlan.Planning
+        {
+            EndTime = form.EndTime,
+            StartTime = form.StartTime,
+            IdCustomer = form.IdCustomer,
+            IdEmployee = form.IdEmployee,
+        };
+    }
+
+    /// <summary>
+    /// Mapper pour le controle d'une pastille
+    /// </summary>
+
     public static BUSIRonde.CheckPastille Check(this ASPRonde.CheckPastille form)
     {
         return new BUSIRonde.CheckPastille
@@ -25,7 +60,6 @@ public static class Mapper
             IdTimeRomnde = form.IdTimeRomnde,
         };
     }
-
 
     /// <summary>
     /// Mapper pour le démarrage d'une ronde

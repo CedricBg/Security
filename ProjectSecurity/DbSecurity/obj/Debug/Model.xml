@@ -1095,6 +1095,117 @@ End]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddCustomer]&#xD;&#xA;&#x9;@Name varchar(50),&#xD;&#xA;&#x9;@GeneralPhone varchar(50),&#xD;&#xA;&#x9;@EmergencyPhone varchar(50),&#xD;&#xA;&#x9;@EmergencyEmail varchar(50),&#xD;&#xA;&#x9;@Street varchar(50),&#xD;&#xA;&#x9;@PostCode varchar(30),&#xD;&#xA;&#x9;@StreetNumber varchar(20),&#xD;&#xA;&#x9;@IdCountry int,&#xD;&#xA;&#x9;@Phone varchar(50),&#xD;&#xA;&#x9;@Email varchar(50),&#xD;&#xA;&#x9;@IdLanguage int,&#xD;&#xA;&#x9;@Role int&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[AddDayWork]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	INSERT INTO ScheduleGuard (IdCustomer,IdEmployee,StartTime,EndTime) Values(@IdCustomer, @IdEmployee, @Start, @End)
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[StartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[EndTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddDayWork].[@IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddDayWork].[@IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddDayWork].[@Start]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddDayWork].[@End]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddDayWork].[@IdEmployee]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddDayWork].[@IdCustomer]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddDayWork].[@Start]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddDayWork].[@End]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="233" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddDayWork]&#xD;&#xA;&#x9;@IdEmployee int,&#xD;&#xA;&#x9;@IdCustomer int,&#xD;&#xA;&#x9;@Start Date,&#xD;&#xA;&#x9;@End Date&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[AddEmployee]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -3433,11 +3544,11 @@ End]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAll]&#xD;&#xA;&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[getOneByCustomer]">
+		<Element Type="SqlProcedure" Name="[dbo].[GetByCustomer]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
-	SELECT * from ScheduleGuard where IdEmployee = @Employee
+	SELECT EndTime, IdCustomer, IdCustomer,StartTime from ScheduleGuard where IdCustomer = @Customer
 	end]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3446,15 +3557,21 @@ begin
 					<References Name="[dbo].[ScheduleGuard]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[ScheduleGuard].[IdEmployee]" />
+					<References Name="[dbo].[ScheduleGuard].[EndTime]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[getOneByCustomer].[@Employee]" />
+					<References Name="[dbo].[ScheduleGuard].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[StartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetByCustomer].[@Customer]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[getOneByCustomer].[@Employee]">
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetByCustomer].[@Customer]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3475,23 +3592,32 @@ begin
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="136" />
+				<Property Name="Length" Value="173" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[getOneByCustomer]&#xD;&#xA;&#x9;@Employee int&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetByCustomer]&#xD;&#xA;&#x9;@Customer int&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[getOneByEmployee]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
-	SELECT * from ScheduleGuard where IdEmployee = @Employee
+	SELECT EndTime, IdCustomer, IdCustomer,StartTime from ScheduleGuard where IdEmployee = @Employee
 	end]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[ScheduleGuard]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[EndTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[StartTime]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[ScheduleGuard].[IdEmployee]" />
@@ -3523,7 +3649,7 @@ begin
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="136" />
+				<Property Name="Length" Value="176" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[getOneByEmployee]&#xD;&#xA;&#x9;@Employee int&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
@@ -5160,6 +5286,117 @@ end]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PutEmployee]&#xD;&#xA;&#x9;@Name varchar(50),&#xD;&#xA;&#x9;@firstName varchar(50),&#xD;&#xA;&#x9;@BirthDate varchar(50),&#xD;&#xA;&#x9;@Vehicle bit,&#xD;&#xA;&#x9;@SecurityCard varchar(50),&#xD;&#xA;&#x9;@EmployeeCardNumber varchar(50),&#xD;&#xA;&#x9;@RegistreNational varchar(20),&#xD;&#xA;&#x9;@IdLanguage int,&#xD;&#xA;&#x9;@IdInformation int,&#xD;&#xA;&#x9;@IdEmployee int ,&#xD;&#xA;&#x9;@IdDepartement int&#xD;&#xA;&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PutPlanning]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	Update ScheduleGuard SET IdCustomer=@Customer, IdEmployee=@Employee,StartTime=@Sart,EndTime=@End
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[IdCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutPlanning].[@Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[IdEmployee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutPlanning].[@Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[StartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutPlanning].[@Sart]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ScheduleGuard].[EndTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PutPlanning].[@End]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutPlanning].[@Employee]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutPlanning].[@Customer]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutPlanning].[@Sart]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PutPlanning].[@End]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="211" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PutPlanning]&#xD;&#xA;&#x9;@Employee int,&#xD;&#xA;&#x9;@Customer int,&#xD;&#xA;&#x9;@Sart Date,&#xD;&#xA;&#x9;@End Date&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[PutRonde]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -6162,10 +6399,9 @@ End]]></Value>
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="7" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -6175,13 +6411,13 @@ End]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[ScheduleGuard].[EndTime]">
+						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="7" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime2]" />
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -6191,6 +6427,7 @@ End]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[ScheduleGuard].[IdEmployee]">
+						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -6206,6 +6443,7 @@ End]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[ScheduleGuard].[IdCustomer]">
+						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">

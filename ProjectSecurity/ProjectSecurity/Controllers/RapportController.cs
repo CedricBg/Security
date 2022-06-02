@@ -16,6 +16,9 @@ namespace ProjectSecurity.Controllers
             _rapportService = rapportService;
         }
 
+        /// <summary>
+        /// Création de'un rapport
+        /// </summary>
 
         [HttpPost]
         public IActionResult Post(RapportPost rapport)
@@ -29,7 +32,9 @@ namespace ProjectSecurity.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Ajout ou modification au rapport
+        /// </summary>
         [HttpPut]
         public IActionResult PutRapport(RapportPut rapport)
         {
@@ -42,6 +47,9 @@ namespace ProjectSecurity.Controllers
                 return BadRequest(ex);
             }
         }
+        /// <summary>
+        /// Création d'un pdf à la fermeture d'un rapport
+        /// </summary>
 
         [HttpPut("pdf/")]
         public IActionResult SaveRapport(RapportPut rapport)

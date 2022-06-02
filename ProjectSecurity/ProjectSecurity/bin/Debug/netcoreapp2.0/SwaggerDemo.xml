@@ -54,6 +54,41 @@
             <param name="form"></param>
             <returns></returns>
         </member>
+        <member name="M:ProjectSecurity.Controllers.PlanningController.GetPlanningCustomer(System.Int32)">
+            <summary>
+            Récupération des jours de travail par client
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.PlanningController.GetByEmployee(System.Int32)">
+            <summary>
+            Récupération des jours de travail par employee
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.PlanningController.PostPlanning(ProjectSecurity.Models.Planning.Planning)">
+            <summary>
+            Création d'une journée sur le planning
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.PlanningController.PutPlanning(ProjectSecurity.Models.Planning.Planning)">
+            <summary>
+            Modifcation du planning
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RapportController.Post(ProjectSecurity.Models.Rapport.RapportPost)">
+            <summary>
+            Création de'un rapport
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RapportController.PutRapport(ProjectSecurity.Models.Rapport.RapportPut)">
+            <summary>
+            Ajout ou modification au rapport
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.RapportController.SaveRapport(ProjectSecurity.Models.Rapport.RapportPut)">
+            <summary>
+            Création d'un pdf à la fermeture d'un rapport
+            </summary>
+        </member>
         <member name="T:ProjectSecurity.Controllers.RondeController">
             <summary>
             Controller pour la gestion des rondes
@@ -101,10 +136,8 @@
         </member>
         <member name="M:ProjectSecurity.Controllers.WorkController.Get(System.Int32)">
             <summary>
-            <remarks>test</remarks>
+            
             </summary>
-            <param name="id">id du client a retourné</param>
-            <returns>Boolean</returns>
         </member>
         <member name="T:ProjectSecurity.Models.Auth.RegForm">
             <summary>
@@ -150,6 +183,21 @@
         <member name="T:ProjectSecurity.Tools.Mapper">
             <summary>
             Classe de mapper
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Tools.Mapper.BllTOASPPlanning(BusinessAccessLayer.Models.Planning.Planning)">
+            <summary>
+            Mapper pour l'affichage du planning 
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Tools.Mapper.ASPTOBLLPlanning(ProjectSecurity.Models.Planning.Planning)">
+            <summary>
+            Mapper pour l'envoi d'une date de planning planning
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Tools.Mapper.Check(ProjectSecurity.Models.Ronde.CheckPastille)">
+            <summary>
+            Mapper pour le controle d'une pastille
             </summary>
         </member>
         <member name="M:ProjectSecurity.Tools.Mapper.StartRonde(ProjectSecurity.Models.Ronde.Start)">

@@ -18,10 +18,8 @@ namespace ProjectSecurity.Controllers
             _workServices = workServices;
         }
         /// <summary>
-        /// <remarks>test</remarks>
+        /// 
         /// </summary>
-        /// <param name="id">id du client a retourné</param>
-        /// <returns>Boolean</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -42,7 +40,7 @@ namespace ProjectSecurity.Controllers
             {
                 return Ok(_workServices.StartWork(form.ASPTOBllWork()));
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

@@ -14,5 +14,6 @@ namespace BusinessAccessLayer.Models.Auth
         public string FirstName { get; set; }
         public int IdLanguage { get; set; }
         public string Role { get; set; }
+        public bool isActive { get; set; }
     }
 }

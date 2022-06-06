@@ -46,6 +46,7 @@ public static class Mapper
             Login = Convert.ToString(reader["Login"]),
             IdLanguage = (int)reader["IdLanguages"],
             Role = Convert.ToString(reader["Classe"]),
+            isActive = (Boolean)reader["Active"],
         };
     }
 
@@ -59,7 +60,7 @@ public static class Mapper
             IdLanguage = (int)reader["IdLanguage"],
             Role = Convert.ToString(reader["Classe"]),
             Login = Convert.ToString(reader["Login"]),
-
+            isActive = (Boolean)reader["Active"],
         };
     }
 

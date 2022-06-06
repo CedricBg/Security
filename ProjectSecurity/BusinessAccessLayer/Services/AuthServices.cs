@@ -29,6 +29,7 @@ public class AuthServices : IAuthServices
         {
             JwtUser user = _servicesAuth.LoginCust(form.BllToDataCustomer()).DataToBllJwtCustomer();
             string token = _tokenService.GenerateJwt(user);
+            
             return token;
         }
         catch(Exception ex)
@@ -40,9 +41,10 @@ public class AuthServices : IAuthServices
     public string Login(RegForm form)
     {
         try
-        {
+        {     
             JwtUser user = _servicesAuth.Login(form.BllToDataCustomer()).DataToBllJwtUser();
             string token = _tokenService.GenerateJwt(user);
+            
             return token;
         }
         catch (Exception ex)

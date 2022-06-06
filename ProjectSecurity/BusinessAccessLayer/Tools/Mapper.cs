@@ -51,7 +51,6 @@ public static class Mapper
             PostCode = form.PostCode,
             Role = form.Role,
             
-            
         };
     }
 
@@ -73,6 +72,7 @@ public static class Mapper
             Login = form.Login,
             Role = form.Role,
             IdUser = form.IdCust,
+            isActive = form.isActive
         };
     }
 
@@ -85,8 +85,9 @@ public static class Mapper
             Name = form.Name,
             FirstName = form.FirstName,
             Login = form.Login,
-            Role = form.Role
-        };
+            Role = form.Role,
+            isActive = form.isActive
+};
     }
 
     public static DATA.AddEmployee BllToDataEmployee(this AddEmployee form)
@@ -132,10 +133,7 @@ public static class Mapper
             Departement =form.Departement,
             Email = form.Email,
             Language = form.Language,
-            Role = form.Role,
-            
-            
-            
+            Role = form.Role, 
         };
     }
 

@@ -3,6 +3,7 @@ using BusinessAccessLayer.Services;
 using Microsoft.AspNetCore.Mvc;
 using ProjectSecurity.Models.Auth;
 using ProjectSecurity.Tools;
+using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -48,32 +49,30 @@ public class AuthController : ControllerBase
     /// <param name="form"></param>
     /// <returns></returns>
     /// 
-    [HttpPost("contrator/")]
-    public IActionResult RegisterContractor(RegForm form)
-    {
-        try
-        {
-            _servicesAuth.RegisterAccessContract(form.AspToBllRegister());
-            return StatusCode(StatusCodes.Status201Created);
-        }
-        catch (Exception)
-        {
-            return StatusCode(StatusCodes.Status400BadRequest);
-        }
-    }
+    //[HttpPost("contrator/")]
+    //public IActionResult RegisterContractor(RegForm form)
+    //{
+    //    try
+    //    {
+    //        _servicesAuth.RegisterAccessContract(form.AspToBllRegister());
+    //        return StatusCode(StatusCodes.Status201Created);
+    //    }
+    //    catch (Exception)
+    //    {
+    //        return StatusCode(StatusCodes.Status400BadRequest);
+    //    }
+    //}
     /// <summary>
     /// Activation de la connexion aun site pour les Clients
     /// </summary>
-    /// <param name="form"></param>
-    /// <returns></returns>
-    /// 
+
     [HttpPost("customer/")]
     public IActionResult RegisterCustomer(RegForm form)
     {
         try
         {
-            _servicesAuth.RegisterAccessCustomer(form.AspToBllRegister());
-            return StatusCode(StatusCodes.Status201Created);
+             return Ok(_servicesAuth.RegisterAccessCustomer(form.AspToBllRegister()));
+             
         }
         catch (Exception)
         {
@@ -84,8 +83,6 @@ public class AuthController : ControllerBase
     /// <summary>
     /// Mise à jour du mot de passe de clients, employées ou sous-traitans
     /// </summary>
-    /// <param name="form"></param>
-    /// <returns></returns>
 
     [HttpPut]
     public IActionResult Post(UpdateForm form)
@@ -103,36 +100,42 @@ public class AuthController : ControllerBase
     /// <summary>
     /// Login pour les employées
     /// </summary>
-    /// <param name="form"></param>
-    /// <returns></returns>
     [HttpPost("Employee/Login/")]
     public IActionResult Login(RegForm form)
     {
         try
         {
-            return Ok(_servicesAuth.Login(form.AspToBllRegister()));
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            return Ok(JsonSerializer.Serialize(_servicesAuth.Login(form.AspToBllRegister())));
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return BadRequest();
+            return BadRequest(ex.Message);
         }
     }
     /// <summary>
     /// Login pour les clients
     /// </summary>
-    /// <param name="form"></param>
-    /// <returns></returns>
 
     [HttpPost("Customer/Login/")]
     public IActionResult Logincust(RegForm form)
     {
         try
         {
-            return Ok(_servicesAuth.LoginCust(form.AspToBllRegister()));
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+             return Ok(JsonSerializer.Serialize(_servicesAuth.LoginCust(form.AspToBllRegister())));
+
+            
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return BadRequest();
+            return BadRequest(ex.Message);
         }
     }
 

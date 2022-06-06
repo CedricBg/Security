@@ -26,15 +26,16 @@ public class TokenService
         }
 
         SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secret));
-        SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature);
 
 
         Claim[] myClaims = new[]
         {
-            new Claim(ClaimTypes.Surname, user.Login),
-            new Claim(ClaimTypes.Name, user.Name),
+            new Claim(ClaimTypes.Surname, user.Login.Trim()),
+            new Claim(ClaimTypes.Name, user.Name.Trim()),
             new Claim(ClaimTypes.Sid, user.IdUser.ToString()),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Role, user.Role.Trim()),
+            new Claim(ClaimTypes.IsPersistent, user.isActive == true ? "true" :"false"),
         };
 
         JwtSecurityToken token = new JwtSecurityToken

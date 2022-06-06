@@ -17,9 +17,10 @@ Begin
 	Declare @IdUser INT
 	set @IdUser = (SELECT IdUser from Users WHERE (Password_hash = @password_hash AND ([Login] = @Login)))
 
-	Select C.[Name], C.IdLanguages, C.IdCustomer, U.[Login] , S.Classe
+	Select C.[Name], C.IdLanguages, C.IdCustomer, U.[Login] , S.Classe,C.Active
 	from Customer C, Users U , StatutAgent S
 	Where C.IdUsers = U.IdUser 
 	AND S.IdStatut = C.IdStatuts
 	AND U.[Login] = @Login
+	and Password_hash = @password_hash
 End

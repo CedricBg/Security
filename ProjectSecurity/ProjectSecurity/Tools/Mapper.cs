@@ -155,6 +155,7 @@ public static class Mapper
             FirstName = form.FirstName,
             Name = form.Name,
             Role = form.Role,
+            isActive = form.isActive,
         };
     }
 

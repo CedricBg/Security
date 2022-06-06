@@ -4204,11 +4204,12 @@ Begin
 	Declare @IdUser INT
 	set @IdUser = (SELECT IdUser from Users WHERE (Password_hash = @password_hash AND ([Login] = @Login)))
 
-	Select C.[Name], C.IdLanguages, C.IdCustomer, U.[Login] , S.Classe
+	Select C.[Name], C.IdLanguages, C.IdCustomer, U.[Login] , S.Classe,C.Active
 	from Customer C, Users U , StatutAgent S
 	Where C.IdUsers = U.IdUser 
 	AND S.IdStatut = C.IdStatuts
 	AND U.[Login] = @Login
+	and Password_hash = @password_hash
 End]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -4274,6 +4275,9 @@ End]]></Value>
 					<References Name="[dbo].[StatutAgent].[Classe]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Customer].[Active]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Customer].[IdUsers]" />
 				</Entry>
 				<Entry>
@@ -4284,6 +4288,9 @@ End]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Customer].[IdStatuts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[Password_hash]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -4326,7 +4333,7 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="743" />
+				<Property Name="Length" Value="789" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[LoginCustomer]&#xD;&#xA;&#x9;@Login VARCHAR(50),&#xD;&#xA;&#x9;@Password VARCHAR(50)&#xD;&#xA;&#xD;&#xA;AS" />
@@ -4349,7 +4356,7 @@ Begin
 	Declare @IdUser INT
 	set @IdUser = (SELECT IdUser from Users WHERE (Password_hash = @password_hash AND ([Login] = @Login)))
 
-	Select E.[Name], E.firstName, E.IdLanguage, S.Classe , E.IdEmployee, U.[Login] 
+	Select E.[Name], E.firstName, E.IdLanguage, S.Classe , E.IdEmployee, U.[Login], E.Active
 	from Employee E, Users U , StatutAgent S 
 	Where E.IdUsers = U.IdUser  
 	and E.IdStatut = S.IdStatut 
@@ -4422,6 +4429,9 @@ End]]></Value>
 					<References Name="[dbo].[Users].[Login]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Employee].[Active]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Employee].[IdUsers]" />
 				</Entry>
 				<Entry>
@@ -4474,7 +4484,7 @@ End]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="758" />
+				<Property Name="Length" Value="767" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Loginemployee]&#xD;&#xA;&#x9;@Login VARCHAR(50),&#xD;&#xA;&#x9;@Password VARCHAR(50)&#xD;&#xA;&#xD;&#xA;AS" />

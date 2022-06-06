@@ -17,42 +17,25 @@
             <returns>Code 201 ou Bad request</returns>
             
         </member>
-        <member name="M:ProjectSecurity.Controllers.AuthController.RegisterContractor(ProjectSecurity.Models.Auth.RegForm)">
-            <summary>
-            Activation de la connexion aun site pour les sous-traitans
-            </summary>
-            <param name="form"></param>
-            <returns></returns>
-            
-        </member>
         <member name="M:ProjectSecurity.Controllers.AuthController.RegisterCustomer(ProjectSecurity.Models.Auth.RegForm)">
             <summary>
             Activation de la connexion aun site pour les Clients
             </summary>
-            <param name="form"></param>
-            <returns></returns>
-            
         </member>
         <member name="M:ProjectSecurity.Controllers.AuthController.Post(ProjectSecurity.Models.Auth.UpdateForm)">
             <summary>
             Mise à jour du mot de passe de clients, employées ou sous-traitans
             </summary>
-            <param name="form"></param>
-            <returns></returns>
         </member>
         <member name="M:ProjectSecurity.Controllers.AuthController.Login(ProjectSecurity.Models.Auth.RegForm)">
             <summary>
             Login pour les employées
             </summary>
-            <param name="form"></param>
-            <returns></returns>
         </member>
         <member name="M:ProjectSecurity.Controllers.AuthController.Logincust(ProjectSecurity.Models.Auth.RegForm)">
             <summary>
             Login pour les clients
             </summary>
-            <param name="form"></param>
-            <returns></returns>
         </member>
         <member name="M:ProjectSecurity.Controllers.PlanningController.GetPlanningCustomer(System.Int32)">
             <summary>

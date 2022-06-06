@@ -32,8 +32,8 @@ public class AuthService : IAuthService
 
             cmd.AddParameter("Login", form.Login);
             cmd.AddParameter("Password", form.Password);
-
-            return cnx.ExecuteReader(cmd, dr => dr.ReadJwtUserToBll()).Single();
+            JwtUser user = cnx.ExecuteReader(cmd, dr => dr.ReadJwtUserToBll()).Single();
+            return user;
         }
         catch (Exception)
         {
@@ -45,15 +45,16 @@ public class AuthService : IAuthService
          
         try
         {
-            
             Connection cnx = new Connection(_connectionString);
             Command cmd = new Command("LoginCustomer", true);
             cmd.AddParameter("Login", form.Login);
             cmd.AddParameter("Password", form.Password);
             
-            return cnx.ExecuteReader(cmd, dr => dr.ReadToDataJwtCustomer()).Single();
+            JwtCustomer retour = cnx.ExecuteReader(cmd, dr => dr.ReadToDataJwtCustomer()).Single();
+           
+            return retour;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return null;
         }

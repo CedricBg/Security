@@ -9,7 +9,6 @@
 	@IdCountry int,
 	@Phone varchar(50),
 	@Email varchar(50),
-	@IdInformation int,
 	@IdCustomer int
 AS
 Begin
@@ -17,7 +16,7 @@ Begin
 	Where IdCustomer = @IdCustomer
 
 	Update Informations Set Street = @Street, PostCode = @PostCode, StreetNumber = @StreetNumber, Phone = @Phone ,Email = @Email , IdCountry = @IdCountry 
-	Where IdInformation = @IdInformation
+	Where IdInformation = (Select IdInformation from Customer where IdCustomer = @IdCustomer)
 End
 	
 

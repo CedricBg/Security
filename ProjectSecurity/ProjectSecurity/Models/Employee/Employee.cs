@@ -21,5 +21,6 @@
         public string Country { get; set; }
         public int? IdUsers { get; set; }
         public string Departement { get; set; }
+        public int IdInformation { get; set; }
     }
 }

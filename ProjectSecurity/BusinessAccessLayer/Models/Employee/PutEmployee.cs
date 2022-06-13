@@ -16,8 +16,13 @@ namespace BusinessAccessLayer.Models.Employee
         public int SecurityCard { get; set; }
         public string EmployeeCardNumber { get; set; }
         public string RegistreNational { get; set; }
-        public int IdLanguage { get; set; }
-        public int IdInformation { get; set; }
-        public int IdDepartement { get; set; }
+        public string Language { get; set; }
+        public string Departement { get; set; }
+        public string Email { get; set; }
+        public string PostCode { get; set; }
+        public string Phone { get; set; }
+        public string Street { get; set; }
+        public string StreetNbr { get; set; }
+        public string Country { get; set; }
     }
 }

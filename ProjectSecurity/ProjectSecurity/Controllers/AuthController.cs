@@ -43,28 +43,6 @@ public class AuthController : ControllerBase
             return StatusCode(StatusCodes.Status400BadRequest);
         } 
     }
-    /// <summary>
-    /// Activation de la connexion aun site pour les sous-traitans
-    /// </summary>
-    /// <param name="form"></param>
-    /// <returns></returns>
-    /// 
-    //[HttpPost("contrator/")]
-    //public IActionResult RegisterContractor(RegForm form)
-    //{
-    //    try
-    //    {
-    //        _servicesAuth.RegisterAccessContract(form.AspToBllRegister());
-    //        return StatusCode(StatusCodes.Status201Created);
-    //    }
-    //    catch (Exception)
-    //    {
-    //        return StatusCode(StatusCodes.Status400BadRequest);
-    //    }
-    //}
-    /// <summary>
-    /// Activation de la connexion aun site pour les Clients
-    /// </summary>
 
     [HttpPost("customer/")]
     public IActionResult RegisterCustomer(RegForm form)

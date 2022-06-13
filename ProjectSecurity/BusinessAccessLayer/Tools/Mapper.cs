@@ -187,9 +187,14 @@ public static class Mapper
             SecurityCard = form.SecurityCard,
             EmployeeCardNumber = form.EmployeeCardNumber,
             RegistreNational = form.RegistreNational,
-            IdInformation = form.IdInformation,
-            IdLanguage = form.IdLanguage
-
+            Language = form.Language,
+            Email = form.Email,
+            Departement = form.Departement,
+            Street = form.Street,
+            StreetNbr = form.StreetNbr,
+            Phone = form.Phone,
+            PostCode = form.PostCode,
+            Country = form.Country,
         };
     }
 

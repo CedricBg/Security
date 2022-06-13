@@ -80,7 +80,7 @@ public static class Mapper
             Phone = Convert.ToString(reader["Phone"]),
             GeneralPhone = Convert.ToString(reader["GeneralPhone"]),
             Role = Convert.ToString(reader["ClasseName"]), 
-            Language = Convert.ToString(reader["Language"])
+            Language = Convert.ToString(reader["Language"]),
 };
     }
     public static AllCustomer ReadAllCustomerToBll(this SqlDataReader reader)
@@ -100,7 +100,6 @@ public static class Mapper
             Language = Convert.ToString(reader["Language"]),
             Country = Convert.ToString(reader["Country"]),
             Role = Convert.ToString(reader["ClasseName"]),
-
         };
     }
 

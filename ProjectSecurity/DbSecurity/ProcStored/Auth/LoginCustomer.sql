@@ -19,8 +19,9 @@ Begin
 
 	Select C.[Name], C.IdLanguages, C.IdCustomer, U.[Login] , S.Classe,C.Active
 	from Customer C, Users U , StatutAgent S
-	Where C.IdUsers = U.IdUser 
+	Where Password_hash = @password_hash
+	AND C.IdUsers = U.IdUser 
 	AND S.IdStatut = C.IdStatuts
 	AND U.[Login] = @Login
-	and Password_hash = @password_hash
+	 
 End

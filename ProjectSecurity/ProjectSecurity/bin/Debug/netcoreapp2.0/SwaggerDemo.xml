@@ -17,11 +17,6 @@
             <returns>Code 201 ou Bad request</returns>
             
         </member>
-        <member name="M:ProjectSecurity.Controllers.AuthController.RegisterCustomer(ProjectSecurity.Models.Auth.RegForm)">
-            <summary>
-            Activation de la connexion aun site pour les Clients
-            </summary>
-        </member>
         <member name="M:ProjectSecurity.Controllers.AuthController.Post(ProjectSecurity.Models.Auth.UpdateForm)">
             <summary>
             Mise à jour du mot de passe de clients, employées ou sous-traitans

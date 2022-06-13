@@ -30,7 +30,3 @@ C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\Model.xml
 C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
 C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
 C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql
-C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\Model.xml
-C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
-C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
-C:\Users\cedri\Documents\Projet Formation\Security\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql

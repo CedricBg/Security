@@ -28,28 +28,34 @@ public class AuthServices : IAuthServices
         try
         {
             JwtUser user = _servicesAuth.LoginCust(form.BllToDataCustomer()).DataToBllJwtCustomer();
-            string token = _tokenService.GenerateJwt(user);
-            
-            return token;
+            if (user != null)
+            {
+                string token = _tokenService.GenerateJwt(user);
+                return token;
+            }
+            else return null;
         }
-        catch(Exception ex)
+        catch(Exception)
         {
-            return ex.Message;
+            return null;
         }
     }
 
     public string Login(RegForm form)
     {
         try
-        {     
-            JwtUser user = _servicesAuth.Login(form.BllToDataCustomer()).DataToBllJwtUser();
-            string token = _tokenService.GenerateJwt(user);
-            
-            return token;
-        }
-        catch (Exception ex)
         {
-            return ex.Message;
+            JwtUser user = _servicesAuth.Login(form.BllToDataCustomer()).DataToBllJwtUser();
+            if (user != null)
+            {
+                string token = _tokenService.GenerateJwt(user);
+                return token;
+            }
+            else return null;
+        }
+        catch (Exception)
+        {
+            return null;
         }
     }
 

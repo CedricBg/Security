@@ -181,9 +181,14 @@ public static class Mapper
             SecurityCard = form.SecurityCard,
             EmployeeCardNumber = form.EmployeeCardNumber,
             RegistreNational = form.RegistreNational,
-            IdInformation = form.IdInformation,
-            IdLanguage = form.IdLanguage,
-            IdDepartement = form.IdDepartement
+            Language = form.Language,
+            Departement = form.Departement,
+            Email = form.Email,
+            Street = form.Street,
+            StreetNbr = form.StreetNbr,
+            Phone = form.Phone,
+            PostCode = form.PostCode,
+            Country = form.Country
 };
     }
     public static ASPCustomer.AllCustomer BLLToASPAllCustomer(this BUSICust.AllCustomer form)

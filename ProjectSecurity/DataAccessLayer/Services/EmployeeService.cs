@@ -36,7 +36,6 @@ public class EmployeeService : IEmployeeService
             cmd.AddParameter("EntryService", employee.EntryService);
             cmd.AddParameter("RegistreNational", employee.RegistreNational);
             cmd.AddParameter("IdLanguage", employee.IdLanguage);
-            cmd.AddParameter("IdInformation", employee.IdInformation);
             cmd.AddParameter("IdStatut", employee.IdStatut);
             cmd.AddParameter("IdDepartement", employee.IdDepartement);
 
@@ -110,10 +109,16 @@ public class EmployeeService : IEmployeeService
             cmd.AddParameter("SecurityCard", form.SecurityCard);
             cmd.AddParameter("EmployeeCardNumber", form.EmployeeCardNumber);
             cmd.AddParameter("RegistreNational", form.RegistreNational);
-            cmd.AddParameter("IdLanguage", form.IdLanguage);
-            cmd.AddParameter("IdInformation", form.IdInformation);
-            cmd.AddParameter("IdEmployee", form.IdInformation);
-            cmd.AddParameter("IdDepartement", form.IdDepartement);
+            cmd.AddParameter("Language", form.Language);
+            cmd.AddParameter("Departement", form.Departement);
+            cmd.AddParameter("Phone", form.Phone);
+            cmd.AddParameter("Street", form.Street);
+            cmd.AddParameter("StreetNumber", form.StreetNbr);
+            cmd.AddParameter("Email", form.Email);
+            cmd.AddParameter("PostCode", form.PostCode);
+            cmd.AddParameter("Country", form.Country);
+            cmd.AddParameter("IdEmployee", form.IdEmployee);
+
 
 
             return cnx.ExecuteNonQuery(cmd) == 1;

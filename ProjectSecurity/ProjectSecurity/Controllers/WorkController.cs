@@ -12,7 +12,10 @@ namespace ProjectSecurity.Controllers
     public class WorkController : ControllerBase
     {
         IWorkServices _workServices;
-
+        /// <summary>
+        /// Classe qui permet de réupérer l'heure d'arrivée et de départ de l'agent
+        /// </summary>
+        /// <param name="workServices"></param>
         public WorkController(IWorkServices workServices)
         {
             _workServices = workServices;
@@ -20,8 +23,10 @@ namespace ProjectSecurity.Controllers
         /// <summary>
         /// 
         /// </summary>
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        /// <param name="id">Id de l'agent</param>
+        /// <returns>heure</returns>
+        [HttpPost("end/{id}")]
+        public IActionResult End(int id)
         {
             try
             {
@@ -34,7 +39,7 @@ namespace ProjectSecurity.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(StartForm form)
+        public IActionResult Start(StartForm form)
         {
             try
             {

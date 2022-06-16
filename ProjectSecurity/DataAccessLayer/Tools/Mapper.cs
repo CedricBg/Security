@@ -8,12 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Models.Planning;
+using DataAccessLayer.Models.Town;
 
 namespace DataAccessLayer.Tools;
 
 
 public static class Mapper
 {
+    public static Ville AllTown(this SqlDataReader reader)
+    {
+        return new Ville
+        {
+            codePostal = Convert.ToString(reader["fieldscolumn_2"]),
+            ville = Convert.ToString(reader["fieldscolumn_1"])
+        };
+    }
+
 
     public static RondeFinish RondeFinie(this SqlDataReader reader)
     {

@@ -17,6 +17,13 @@
             <returns>Code 201 ou Bad request</returns>
             
         </member>
+        <member name="M:ProjectSecurity.Controllers.AuthController.RegisterCustomer(ProjectSecurity.Models.Auth.RegForm)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+            <returns>Token</returns>
+        </member>
         <member name="M:ProjectSecurity.Controllers.AuthController.Post(ProjectSecurity.Models.Auth.UpdateForm)">
             <summary>
             Mise à jour du mot de passe de clients, employées ou sous-traitans
@@ -112,10 +119,23 @@
             Récupération des rondes finies par client
             </summary>
         </member>
-        <member name="M:ProjectSecurity.Controllers.WorkController.Get(System.Int32)">
+        <member name="M:ProjectSecurity.Controllers.TownController.Get">
+            <summary>
+            Controlleur récuperation des villes et codes postaux
+            </summary>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.WorkController.#ctor(BusinessAccessLayer.IRepositories.IWorkServices)">
+            <summary>
+            Classe qui permet de réupérer l'heure d'arrivée et de départ de l'agent
+            </summary>
+            <param name="workServices"></param>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.WorkController.End(System.Int32)">
             <summary>
             
             </summary>
+            <param name="id">Id de l'agent</param>
+            <returns>heure</returns>
         </member>
         <member name="T:ProjectSecurity.Models.Auth.RegForm">
             <summary>
@@ -157,6 +177,11 @@
             Classe démarrage d'une ronde
             </summary>
             
+        </member>
+        <member name="T:ProjectSecurity.Models.Town.Ville">
+            <summary>
+            Class qui récupère toutes les villes et code postaux
+            </summary>
         </member>
         <member name="T:ProjectSecurity.Tools.Mapper">
             <summary>

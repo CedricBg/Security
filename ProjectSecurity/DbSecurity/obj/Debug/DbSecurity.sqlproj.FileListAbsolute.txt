@@ -30,3 +30,13 @@ C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\Model.xml
 C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
 C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
 C:\Angular\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dacpac
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.dll
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\bin\Debug\DbSecurity.pdb
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.sqlproj.AssemblyReference.cache
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.dll
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\Model.xml
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
+C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql

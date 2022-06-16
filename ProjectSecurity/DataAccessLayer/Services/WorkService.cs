@@ -13,7 +13,10 @@ namespace DataAccessLayer.Services;
 public class WorkService : IWorkService
 {
     private readonly string _connectionString;
-
+    /// <summary>
+    /// Service ou on réceptionne le départ et la fin de journée de travail de l'agent
+    /// </summary>
+    /// <param name="connectionString"></param>
     public WorkService(IConfiguration connectionString)
     {
         _connectionString = connectionString.GetConnectionString("connectionString");

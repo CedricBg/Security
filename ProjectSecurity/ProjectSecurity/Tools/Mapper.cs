@@ -4,12 +4,14 @@ using BUSIEmplo = BusinessAccessLayer.Models.Employee;
 using BUSIRonde = BusinessAccessLayer.Models.Ronde;
 using BUSIWork = BusinessAccessLayer.Models.Work;
 using BUSIPlan = BusinessAccessLayer.Models.Planning;
+using BUSITown = BusinessAccessLayer.Models.Town;
 using ASPRonde = ProjectSecurity.Models.Ronde;
 using ASPCustomer = ProjectSecurity.Models.Customer;
 using ASPEmplo = ProjectSecurity.Models.Employee;
 using ASPAuth = ProjectSecurity.Models.Auth;
 using ASPWork = ProjectSecurity.Models.Work;
 using ASPPlan = ProjectSecurity.Models.Planning;
+using ASPTown = ProjectSecurity.Models.Town;
 
 namespace ProjectSecurity.Tools;
 
@@ -18,6 +20,16 @@ namespace ProjectSecurity.Tools;
 /// </summary>
 public static class Mapper
 {
+
+    public static ASPTown.Ville GetAll(this BUSITown.Ville ville)
+    {
+        return new ASPTown.Ville
+        {
+            ville = ville.ville,
+            codePostal = ville.codePostal,
+        };
+    }
+
     /// <summary>
     /// Mapper pour l'affichage du planning 
     /// </summary>

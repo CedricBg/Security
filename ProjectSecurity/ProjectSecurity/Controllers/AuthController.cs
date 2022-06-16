@@ -43,14 +43,18 @@ public class AuthController : ControllerBase
             return StatusCode(StatusCodes.Status400BadRequest);
         } 
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="form"></param>
+    /// <returns>Token</returns>
     [HttpPost("customer/")]
     public IActionResult RegisterCustomer(RegForm form)
     {
         try
         {
              return Ok(_servicesAuth.RegisterAccessCustomer(form.AspToBllRegister()));
-             
+    
         }
         catch (Exception)
         {

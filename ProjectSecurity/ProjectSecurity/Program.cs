@@ -8,7 +8,6 @@ using System.Text;
 using BusinessAccessLayer.Services;
 using ProjectSecurity.Tools;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +19,7 @@ builder.Services.AddSingleton<IPlanningService, PlanningService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IRondeService , RondeService>();
 builder.Services.AddSingleton<IWorkService , WorkService>();
+builder.Services.AddSingleton<ITownService ,TownService> ();
 
 
 //BLL Services
@@ -30,6 +30,8 @@ builder.Services.AddSingleton<IRapportService , RapportService>();
 builder.Services.AddSingleton<IAuthServices, AuthServices>();
 builder.Services.AddSingleton<IRondeServices, RondeServices>();
 builder.Services.AddSingleton<IWorkServices, WorkServices>();
+builder.Services.AddSingleton< IClientServices, ClientServices>();
+builder.Services.AddSingleton<ITownServices, TownServices>();
 
 //Api
 builder.Services.AddSingleton<TokenService>();

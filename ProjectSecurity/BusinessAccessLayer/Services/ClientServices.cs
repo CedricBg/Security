@@ -20,9 +20,6 @@ public class ClientServices : IClientServices
         _customerService = customerService;
     }
 
-    
-    
-
     public bool AddCustomer(BUSI.Customer.PostCustomer form)
     {
         try

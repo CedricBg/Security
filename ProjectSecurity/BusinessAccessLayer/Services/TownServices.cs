@@ -2,6 +2,7 @@
 using BusinessAccessLayer.Models.Town;
 using BusinessAccessLayer.Tools.Town;
 using DataAccessLayer.Repository;
+using System.Data.SqlClient;
 
 namespace BusinessAccessLayer.Services;
 
@@ -23,7 +24,18 @@ public class TownServices : ITownServices
         catch(Exception)
         {
             return null;
+        } 
+    }
+
+    public IEnumerable<Pays> GetCountrysAll()
+    {
+        try
+        {
+            return _townService.getAllCountry().Select(dr => dr.GetAllCountrys());
         }
-        
+        catch (Exception)
+        {
+            return null;
+        }
     }
 }

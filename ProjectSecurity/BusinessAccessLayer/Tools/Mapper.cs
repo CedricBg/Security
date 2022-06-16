@@ -179,7 +179,7 @@ public static class Mapper
     {
         return new DATA.PutEmployee
         {
-            IdEmployee = form.IdEmployee,
+            id = form.id,
             FirstName = form.FirstName,
             Name = form.Name,
             BirthDate = form.BirthDate,
@@ -253,7 +253,7 @@ public static class Mapper
             Street = form.Street,
             StreetNumber = form.StreetNumber,
             PostCode = form.PostCode,
-            IdCountry = form.IdCountry,
+            Country = form.Country,
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
             IdInformation = form.IdInformation,

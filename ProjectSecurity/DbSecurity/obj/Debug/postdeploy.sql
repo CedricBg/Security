@@ -316,10 +316,10 @@ INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry )
 Values('Rue Simon', '48', '6990', 'bogaert@outlook.com', '0487345912' ,1)
 
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
-Values('Rue de la gare', '130', '1310', 'bogaert@gmail.com', '047854221' ,3)
+Values('Rue de la gare', '130', 'Wavre 1300', 'bogaert@gmail.com', '047854221' ,3)
 
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
-Values('StationStraat', '27', '6945', 'rabbit@gmail.com', '5248551' ,2)
+Values('StationStraat', '27', 'Durbuy 6940', 'rabbit@gmail.com', '5248551' ,2)
 
 INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) 
 Values ('Danone','0455555555','101','emerg@email.com', 1, 1,21)

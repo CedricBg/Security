@@ -69,6 +69,8 @@
     <Folder Include="ProcStored\Rondes" />
     <Folder Include="ProcStored\Work" />
     <Folder Include="ProcStored\Ville" />
+    <Folder Include="ProcStored\Pays" />
+    <Folder Include="ProcStored\formulaire" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Employee.sql" />
@@ -137,6 +139,9 @@
     <Build Include="ProcStored\planning\PutPlanning.sql" />
     <Build Include="Tables\ville.sql" />
     <Build Include="ProcStored\Ville\GetTown.sql" />
+    <Build Include="ProcStored\Pays\AllCountrys.sql" />
+    <Build Include="ProcStored\formulaire\GetDepartement.sql" />
+    <Build Include="ProcStored\formulaire\GetStatut.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DbSecurity.refactorlog" />

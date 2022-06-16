@@ -39,6 +39,93 @@
             Login pour les clients
             </summary>
         </member>
+        <member name="M:ProjectSecurity.Controllers.CustomerController.Post(ProjectSecurity.Models.Customer.PostCustomer)">
+            <summary>
+            Ajout d'un nouveau client
+            </summary>
+            <param name="form">formulaire avec les infos du client</param>
+            <returns>l'erreur ou status 201 </returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.CustomerController.GetAll">
+            <summary>
+            Réupération de la liste des clients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.CustomerController.Get(System.Int32)">
+            <summary>
+            Récupèration d'un client par son id
+            </summary>
+            <param name="Id">nr de client dans la db</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.CustomerController.Put(ProjectSecurity.Models.Customer.PutCustomer)">
+            <summary>
+            Mise à jour d'un client
+            </summary>
+            <param name="form">formuliare de mise à jour d'un client</param>
+            <returns>l'erreur ou le status code 201</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.CustomerController.Delete(System.Int32)">
+            <summary>
+            Supression d'un client (Attention trigger en place il passe en InActive et n'est pluis affiché pour le reste de l'appli)
+            </summary>
+            <param name="id">Id du clinet dans la db</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.EmployeeController.Post(ProjectSecurity.Models.Employee.AddEmployee)">
+            <summary>
+            Ajout d'un nouvel employée
+            </summary>
+            <param name="form">totues les infos d'un employée</param>
+            <returns>Le status 404 en cas d'erreur</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.EmployeeController.GetById(System.Int32)">
+            <summary>
+            Renvoi un employé par rapport à son id
+            </summary>
+            <param name="Id">nr id de l'employée</param>
+            <returns>Not found si existe pas</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.EmployeeController.GetAll">
+            <summary>
+            Renvoir une liste de toutr les employées
+            </summary>
+            <returns>L'erreur en cas d'échec</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.EmployeeController.DeleteEmployee(System.Int32)">
+            <summary>
+            suppression de employee
+            </summary>
+            <param name="Id">nr de l'agent dans la db</param>
+            <returns>message en cas d'erreur</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.EmployeeController.PutEmployee(ProjectSecurity.Models.Employee.PutEmployee)">
+            <summary>
+            Mise à jouir d'un employee
+            </summary>
+            <param name="form">formulaire avec totues les infos de l'agent</param>
+            <returns>le message d'erreur</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.EmployeeController.DepartementTo(ProjectSecurity.Models.Employee.Belongs)">
+            <summary>
+            Retourne le departement pour lequel l'employée travail
+            </summary>
+            <param name="form">nr employee , nr du departement</param>
+            <returns>Liste de departements possibles</returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.FormulaireController.GetDept">
+            <summary>
+            Réupération de la liste des Formulaires
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectSecurity.Controllers.FormulaireController.GetStat">
+            <summary>
+            Réupération de la liste des statuts
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:ProjectSecurity.Controllers.PlanningController.GetPlanningCustomer(System.Int32)">
             <summary>
             Récupération des jours de travail par client
@@ -124,6 +211,12 @@
             Controlleur récuperation des villes et codes postaux
             </summary>
         </member>
+        <member name="M:ProjectSecurity.Controllers.TownController.GetAllCountrys">
+            <summary>
+            Fonction qui va chercher le nom et l'id de tout les pays pour les formulaires
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:ProjectSecurity.Controllers.WorkController.#ctor(BusinessAccessLayer.IRepositories.IWorkServices)">
             <summary>
             Classe qui permet de réupérer l'heure d'arrivée et de départ de l'agent
@@ -145,6 +238,11 @@
         <member name="P:ProjectSecurity.Models.Auth.RegForm.Id">
             <summary>
             id de l'utilisateur pour activation de l'éspace de connexion
+            </summary>
+        </member>
+        <member name="T:ProjectSecurity.Models.Employee.PutEmployee">
+            <summary>
+            class pour la mise à jour d'un membre du personel
             </summary>
         </member>
         <member name="T:ProjectSecurity.Models.Ronde.AddRfid">
@@ -177,6 +275,11 @@
             Classe démarrage d'une ronde
             </summary>
             
+        </member>
+        <member name="T:ProjectSecurity.Models.Town.Pays">
+            <summary>
+            Classe qui retourne les noms des Pays pour les formulaires
+            </summary>
         </member>
         <member name="T:ProjectSecurity.Models.Town.Ville">
             <summary>

@@ -13,4 +13,13 @@ public static class Mapper
             codePostal = ville.codePostal
         };
     }
+
+    public static BUSI.Pays GetAllCountrys(this DATA.Pays pays)
+    {
+        return new BUSI.Pays
+        {
+            Id = pays.Id,
+            Name = pays.Name,
+        };
+    }
 }

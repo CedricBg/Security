@@ -5,4 +5,5 @@ namespace DataAccessLayer.Repository;
 public interface ITownService
 {
     IEnumerable<Ville> getAll();
+    IEnumerable<Pays> getAllCountry();
 }

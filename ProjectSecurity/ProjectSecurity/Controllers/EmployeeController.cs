@@ -18,7 +18,11 @@ namespace ProjectSecurity.Controllers
         {
             _EmployeeServices = employeeServices;
         }
-
+        /// <summary>
+        /// Ajout d'un nouvel employée
+        /// </summary>
+        /// <param name="form">totues les infos d'un employée</param>
+        /// <returns>Le status 404 en cas d'erreur</returns>
         [HttpPost]
         public IActionResult Post(AddEmployee form)
         {
@@ -32,7 +36,11 @@ namespace ProjectSecurity.Controllers
                 return StatusCode(StatusCodes.Status404NotFound);
             }
         }
-
+        /// <summary>
+        /// Renvoi un employé par rapport à son id
+        /// </summary>
+        /// <param name="Id">nr id de l'employée</param>
+        /// <returns>Not found si existe pas</returns>
         [HttpGet("{Id}")]
         public IActionResult GetById(int Id)
         {
@@ -43,7 +51,11 @@ namespace ProjectSecurity.Controllers
             }
             return NotFound();
         }
-        
+        /// <summary>
+        /// Renvoir une liste de toutr les employées
+        /// </summary>
+        /// <returns>L'erreur en cas d'échec</returns>
+
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -56,7 +68,11 @@ namespace ProjectSecurity.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// suppression de employee
+        /// </summary>
+        /// <param name="Id">nr de l'agent dans la db</param>
+        /// <returns>message en cas d'erreur</returns>
         [HttpDelete("{Id}")]
         public IActionResult DeleteEmployee(int Id)
         {
@@ -69,7 +85,11 @@ namespace ProjectSecurity.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Mise à jouir d'un employee
+        /// </summary>
+        /// <param name="form">formulaire avec totues les infos de l'agent</param>
+        /// <returns>le message d'erreur</returns>
         [HttpPut]
         public IActionResult PutEmployee(PutEmployee form)
         {
@@ -83,7 +103,11 @@ namespace ProjectSecurity.Controllers
             }
 
         }
-
+        /// <summary>
+        /// Retourne le departement pour lequel l'employée travail
+        /// </summary>
+        /// <param name="form">nr employee , nr du departement</param>
+        /// <returns>Liste de departements possibles</returns>
         [HttpPost("Departement/")]
         public IActionResult DepartementTo(Belongs form)
         {

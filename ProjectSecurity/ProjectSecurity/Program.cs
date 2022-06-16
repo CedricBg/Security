@@ -13,28 +13,30 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 //Dal Services
-builder.Services.AddSingleton<IAuthService, AuthService>();
-builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
-builder.Services.AddSingleton<IPlanningService, PlanningService>();
-builder.Services.AddSingleton<ICustomerService, CustomerService>();
-builder.Services.AddSingleton<IRondeService , RondeService>();
-builder.Services.AddSingleton<IWorkService , WorkService>();
-builder.Services.AddSingleton<ITownService ,TownService> ();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IPlanningService, PlanningService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IRondeService , RondeService>();
+builder.Services.AddScoped<IWorkService , WorkService>();
+builder.Services.AddScoped<ITownService ,TownService> ();
+builder.Services.AddScoped<IFormulaireService, FormulaireService>();
 
 
 //BLL Services
-builder.Services.AddSingleton<IPlanningServices, PlanningServices>();
-builder.Services.AddSingleton<IClientServices , ClientServices>();
-builder.Services.AddSingleton<IEmployeeServices, EmployeeServices>();
-builder.Services.AddSingleton<IRapportService , RapportService>();
-builder.Services.AddSingleton<IAuthServices, AuthServices>();
-builder.Services.AddSingleton<IRondeServices, RondeServices>();
-builder.Services.AddSingleton<IWorkServices, WorkServices>();
-builder.Services.AddSingleton< IClientServices, ClientServices>();
-builder.Services.AddSingleton<ITownServices, TownServices>();
+builder.Services.AddScoped<IPlanningServices, PlanningServices>();
+builder.Services.AddScoped<IClientServices , ClientServices>();
+builder.Services.AddScoped<IEmployeeServices, EmployeeServices>();
+builder.Services.AddScoped<IRapportService , RapportService>();
+builder.Services.AddScoped<IAuthServices, AuthServices>();
+builder.Services.AddScoped<IRondeServices, RondeServices>();
+builder.Services.AddScoped<IWorkServices, WorkServices>();
+builder.Services.AddScoped<IClientServices, ClientServices>();
+builder.Services.AddScoped<ITownServices, TownServices>();
+builder.Services.AddScoped<IformulaireServices, formulaireServices>();
 
 //Api
-builder.Services.AddSingleton<TokenService>();
+builder.Services.AddScoped<TokenService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

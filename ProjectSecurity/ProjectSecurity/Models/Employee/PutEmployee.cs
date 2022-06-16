@@ -1,8 +1,10 @@
 ﻿namespace ProjectSecurity.Models.Employee;
-
+/// <summary>
+/// class pour la mise à jour d'un membre du personel
+/// </summary>
 public class PutEmployee
 {
-    public int IdEmployee { get; set; }
+    public int id { get; set; }
     public string Name { get; set; }
     public string FirstName { get; set; }
     public string BirthDate { get; set; }

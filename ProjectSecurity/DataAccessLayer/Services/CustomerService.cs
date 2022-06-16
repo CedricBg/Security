@@ -2,11 +2,7 @@
 using DataAccessLayer.Tools;
 using DataAccessLayer.Models;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DataAccessLayer.Services
 {
@@ -63,7 +59,7 @@ namespace DataAccessLayer.Services
             cmd.AddParameter("Street", form.Street);
             cmd.AddParameter("PostCode", form.PostCode);
             cmd.AddParameter("StreetNumber", form.StreetNumber);
-            cmd.AddParameter("IdCountry", form.IdCountry);
+            cmd.AddParameter("IdCountry", form.Country);
             cmd.AddParameter("Phone", form.Phone);
             cmd.AddParameter("IdInformation", form.IdInformation);
             cmd.AddParameter("IdCustomer", form.IdCustomer);

@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="DbSecurity.dll" />
-			<Metadata Name="FileName" Value="C:\ANGULAR\SECURITY\SECURITY\SECURITY\PROJECTSECURITY\DBSECURITY\OBJ\DEBUG\DBSECURITY.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\CEDRI\DOCUMENTS\PROJET FORMATION\SECURITY\SECURITY\PROJECTSECURITY\DBSECURITY\OBJ\DEBUG\DBSECURITY.DLL" />
 			<Metadata Name="AssemblyName" Value="DbSecurity" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Angular\Security\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -1681,6 +1681,34 @@ RETURN 0]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddSelectToRonde]&#xD;&#xA;&#x9;@IdTimeRonde int,&#xD;&#xA;&#x9;@RfidNr varchar(255)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[AllCountrys]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+	SELECT * from Countrys ORDER BY Country ASC;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Countrys]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Countrys].[Country]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="102" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AllCountrys]&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Belongs]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -3293,11 +3321,12 @@ END]]></Value>
 	
 	from Employee E,Countrys C, Informations I ,StatutAgent S, Employee_Language L, Departement D, Belongs B
 	where I.IdInformation = E.IdInformation
+	and E.Active = 'True'
 	and C.IdCountrys = I.IdCountry
 	and S.IdStatut = E.IdStatut
 	and L.IdLanguage = E.IdLanguage
-	and B.IdEmployee = E.IdEmployee
 	and D.IdDepartement = b.IdDepartement
+	
 RETURN 0]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3384,6 +3413,9 @@ RETURN 0]]></Value>
 					<References Name="[dbo].[Employee].[IdInformation]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Employee].[Active]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Countrys].[IdCountrys]" />
 				</Entry>
 				<Entry>
@@ -3402,9 +3434,6 @@ RETURN 0]]></Value>
 					<References Name="[dbo].[Employee].[IdLanguage]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Belongs].[IdEmployee]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[Departement].[IdDepartement]" />
 				</Entry>
 				<Entry>
@@ -3417,7 +3446,7 @@ RETURN 0]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="675" />
+				<Property Name="Length" Value="668" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GatAllEmployee]&#xD;&#xA;AS" />
@@ -3596,6 +3625,31 @@ begin
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetByCustomer]&#xD;&#xA;&#x9;@Customer int&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetDepartement]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	SELECT * from Departement
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Departement]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="83" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetDepartement]&#xD;&#xA;As" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[getOneByEmployee]">
@@ -4063,11 +4117,36 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetStatut]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+	SELECT * from StatutAgent
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[StatutAgent]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="80" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetStatut]&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetTown]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 Begin
-	SELECT fieldscolumn_2 , fieldscolumn_1 from mytable
+	SELECT fieldscolumn_2 , fieldscolumn_1 from mytable ORDER BY fieldscolumn_2 ASC;
 end]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -4088,7 +4167,7 @@ end]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="102" />
+				<Property Name="Length" Value="131" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetTown]&#xD;&#xA;AS" />

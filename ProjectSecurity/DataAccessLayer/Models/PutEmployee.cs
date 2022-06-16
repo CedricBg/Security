@@ -1,10 +1,8 @@
-﻿
-
-namespace DataAccessLayer.Models;
+﻿namespace DataAccessLayer.Models;
 
 public class PutEmployee
 {
-    public int IdEmployee { get; set; }
+    public int id { get; set; }
     public string Name { get; set; }
     public string FirstName { get; set; }
     public string BirthDate { get; set; }

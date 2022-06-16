@@ -9,12 +9,42 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Models.Planning;
 using DataAccessLayer.Models.Town;
+using DataAccessLayer.Models.Formulaire;
 
 namespace DataAccessLayer.Tools;
 
 
 public static class Mapper
 {
+    public static Statut AllStatut(this SqlDataReader reader)
+    {
+        return new Statut
+        {
+            Id = (int)reader["IdStatut"],
+            Classe = Convert.ToString(reader["Classe"]),
+            ClasseName = Convert.ToString(reader["ClasseName"]),
+            
+        };
+    }
+
+    public static Departement AllDept(this SqlDataReader reader)
+    {
+        return new Departement
+        {
+            Name = Convert.ToString(reader["NameDepartement"]),
+            IdDepartement = (int)reader["IdDepartement"],
+        };
+    }
+
+    public static Pays AllCountrys(this SqlDataReader reader)
+    {
+        return new Pays
+        {
+            Id = (int)reader["IdCountrys"],
+            Name = (string)reader["Country"],
+        };
+    }
+
     public static Ville AllTown(this SqlDataReader reader)
     {
         return new Ville

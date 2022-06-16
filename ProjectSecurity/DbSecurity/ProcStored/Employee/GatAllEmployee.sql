@@ -22,9 +22,10 @@ AS
 	
 	from Employee E,Countrys C, Informations I ,StatutAgent S, Employee_Language L, Departement D, Belongs B
 	where I.IdInformation = E.IdInformation
+	and E.Active = 'True'
 	and C.IdCountrys = I.IdCountry
 	and S.IdStatut = E.IdStatut
 	and L.IdLanguage = E.IdLanguage
-	and B.IdEmployee = E.IdEmployee
 	and D.IdDepartement = b.IdDepartement
+	
 RETURN 0

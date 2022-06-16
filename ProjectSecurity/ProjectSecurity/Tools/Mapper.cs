@@ -136,6 +136,7 @@ public static class Mapper
             Phone = form.Phone,
             PostCode = form.PostCode,
             Role = form.Role,
+            
         };
     }
 
@@ -185,7 +186,7 @@ public static class Mapper
     {
         return new BUSIEmplo.PutEmployee
         {
-            IdEmployee = form.IdEmployee,
+            id = form.id,
             FirstName = form.FirstName,
             Name = form.Name,
             BirthDate = form.BirthDate,
@@ -200,7 +201,8 @@ public static class Mapper
             StreetNbr = form.StreetNbr,
             Phone = form.Phone,
             PostCode = form.PostCode,
-            Country = form.Country
+            Country = form.Country,
+            
 };
     }
     public static ASPCustomer.AllCustomer BLLToASPAllCustomer(this BUSICust.AllCustomer form)
@@ -236,7 +238,7 @@ public static class Mapper
             Street = form.Street,
             PostCode = form.PostCode,
             StreetNumber = form.StreetNumber,
-            IdCountry = form.IdCountry,
+            Country = form.Country,
             Phone = form.Phone,
             Email = form.Email,
             IdLanguage = form.IdLanguage,
@@ -257,10 +259,9 @@ public static class Mapper
             Street = form.Street,
             StreetNumber = form.StreetNumber,
             PostCode = form.PostCode,
-            IdCountry = form.IdCountry,
+            Country = form.Country,
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
-            Country = form.Country,
             IdUsers = form.IdUsers,
             IdInformation = form.IdInformation,
             IdLanguage  = form.IdLanguage,
@@ -281,7 +282,7 @@ public static class Mapper
             Street = form.Street,
             StreetNumber = form.StreetNumber,
             PostCode = form.PostCode,
-            IdCountry = form.IdCountry,
+            Country = form.Country,
             Phone = form.Phone,
             GeneralPhone = form.GeneralPhone,
             IdLanguage = form.IdLanguage

@@ -117,7 +117,7 @@ public class EmployeeService : IEmployeeService
             cmd.AddParameter("Email", form.Email);
             cmd.AddParameter("PostCode", form.PostCode);
             cmd.AddParameter("Country", form.Country);
-            cmd.AddParameter("IdEmployee", form.IdEmployee);
+            cmd.AddParameter("IdEmployee", form.id);
 
 
 

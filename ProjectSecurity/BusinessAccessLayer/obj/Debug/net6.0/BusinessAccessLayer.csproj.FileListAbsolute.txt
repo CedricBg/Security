@@ -49,3 +49,20 @@ C:\Angular\Security\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\De
 C:\Angular\Security\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\refint\BusinessAccessLayer.dll
 C:\Angular\Security\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.pdb
 C:\Angular\Security\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\ref\BusinessAccessLayer.dll
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.deps.json
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.dll
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\AdoToolBox.dll
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\bin\Debug\net6.0\AdoToolBox.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.AssemblyReference.cache
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.AssemblyInfoInputs.cache
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.AssemblyInfo.cs
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.CopyComplete
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.dll
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\refint\BusinessAccessLayer.dll
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.pdb
+C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\BusinessAccessLayer\obj\Debug\net6.0\ref\BusinessAccessLayer.dll

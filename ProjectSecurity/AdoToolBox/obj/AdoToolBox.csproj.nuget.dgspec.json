@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Angular\\Security\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj": {}
+    "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj": {}
   },
   "projects": {
-    "C:\\Angular\\Security\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj": {
+    "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Angular\\Security\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj",
+        "projectUniqueName": "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj",
         "projectName": "AdoToolBox",
-        "projectPath": "C:\\Angular\\Security\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj",
+        "projectPath": "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\Security\\ProjectSecurity\\AdoToolBox\\AdoToolBox.csproj",
         "packagesPath": "C:\\Users\\cedri\\.nuget\\packages\\",
-        "outputPath": "C:\\Angular\\Security\\Security\\Security\\ProjectSecurity\\AdoToolBox\\obj\\",
+        "outputPath": "C:\\Users\\cedri\\Documents\\Projet Formation\\Security\\Security\\ProjectSecurity\\AdoToolBox\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

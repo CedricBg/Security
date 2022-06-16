@@ -27,7 +27,23 @@ public class TownController : ControllerBase
         {
             return  Ok(_townServices.GetAll());
         }
-        catch (Exception ex)
+        catch (NullReferenceException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+    /// <summary>
+    /// Fonction qui va chercher le nom et l'id de tout les pays pour les formulaires
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("contrys")]
+    public IActionResult GetAllCountrys()
+    {
+        try
+        {
+            return Ok(_townServices.GetCountrysAll());
+        }
+        catch (NullReferenceException ex)
         {
             return BadRequest(ex.Message);
         }

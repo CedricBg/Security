@@ -70,7 +70,6 @@ ALTER TABLE Searching ADD CONSTRAINT FK_SEARCH_RACK FOREIGN KEY (IdRack) REFEREN
 ALTER TABLE Searching ADD CONSTRAINT FK_SEARCH_PRODUCT FOREIGN KEY (IdProduct) REFERENCES Product (IdProduct)
 
 ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_EMPLO FOREIGN KEY (IdEmployee) REFERENCES Employee (IdEmployee)
-ALTER TABLE ScheduleGuard ADD CONSTRAINT FK_SCHEDU_CUST FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer)
 
 ALTER TABLE Departement ADD CONSTRAINT UK_DEPARTMENT_NAME UNIQUE (NameDepartement)
 
@@ -313,13 +312,13 @@ INSERT INTO Employee_Language Values('English')
 
 
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
-Values('Rue Simon', '48', '6990', 'bogaert@outlook.com', '0487345912' ,1)
+Values('Rue Simon', '48', '6990 Hotton', 'bogaert@outlook.com', '0487345912' ,1)
 
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
-Values('Rue de la gare', '130', 'Wavre 1300', 'bogaert@gmail.com', '047854221' ,3)
+Values('Rue de la gare', '130', '1300 Wavre ', 'bogaert@gmail.com', '047854221' ,3)
 
 INSERT INTO Informations(Street, StreetNumber, PostCode,Email,Phone, IdCountry ) 
-Values('StationStraat', '27', 'Durbuy 6940', 'rabbit@gmail.com', '5248551' ,2)
+Values('StationStraat', '27', '6940 Durbuy', 'rabbit@gmail.com', '5248551' ,2)
 
 INSERT INTO Customer([Name], GeneralPhone,EmergencyPhone, EmergencyEmail, IdInformation, IdLanguages, IdStatuts) 
 Values ('Danone','0455555555','101','emerg@email.com', 1, 1,21)
@@ -336,8 +335,6 @@ Values ('Rabbit','Roger', '1985/08/26','048218521','2015/09/08','864557878', '21
 INSERT INTO Belongs (IdDepartement, IdEmployee) Values(2,1)
 
 INSERT INTO Manage Values(1,1)
-
-INSERT INTO ScheduleGuard (StartTime, EndTime, IdEmployee, IdCustomer) Values(GETDATE(), GETDATE(), 1,1)
 
 insert into RONDE (NameRonde,IdCustomer) Values('Ronde de 23 heure',1)
 insert into RONDE (NameRonde,IdCustomer) Values('Ronde de 01 heure',1)

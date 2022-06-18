@@ -20,7 +20,7 @@ public class PlanningController : ControllerBase
     /// Récupération des jours de travail par client
     /// </summary>
     
-    [HttpGet("ByCustomer")]
+    [HttpGet("ByCustomer/{Id}")]
     public IActionResult GetPlanningCustomer(int Id)
     {
         try
@@ -36,12 +36,12 @@ public class PlanningController : ControllerBase
     /// Récupération des jours de travail par employee
     /// </summary>
 
-    [HttpGet("ByEmployee")]
+    [HttpGet("ByEmployee/{Id}")]
     public IActionResult GetByEmployee(int Id)
     {
         try
         {
-            return Ok(_planningServices.GetByDay(Id).Select(c=>c.BllTOASPPlanning()));
+            return Ok(_planningServices.GetByemplo(Id));
         }
         catch (Exception)
         {
@@ -74,12 +74,10 @@ public class PlanningController : ControllerBase
         {
             _planningServices.PutPlanning(form.ASPTOBLLPlanning());
             return StatusCode(StatusCodes.Status201Created);
-
         }
         catch (Exception)
         {
             return BadRequest();
         }
-
     }
 }

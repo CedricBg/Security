@@ -1,9 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[AddDayWork]
 	@IdEmployee int,
-	@IdCustomer int,
-	@Start Date,
-	@End Date
+	@Customer varchar(50),
+	@Start varchar(50),
+	@End varchar(50)
 AS
 Begin
-	INSERT INTO ScheduleGuard (IdCustomer,IdEmployee,StartTime,EndTime) Values(@IdCustomer, @IdEmployee, @Start, @End)
+	INSERT INTO ScheduleGuard (Customer,IdEmployee,StartTime,EndTime) Values(@Customer, @IdEmployee, @Start, @End)
 End

@@ -3,5 +3,5 @@
 	
 AS
 begin
-	SELECT EndTime, IdCustomer, IdCustomer,StartTime from ScheduleGuard where IdCustomer = @Customer
+	SELECT EndTime, Customer, StartTime, EndTime from ScheduleGuard where Customer = @Customer
 	end

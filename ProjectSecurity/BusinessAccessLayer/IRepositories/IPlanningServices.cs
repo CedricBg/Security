@@ -7,6 +7,7 @@ namespace BusinessAccessLayer.IRepositories
         public bool PutPlanning(Planning form);
         IEnumerable<Planning> GetByDay(int Id);
         bool PostPlanning(Planning form);
+        public IEnumerable<Planning> GetByemplo(int Id);
 
     }
 }

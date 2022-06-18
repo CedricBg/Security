@@ -14,14 +14,15 @@
 	@Email varchar(50),
 	@PostCode varchar(30),
 	@StreetNumber varchar(20),
-	@Country varchar(50)
+	@Country varchar(50),
+	@Role varchar(50)
 
 AS
 Begin
 	Update Employee Set [Name] = @Name, firstName = @firstName , BirthDate = @BirthDate, Vehicle = @Vehicle, 
 	SecurityCardNumber = @SecurityCard, EmployeeCardNumber = @EmployeeCardNumber, RegistreNational = @RegistreNational,
-	IdLanguage = (Select IdLanguage from Employee_Language where [Language] = @Language ) where IdEmployee = @IdEmployee
+	IdLanguage = (Select IdLanguage from Employee_Language where [Language] = @Language ), IdStatut = (SELECT IdStatut from StatutAgent where ClasseName = @Role) where IdEmployee = @IdEmployee
 	Update Informations Set Street = @Street, PostCode = @PostCode, StreetNumber = @StreetNumber, Phone = @Phone ,Email = @Email , IdCountry = (select IdCountrys from Countrys where Country = @Country)
 	where IdInformation =  (Select IdInformation from Employee where IdEmployee = @IdEmployee)
-	Update Manage Set IdDepartement = (select IdDepartement from Employee where IdEmployee = @IdEmployee)
+	Update Manage Set IdDepartement = (select IdDepartement from Employee where IdEmployee = @IdEmployee) 
 end

@@ -113,17 +113,16 @@ public class EmployeeService : IEmployeeService
             cmd.AddParameter("Departement", form.Departement);
             cmd.AddParameter("Phone", form.Phone);
             cmd.AddParameter("Street", form.Street);
-            cmd.AddParameter("StreetNumber", form.StreetNbr);
+            cmd.AddParameter("StreetNumber", form.StreetNumber);
             cmd.AddParameter("Email", form.Email);
             cmd.AddParameter("PostCode", form.PostCode);
             cmd.AddParameter("Country", form.Country);
             cmd.AddParameter("IdEmployee", form.id);
 
 
-
             return cnx.ExecuteNonQuery(cmd) == 1;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             return false;
         }

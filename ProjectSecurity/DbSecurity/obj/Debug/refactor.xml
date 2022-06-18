@@ -364,4 +364,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdRonde" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="1b703d04-4c1c-4237-a164-71335bf6c787" ChangeDateTime="06/17/2022 16:04:16" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[ScheduleGuard].[IdCustomer]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ScheduleGuard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Customer" />
+  </Operation>
 </Operations>

@@ -44,7 +44,7 @@ public class AuthController : ControllerBase
         } 
     }
     /// <summary>
-    /// 
+    /// Activation de la connexion au site pour les clients
     /// </summary>
     /// <param name="form"></param>
     /// <returns>Token</returns>

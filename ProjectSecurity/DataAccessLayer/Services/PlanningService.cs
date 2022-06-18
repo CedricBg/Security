@@ -1,4 +1,5 @@
 ﻿using AdoToolbox;
+using DataAccessLayer.Models;
 using DataAccessLayer.Models.Planning;
 using DataAccessLayer.Tools;
 using Microsoft.Extensions.Configuration;
@@ -25,20 +26,32 @@ namespace DataAccessLayer.Services
         public IEnumerable<Planning> getOneByCustomer(int IdCustomer)
         {
             Connection cnx = new Connection(_connectionString);
-            Command cmd = new Command("getOneByCustomer", true);
+            Command cmd = new Command("getByCustomer", true);
 
             cmd.AddParameter("Customer", IdCustomer);
 
             return cnx.ExecuteReader(cmd, dr => dr.ReadToAccessPlanning());
 
         }
+
+        public IEnumerable<Planning> getByEmployee(int id)
+        {
+            Connection cnx = new Connection(_connectionString);
+            Command cmd = new Command("getOneByEmployee", true);
+
+            cmd.AddParameter("Employee", id);
+
+            return cnx.ExecuteReader(cmd, dr => dr.ReadToAccessPlanning());
+        }
+
+
         public bool AddADay(Planning form)
         {
             Connection cnx = new Connection(_connectionString);
             Command cmd = new Command("AddDayWork", true);
 
             cmd.AddParameter("IdEmployee", form.IdEmployee);
-            cmd.AddParameter("IdCustomer", form.IdCustomer);
+            cmd.AddParameter("Customer", form.Customer);
             cmd.AddParameter("End", form.EndTime);
             cmd.AddParameter("Start", form.StartTime);
 
@@ -51,7 +64,7 @@ namespace DataAccessLayer.Services
             Command cmd = new Command("PutPlanning", true);
 
             cmd.AddParameter("IdEmployee", form.IdEmployee);
-            cmd.AddParameter("IdCustomer", form.IdCustomer);
+            cmd.AddParameter("Customer", form.Customer);
             cmd.AddParameter("End", form.EndTime);
             cmd.AddParameter("Start", form.StartTime);
 

@@ -40,8 +40,9 @@ public static class Mapper
         {
             EndTime = form.EndTime,
             StartTime = form.StartTime,
-            IdCustomer = form.IdCustomer,
+            Customer = form.Customer,
             IdEmployee = form.IdEmployee,
+            
         };
     }
 
@@ -55,7 +56,7 @@ public static class Mapper
         {
             EndTime = form.EndTime,
             StartTime = form.StartTime,
-            IdCustomer = form.IdCustomer,
+            Customer = form.Customer,
             IdEmployee = form.IdEmployee,
         };
     }
@@ -198,10 +199,11 @@ public static class Mapper
             Departement = form.Departement,
             Email = form.Email,
             Street = form.Street,
-            StreetNbr = form.StreetNbr,
+            StreetNumber = form.StreetNumber,
             Phone = form.Phone,
             PostCode = form.PostCode,
             Country = form.Country,
+            Role = form.Role,
             
 };
     }

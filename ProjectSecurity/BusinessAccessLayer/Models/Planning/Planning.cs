@@ -8,10 +8,9 @@ namespace BusinessAccessLayer.Models.Planning
 {
     public class Planning
     {
-        public int? Id { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
         public int? IdEmployee { get; set; }
-        public int? IdCustomer { get; set; }
+        public string Customer { get; set; }
     }
 }

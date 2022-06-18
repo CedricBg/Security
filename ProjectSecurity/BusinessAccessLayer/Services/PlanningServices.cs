@@ -31,6 +31,11 @@ namespace BusinessAccessLayer.Services
             return _planningService.getOneByCustomer(Id).Select(c => c.DataToBllPlanning());
         }
 
+        public IEnumerable<Planning> GetByemplo(int Id)
+        {
+            return _planningService.getByEmployee(Id).Select(c => c.DataToBllPlanning());
+        }
+
         public bool PostPlanning(Planning form)
         {
             return _planningService.AddADay(form.BllToDataPlanning());

@@ -7,5 +7,6 @@ namespace DataAccessLayer.Services
         IEnumerable<Planning> getOneByCustomer(int IdCustomer);
         bool AddADay(Planning form);
         public bool PutPlanning(Planning form);
+        public IEnumerable<Planning> getByEmployee(int id);
     }
 }

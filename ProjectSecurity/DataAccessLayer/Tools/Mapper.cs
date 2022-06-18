@@ -172,9 +172,10 @@ public static class Mapper
     {
         return new Planning
         {
-            StartTime = (DateTime)reader["StartTime"],
-            EndTime = (DateTime)reader["EndTime"],
-            IdCustomer = reader["IdCustomer"] is DBNull ? null : (int)reader["IdCustomer"]
+            IdEmployee = Convert.ToInt32(reader["IdEmployee"]),
+            StartTime = Convert.ToString(reader["StartTime"]),
+            EndTime = Convert.ToString(reader["EndTime"]),
+            Customer = Convert .ToString(reader["Customer"]),
 
         };
     }

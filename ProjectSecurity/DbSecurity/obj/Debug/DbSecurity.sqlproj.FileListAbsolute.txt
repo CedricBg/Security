@@ -46,7 +46,3 @@ C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSe
 C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.sqlproj.AssemblyReference.cache
 C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.dll
 C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\DbSecurity.pdb
-C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\Model.xml
-C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\refactor.xml
-C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\postdeploy.sql
-C:\Users\cedri\Documents\Projet Formation\Security\Security\ProjectSecurity\DbSecurity\obj\Debug\predeploy.sql

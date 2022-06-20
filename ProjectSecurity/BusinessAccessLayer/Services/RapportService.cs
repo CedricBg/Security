@@ -31,7 +31,7 @@ public class RapportService : IRapportService
                 return line;
             }
         }
-        catch (Exception e)
+        catch (NullReferenceException e)
         {
             return("Le fichier n'a pas pu être lu" + e.Message);
         }

@@ -38,9 +38,9 @@ public class AuthController : ControllerBase
             _servicesAuth.RegisterAccessEmployee(form.AspToBllRegister());
             return StatusCode(StatusCodes.Status201Created);
         }
-        catch (Exception)
+        catch (NullReferenceException ex)
         {
-            return StatusCode(StatusCodes.Status400BadRequest);
+            return BadRequest(ex.Message);
         } 
     }
     /// <summary>
@@ -56,9 +56,9 @@ public class AuthController : ControllerBase
              return Ok(_servicesAuth.RegisterAccessCustomer(form.AspToBllRegister()));
     
         }
-        catch (Exception)
+        catch (NullReferenceException ex)
         {
-            return StatusCode(StatusCodes.Status400BadRequest);
+            return BadRequest(ex.Message);
         }
     }
 
@@ -87,15 +87,12 @@ public class AuthController : ControllerBase
     {
         try
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-            return Ok(JsonSerializer.Serialize(_servicesAuth.Login(form.AspToBllRegister())));
+            string token = _servicesAuth.Login(form.AspToBllRegister());
+            return Ok(JsonSerializer.Serialize(token));
         }
         catch (Exception ex)
         {
-            return BadRequest(ex.Message);
+            return Ok(BadRequest(ex.Message));
         }
     }
     /// <summary>
@@ -107,13 +104,8 @@ public class AuthController : ControllerBase
     {
         try
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-             return Ok(JsonSerializer.Serialize(_servicesAuth.LoginCust(form.AspToBllRegister())));
-
-            
+            string token = _servicesAuth.LoginCust(form.AspToBllRegister());
+            return Ok(JsonSerializer.Serialize(token));  
         }
         catch (Exception ex)
         {

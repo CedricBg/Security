@@ -41,11 +41,12 @@ public class PlanningController : ControllerBase
     {
         try
         {
-            return Ok(_planningServices.GetByemplo(Id));
+            IEnumerable<Planning> planning = _planningServices.GetByemplo(Id).Select(dr => dr.BllTOASPPlanning());
+            return Ok(planning);
         }
-        catch (Exception)
+        catch (NullReferenceException ex)
         {
-            return BadRequest();
+            return BadRequest(ex.Message);
         }
     }
     /// <summary>
